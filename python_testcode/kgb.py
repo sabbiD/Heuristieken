@@ -1,15 +1,15 @@
-ukraine = {'1': set(['2', '4']),
-         '2': set(['1', '3', '4', '5', '6']),
-         '3': set(['2', '6']),
-         '4': set(['1', '2', '5', '8', '7']),
-         '5': set(['2', '4', '6', '8', '9']),
-         '6': set(['2', '3', '5', '9'])
-         '7': set(['4', '8', '11', '10'])
-         '8': set(['4', '5', '7', '9', '11'])
-         }
+#ukraine = {'1': set(['2', '4']),
+         #'2': set(['1', '3', '4', '5', '6']),
+         #'3': set(['2', '6']),
+         #'4': set(['1', '2', '5', '8', '7']),
+         #'5': set(['2', '4', '6', '8', '9']),
+         #'6': set(['2', '3', '5', '9'])
+         #'7': set(['4', '8', '11', '10'])
+         #'8': set(['4', '5', '7', '9', '11'])
+         #}
 
-for i in ukraine:
-	print (ukraine[i])
+#for i in ukraine:
+#	print (ukraine[i])
 
 regions = [ [4, 2], [1, 4, 5, 6, 3], [2, 6], [1, 2, 5, 8, 7], [4, 2, 6, 9, 8], 
 [2, 3, 5, 9], [4, 8, 11, 10], [4, 5, 7, 9, 11], [5, 6, 8, 11], [7, 11, 13, 17, 12],
@@ -17,6 +17,7 @@ regions = [ [4, 2], [1, 4, 5, 6, 3], [2, 6], [1, 2, 5, 8, 7], [4, 2, 6, 9, 8],
 [14], [12, 17, 20], [10, 12, 16, 13, 18, 21, 20], [13, 17, 21, 19, 14, 11], 
 [14, 18, 21, 22], [16, 17, 21, 25, 24], [17, 20, 25, 26, 22, 19, 18], [23, 19, 21, 26],
 [22], [20, 25], [20, 21, 24, 16], [21, 25, 22] ]
+
 
 """
 - For item in dictionary, set radio, 1-7, default is 1.
@@ -35,24 +36,47 @@ regions = [ [4, 2], [1, 4, 5, 6, 3], [2, 6], [1, 2, 5, 8, 7], [4, 2, 6, 9, 8],
 """
 
 class Region:
-	def __init__(self, index, neighbours = [], radio = 0):
-		self.index = index
+   def __init__(self, index, neighbours = [], radio = 0):
+      self.index = index
+      self.neighbours = neighbours
+      self.radio = radio
+   
+   def __str__(self):
+      return ("{}: Neighbours: {} = Radio {}".format(self.index, self.neighbours, self.radio))
 
-	def __str__(self):
 
-		return ("Region {}: Neighbours: {} = Radio {}".format(self.index, 
-			self.neighbours, self.radio))
+ukraine = []
 
-first= Region(1)
-first.neighbours = [2,4]
-first.radio = 1
+for i in range (26):
+   index = str(i)
+   ukraine.append(Region(index))
+   ukraine[i].neighbours = regions[i]
 
-second = Region(2)
-second.neighbours = [1,3,4,5,6]
-second.radio = 4
+   #print(ukraine[i])
 
-print(first)
-print(second)
+   
+def radio(edges):
+   neighbours = []
+   radio_station = set()
+   radio = 1
+   for i in range(len(edges.neighbours)):
+      neighbours.append(edges.neighbours[i])
+      radio_station.add(ukraine[neighbours[i]].radio)
+
+   for i in range(7):
+      if radio in radio_station:
+         radio += 1
+      else:
+         break
+   edges.radio = radio
+
+   return
+for i in range(len(ukraine)):
+   radio(ukraine[i])
+   print(ukraine[i])
+
+
+
 
 
 
