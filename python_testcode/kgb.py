@@ -1,22 +1,14 @@
-#ukraine = {'1': set(['2', '4']),
-         #'2': set(['1', '3', '4', '5', '6']),
-         #'3': set(['2', '6']),
-         #'4': set(['1', '2', '5', '8', '7']),
-         #'5': set(['2', '4', '6', '8', '9']),
-         #'6': set(['2', '3', '5', '9'])
-         #'7': set(['4', '8', '11', '10'])
-         #'8': set(['4', '5', '7', '9', '11'])
-         #}
-
-#for i in ukraine:
-#	print (ukraine[i])
-
 regions = [ [4, 2], [1, 4, 5, 6, 3], [2, 6], [1, 2, 5, 8, 7], [4, 2, 6, 9, 8], 
 [2, 3, 5, 9], [4, 8, 11, 10], [4, 5, 7, 9, 11], [5, 6, 8, 11], [7, 11, 13, 17, 12],
 [8, 9, 7, 10, 13, 18, 14], [10, 17, 16], [10, 11, 18, 17], [11, 13, 18, 19, 15], 
 [14], [12, 17, 20], [10, 12, 16, 13, 18, 21, 20], [13, 17, 21, 19, 14, 11], 
 [14, 18, 21, 22], [16, 17, 21, 25, 24], [17, 20, 25, 26, 22, 19, 18], [23, 19, 21, 26],
 [22], [20, 25], [20, 21, 24, 16], [21, 25, 22] ]
+
+# change array to correct format (0-25)
+for i in range(len(regions)):
+	for j in range(len(regions[i])):
+		regions[i][j] -= 1
 
 
 """
@@ -35,45 +27,50 @@ regions = [ [4, 2], [1, 4, 5, 6, 3], [2, 6], [1, 2, 5, 8, 7], [4, 2, 6, 9, 8],
 - Functie radio zender 
 """
 
+# Create Region Class
 class Region:
-   def __init__(self, index, neighbours = [], radio = 0):
-      self.index = index
-      self.neighbours = neighbours
-      self.radio = radio
+	def __init__(self, index, neighbours = [], radio = 0):
+		self.index = index
+		self.neighbours = neighbours
+		self.radio = radio
    
-   def __str__(self):
-      return ("{}: Neighbours: {} = Radio {}".format(self.index, self.neighbours, self.radio))
+	def __str__(self):
+		return ("{}: Neighbours: {} = Radio {}".format(self.index, self.neighbours, self.radio))
 
 
 ukraine = []
 
+# Create array with all Regions
 for i in range (26):
-   index = str(i)
-   ukraine.append(Region(index))
-   ukraine[i].neighbours = regions[i]
+	index = str(i)
+	ukraine.append(Region(index))
+	ukraine[i].neighbours = regions[i]
 
-   #print(ukraine[i])
+# Add radiostations to regions
+def radio(index):
 
-   
-def radio(edges):
-   neighbours = []
-   radio_station = set()
-   radio = 1
-   for i in range(len(edges.neighbours)):
-      neighbours.append(edges.neighbours[i])
-      radio_station.add(ukraine[neighbours[i]].radio)
+	neighbours = []
+	radio_station = set()
+	radio = 1
 
-   for i in range(7):
-      if radio in radio_station:
-         radio += 1
-      else:
-         break
-   edges.radio = radio
-
-   return
+	# Create radiostation set
+	for i in range(len(index.neighbours)):
+		neighbours.append(index.neighbours[i])
+		radio_station.add(ukraine[neighbours[i]].radio)
+	
+	# Add radios
+	for i in range(7):
+		if radio in radio_station:
+			radio += 1
+		else:
+			break
+	index.radio = radio
+	return
+	
+# Add radios to Ukraine
 for i in range(len(ukraine)):
-   radio(ukraine[i])
-   print(ukraine[i])
+	radio(ukraine[i])
+	print(ukraine[i])
 
 
 
