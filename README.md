@@ -7,6 +7,8 @@ Er zijn 7 type zendmasten mogelijk.
 Afbeelding 1: De verdeling van provincies van Oekraine.
 
 
+
+
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
 
