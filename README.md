@@ -3,7 +3,10 @@
 Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van zendmasten te creëren voor de provincies van de landen Oekraine, de Verenigde Staten, China en Rusland.
 Er zijn 7 type zendmasten mogelijk.
 
-![Oekraine](http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png =250x250)
+<img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" alt="Oekraine" style="width: 200px;"/>
+
+![Okraine](http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png)
+
 Afbeelding 1: De verdeling van provincies van Oekraine.
 
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
