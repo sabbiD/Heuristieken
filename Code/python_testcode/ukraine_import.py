@@ -1,0 +1,37 @@
+from shapely.geometry import shape
+import fiona
+
+def country():
+
+
+	file_name = "ukr_admbnda_adm1_q2_sspe_20171221.shp"
+
+	# NOTE: Gebruik deze lines om te kijken hoe de key heet die je nodig hebt
+	# voor de namen/id's
+	#print(fiona.open(file_name)[0]['properties'])
+
+	# Haal een tuple met de coordinaten en de naam uit de shapefile
+	geoms =[(shape(feature['geometry']), feature['properties']['ADM1_PCODE']) for
+	    feature in fiona.open(file_name)]
+
+	# make dictionary with all regions and its neighbours
+	regions = dict()
+	counter = 0;
+	neighbours = []
+
+
+	# Vindt de neighbours van iedere regio in je shapefile
+	for line, name in geoms:
+		#print("\nCurrent country: {}\nNeighbours: ".format(name))
+		for lin, name_other in geoms:
+			if line.touches(lin):
+				#print("\t", name_other)
+				neighbours.append(name_other)
+		regions[name] = neighbours
+		counter += 1
+		neighbours = []
+
+	return(regions)
+
+
+
