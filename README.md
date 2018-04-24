@@ -4,16 +4,20 @@ Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van 
 Er zijn 7 type zendmasten mogelijk.
 
 Afbeelding 1: De verdeling van provincies van Oekraine.
-![Oekraine](http://heuristieken.nl/wiki/index.php?title=File:Rr_ukraine.png)
+![Oekraine](http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png)
 
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
 
 De tweede stap is om een zo evenredig mogelijke verdeling van het type zendmasten te maken.
 
-De derde stap is om met behulp van een bestaand kostenschema de voordeligste inrichting van zendmasten te bepalen.
+De derde stap is om met behulp van onderstaand kostenschema de voordeligste inrichting van zendmasten te bepalen.
 
-Plaatjes toevoegen!!!
+| Zendertype     | Kosten 1      | Kosten 2  | Kosten 3 | Kosten 4 |
+| :------------- |:--------------:| ---------:| bla | bla |
+| col 3 is      | right-aligned | $1600 | bla | bla |
+| col 2 is      | centered      |   $12 | bla | bla |
+| zebra stripes | are neat      |    $1 | bla | bla |
 
 ## Aan de slag (Getting Started)
 
