@@ -11,18 +11,19 @@ Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben
 
 De tweede stap is om een zo evenredig mogelijke verdeling van het type zendmasten te maken.
 
-De derde stap is om met behulp van onderstaand kostenschema de voordeligste inrichting van zendmasten te bepalen.
+De derde stap is om met behulp van onderstaand kostenschema (Tabel 1) de voordeligste inrichting van zendmasten te bepalen.
 
+Tabel 1: Kostenschema 
 
 | Zendertype     | Kosten 1      | Kosten 2  | Kosten 3 | Kosten 4 |
 |:--------------:|:-------------:|:---------:| :-------:| :-------:|
 | A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
-| A              | 12            | 19        | 16       | 3        |
+| B              | 26            | 20        | 17       | 34       |
+| C              | 27            | 21        | 31       | 36       |
+| D              | 30            | 23        | 33       | 39       |
+| E              | 37            | 36        | 36       | 41       |
+| F              | 39            | 37        | 56       | 43       |
+| G              | 41            | 38        | 57       | 48       |
 
 
 
