@@ -14,17 +14,17 @@ De tweede stap is om een zo evenredig mogelijke verdeling van het type zendmaste
 De derde stap is om met behulp van onderstaand kostenschema de voordeligste inrichting van zendmasten te bepalen.
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
 | Zendertype     | Kosten 1      | Kosten 2  | Kosten 3 | Kosten 4 |
-| :------------- |:--------------:| ---------:| bla | bla |
-| col 3 is      | right-aligned | $1600 | bla | bla |
-| col 2 is      | centered      |   $12 | bla | bla |
-| zebra stripes | are neat      |    $1 | bla | bla |
+|:--------------:|:-------------:|:---------:| :-------:| :-------:|
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+| A              | 12            | 19        | 16       | 3        |
+
+
 
 ## Aan de slag (Getting Started)
 
