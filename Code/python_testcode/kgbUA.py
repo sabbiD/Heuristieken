@@ -46,62 +46,79 @@ class Region:
 
 	def __str__(self):
 
-		return ("Region {}: = Radio {}".format(self.index
+		return ("Region {}: Radio {}".format(self.index
 			, self.radio))
 
 ukraine = {}
-neighbour = []
+neighbours = []
+
 # Create array with all Regions
-#i = 0
 for key in regions:
-	#print(key)
-	bla = regions.get(key)
+	
+	neighbour = regions.get(key)
 	key = Region(key)
-	#ukraine[key] = Region(bla[0])
-	#print(key)
-	for item in bla:
+	
+	for item in neighbour:
 		item = Region(item)
 		#ukraine[key] = item
-		neighbour.append(item)
+		neighbours.append(item)
 
-	ukraine[key] = neighbour
-	#print(neighbour)
-	#print("bla")
-	neighbour = []
-		
-		#i += 1
-		
-		#ukraine[Region(key)] = Region(value)
-		
-#print(regions.get(key))
-#ukraine[i].neighbours = regions.get(key)
+	ukraine[key] = neighbours
+	neighbours = []
+	
 
-print(ukraine)
+#print(ukraine)
 # Add radiostations to regions
 def radio(index):
 
-	neighbours = []
-	radio_station = set()
-	radio = 1
+	#radio_list = []
+	# radio van key vinden
+	for key in index:
+		radio = 0
 
-	# Create radiostation set
-	for i in range(len(index.neighbours)):
-		neighbours.append(index.neighbours[i])
-		radio_station.add(ukraine[neighbours[i]].radio)
-	
+		#print(key)
+		
+		neighb_station = set()
+
+		# Omdat we buren hier hebben opgehaald wordt de buurlijst met radio's
+		# niet geupdate!
+
+		for buur in index.get(key):
+			neighb_station.add(buur.radio)
+		#print(neighb_station)
+
+		for i in range(7):
+			if key.radio in neighb_station:
+				#print("hoi")
+				key.radio += 1
+				print(neighb_station)
+
+			else:
+				break
+		#print(radio)
+		#key.radio = radio
+
+		#radio_list.append(neighb_station)
+	#print(radio_list)
 	# Add radios
-	for i in range(7):
-		if radio in radio_station:
-			radio += 1
-		else:
-			break
-	index.radio = radio
-	return
-	
+	#for lijst in radio_list:
+
+	#	for i in range(7):
+	#		if radio in lijst:
+	#			radio += 1
+	#		else:
+	#
+	#			break
+	#		for key in index:
+	#			key.radio = radio
+
+	#return 
 # Add radios to Ukraine
-for i in range(len(ukraine)):
-	radio(ukraine[i])
-	print(ukraine[i])
+#for i in range(len(ukraine)):
+#	radio(ukraine[i])
+#	print(ukraine[i])
 
 
-
+radio(ukraine)
+for key in ukraine:
+	print(key.radio)
