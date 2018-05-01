@@ -67,58 +67,34 @@ for key in regions:
 	neighbours = []
 	
 
-#print(ukraine)
+print(ukraine)
 # Add radiostations to regions
 def radio(index):
 
 	#radio_list = []
 	# radio van key vinden
-	for key in index:
-		radio = 0
+	#for key in index:
+	radio = 0
 
-		#print(key)
-		
-		neighb_station = set()
+	print("bla")
+	
+	neighb_station = set()
+	buur = index.get(key)
+	#for buur in index.get(key):
+	neighb_station.add(buur.radio)
+	print(neighb_station)
 
-		# Omdat we buren hier hebben opgehaald wordt de buurlijst met radio's
-		# niet geupdate!
+	for i in range(7):
+		if radio in neighb_station:
+			#print("hoi")
+			radio += 1
+			#print(neighb_station)
 
-		for buur in index.get(key):
-			neighb_station.add(buur.radio)
-		#print(neighb_station)
+		else:
+			break
+	#print(radio)
+	index.radio = radio
 
-		for i in range(7):
-			if key.radio in neighb_station:
-				#print("hoi")
-				key.radio += 1
-				print(neighb_station)
-
-			else:
-				break
-		#print(radio)
-		#key.radio = radio
-
-		#radio_list.append(neighb_station)
-	#print(radio_list)
-	# Add radios
-	#for lijst in radio_list:
-
-	#	for i in range(7):
-	#		if radio in lijst:
-	#			radio += 1
-	#		else:
-	#
-	#			break
-	#		for key in index:
-	#			key.radio = radio
-
-	#return 
-# Add radios to Ukraine
-#for i in range(len(ukraine)):
-#	radio(ukraine[i])
-#	print(ukraine[i])
-
-
-radio(ukraine)
 for key in ukraine:
+	radio(key)
 	print(key.radio)
