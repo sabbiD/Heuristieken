@@ -29,37 +29,18 @@ def country():
 	regions = dict()
 	counter = 0;
 	neighbours = []
-	letter_list = []
-	regio = ""
-	buur = ""
-	alphabets = string.ascii_lowercase
-	names = set()
-
-	for i in alphabets:
-		letter_list.append(i)
-
-	letter_list.append("aa")
-
-	print(letter_list)
 
 	# Vindt de neighbours van iedere regio in je shapefile
-	for i, line, name in geoms:
-		"letter_list[i]" = name
-
-		if "letter_list[i]" not in names:
-			names.add("letter_list[i]")
+	for line, name in geoms:
 		#print("\nCurrent country: {}\nNeighbours: ".format(name))
 		for lin, name_other in geoms:
 			if line.touches(lin):
 				#print("\t", name_other)
-				buur = name_other
-				neighbours.append(buur)
+				neighbours.append(name_other)
 
 		regions[name] = neighbours
 		counter += 1
 		neighbours = []
-
-	print(names)
 
 
 	return(regions)
