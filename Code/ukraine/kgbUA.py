@@ -1,10 +1,10 @@
 from ukraine import country
-
+import random
 
 regions = country()
 
 class Region:
-	def __init__(self, index, radio=0):
+	def __init__(self, index, radio=1):
 		self.index = index
 		self.radio = radio
 
@@ -62,11 +62,38 @@ def radio(index):
 				break
 		key.radio = radio
 
-radio(final)
+#radio(final)
 
-for key in final:
-	print("key is", end="")
-	print(key)
-	for buur in final.get(key):
-		print(buur)
+# for key in final:
+# 	print("key is", end="")
+# 	print(key)
+# 	for buur in final.get(key):
+# 		print(buur)
+
+
+
+
+def randomizer(regions):
+
+	radios = [1, 2, 3, 4]#,"5","6","7"]
+
+	for key in regions:
+		key.radio = random.choice(radios)
+		
+		neighb_station = set()
+
+
+		for buur in regions.get(key):
+			neighb_station.add(buur.radio)
+
+			# while loop gebruiken?
+			if key.radio in neighb_station:
+				key.radio = random.choice(radios)
+
+			else:
+				break
+		print(key)
+		print(neighb_station)
+randomizer(final)
+
 
