@@ -7,8 +7,8 @@ sys.path.append(os.path.join(directory, "Code", "datastructuur"))
 sys.path.append(os.path.join(directory, "Code", "datastructuur", "ukraine"))
 
 # importeer de gebruikte structuur
-from ukraine import country
-from data_structuur import data_structuur
+from ukraine_structure import country
+from data_structure import data_structure
 from randomizer import randomizer
 from radio import radio
 
