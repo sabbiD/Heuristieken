@@ -2,13 +2,31 @@
 import os, sys
 directory = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(directory, "Code"))
-sys.path.append(os.path.join(directory, "Code", "classes"))
-sys.path.append(os.path.join(directory, "code", "algoritmes"))
+sys.path.append(os.path.join(directory, "Code", "algorithms"))
+sys.path.append(os.path.join(directory, "Code", "datastructuur"))
+sys.path.append(os.path.join(directory, "Code", "datastructuur", "ukraine"))
 
 # importeer de gebruikte structuur
-from datastructuur import DataStructuur
-from bruteforce import randomize
-from hillclimber import hill_climber
-from breadthfirst import breadth_first
-from genetic import genetic
-from score import score
+from ukraine import country
+from data_structuur import data_structuur
+from randomizer import randomizer
+from radio import radio
+
+def main():
+    regions = country()
+    data_structuur = data_structuur(regions)
+
+    # probeer verschillende algoritmes
+    # random
+    random = randomize(data_strucuur)
+
+    # simpele radiofunctie
+    radio = radio(data_structuur)
+
+    print("Random verdeling")
+    print(random)
+    print("Radio verdeling")
+    print(radio)
+    
+if __name__ == "__main__":
+    main()
