@@ -23,8 +23,6 @@ def score():
 			#Create empty set for the children radio stations
 			children = set()
 
-
-
 			#Get the mother radiostation from the random set		
 			for key in score:
 				
@@ -46,7 +44,6 @@ def score():
 					used_stations[add]+=1
 		return used_stations
 		
-score()
 	
 
 
