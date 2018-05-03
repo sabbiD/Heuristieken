@@ -7,6 +7,7 @@ data_structure = data_structure(regions)
 
 def randomizer(regions):
 
+	# for random.choice(key) ?
 	for key in regions:
 
 		radios = [1, 2, 3, 4]#,"5","6","7"]
