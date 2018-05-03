@@ -1,9 +1,22 @@
-from costs import cost 
+from score import score
 import csv
 
-for i in range(10):
+dist = score()
 
-	cost_list = score()
 
-	if 27 % cost_list[0] = 0 or 1:
+def distribution(score):
+	radio = []
+	for key in score:
+		
+		div = score.get(key)
+		div = round((div/27)*100, 1)
+		radio.append(div) 
+
+	return radio
+
+print(distribution(dist))
+
+
+
+	
 		
