@@ -12,6 +12,9 @@ class Region:
 
 		return ("Region {}: Radio {}".format(self.index
 			, self.radio))
+	def __repr__(self):
+
+		return str(self) + " \n" 
 
 alle_buren = []
 temp = {}
@@ -71,13 +74,13 @@ def radio(index):
 # 		print(buur)
 
 
-
-
 def randomizer(regions):
 
-	radios = [1, 2, 3, 4]#,"5","6","7"]
-
+	
 	for key in regions:
+
+		radios = [1, 2, 3, 4]#,"5","6","7"]
+
 		key.radio = random.choice(radios)
 		
 		neighb_station = set()
@@ -86,14 +89,18 @@ def randomizer(regions):
 		for buur in regions.get(key):
 			neighb_station.add(buur.radio)
 
-			# while loop gebruiken?
 			if key.radio in neighb_station:
+				radios.remove(key.radio)
 				key.radio = random.choice(radios)
 
 			else:
 				break
-		print(key)
-		print(neighb_station)
+
+	return regions
+		# print(key)
+		# print(neighb_station)
+
 randomizer(final)
+#print(final)
 
 
