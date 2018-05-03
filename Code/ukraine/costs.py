@@ -8,6 +8,7 @@ kostenD = [3, 34, 36, 39, 41, 43, 58]
 
 costs = [kostenA, kostenB, kostenC, kostenD]
 
+
 money = []
 
 
@@ -15,31 +16,37 @@ x = score()
 radios = []
 
 
-#print(radios)
-
 for i in costs:
-
+	moneyz = 0		
 	for key in x:
 		radio = x.get(key)
+			
 		radios.append(radio)
-	
-	for price in i:
-		cash = 0
 		
-		if not radios:
-			break
+
+
+	for n in range(4):
+
+		mini = min(i)
 		
-		high = max(radios)
-		radios.remove(high)
+		maxi = max(radios)
+		
 
-		low = min(i)
-		i.remove(low)
+		cash = mini * maxi
+		
+		moneyz += cash
+		
+		
+		radios.remove(maxi)
+		
+		i.remove(mini)
 
-		cash += high * low
-
-	money.append(cash)
+	money.append(moneyz)
 
 print(money)
+
+
+
 
 
 
