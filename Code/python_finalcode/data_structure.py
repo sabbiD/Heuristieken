@@ -1,5 +1,4 @@
 from ukraine import country
-import random
 
 regions = country()
 
@@ -15,7 +14,6 @@ class Region:
 	def __repr__(self):
 
 		return str(self) + " \n" 
-
 		
 def data_structure(regions):
 
@@ -46,55 +44,3 @@ def data_structure(regions):
 	
 	return data_structure
 	
-data_structure = data_structure(regions)
-
-# Add radiostations to regions
-def radio(regions):
-
-	for key in regions:
-		radio = 1
-
-		neighb_station = set()
-
-		for neighbour in regions.get(key):
-		
-			neighb_station.add(neighbour.radio)
-
-		for i in range(7):
-			if radio in neighb_station:
-				radio += 1
-
-			else:
-				break
-		key.radio = radio
-
-	return regions
-
-	
-def randomizer(regions):
-
-	for key in regions:
-
-		radios = [1, 2, 3, 4]#,"5","6","7"]
-
-		key.radio = random.choice(radios)
-		
-		neighb_station = set()
-
-
-		for neighbour in regions.get(key):
-			neighb_station.add(neighbour.radio)
-
-			if key.radio in neighb_station:
-				radios.remove(key.radio)
-				key.radio = random.choice(radios)
-
-			else:
-				break
-
-	return regions
-
-
-
-
-

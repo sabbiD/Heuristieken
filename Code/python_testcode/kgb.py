@@ -37,7 +37,6 @@ class Region:
 	def __str__(self):
 		return ("{}: Neighbours: {} = Radio {}".format(self.index, self.neighbours, self.radio))
 
-
 ukraine = []
 
 # Create array with all Regions
