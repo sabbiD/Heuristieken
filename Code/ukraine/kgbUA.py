@@ -16,36 +16,40 @@ class Region:
 
 		return str(self) + " \n" 
 
-alle_buren = []
-temp = {}
-final = {}
+def data_structure(regions):
+	all_neighbors = []
+	temp = {}
+	final_regions = {}
 
-# make dict for every region with objects as values
-for key in regions:
-	classy = Region(key)
-	temp[key] = classy
+	# make dict for every region with objects as values
+	for key in regions:
+		temp[key] = Region(key)
 
-# make region objects for every neighbour
-for values in regions.values():
-	new = []
-	for buur in values:
-		for sleutel in temp:
-			if buur == sleutel:
-				buur = temp.get(sleutel)
-				new.append(buur)
-	alle_buren.append(new)
+	# make region objects for every neighbour
+	for values in regions.values():
+		new = []
+		for neighbor in values:
+			for key in temp:
+				if neighbor == key:
+					neighbor = temp.get(key)
+					new.append(neighbor)
+		all_neighbors.append(new)
 
-counter = 0
+	counter = 0
 
-# make final dict with key(region) as object and values(neighbours) as objects
-for value in temp.values():
-	final[value] = alle_buren[counter]
-	counter += 1
+	# make final dict with key(region) as object and values(neighbours) as objects
+	for value in temp.values():
+		final_regions[value] = all_neighbors[counter]
+		counter += 1
+
+	return final_regions
+
+final_regions = (data_structure(regions))
 
 # Add radiostations to regions
-def radio(index):
+def radio(regions):
 
-	for key in index:
+	for key in regions:
 		radio = 1
 
 		print(key)
@@ -53,8 +57,8 @@ def radio(index):
 		neighb_station = set()
 
 
-		for buur in index.get(key):
-			neighb_station.add(buur.radio)
+		for neighbor in regions.get(key):
+			neighb_station.add(neighbor.radio)
 		print(neighb_station)
 
 		for i in range(7):
@@ -65,15 +69,9 @@ def radio(index):
 				break
 		key.radio = radio
 
-#radio(final)
+	return regions
 
-# for key in final:
-# 	print("key is", end="")
-# 	print(key)
-# 	for buur in final.get(key):
-# 		print(buur)
-
-
+# randomizer
 def randomizer(regions):
 
 	
@@ -101,10 +99,6 @@ def randomizer(regions):
 				break
 
 	return regions
-		# print(key)
-		# print(neighb_station)
 
-randomizer(final)
-#print(final)
 
 

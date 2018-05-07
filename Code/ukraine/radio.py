@@ -1,18 +1,23 @@
-from ukraine import country
 from data_structure import data_structure
+from ukraine import country
 
 regions = country()
-data_structure = data_structure(regions)
+
+final_regions = data_structure(regions)
 
 def radio(regions):
 
 	for key in regions:
 		radio = 1
 
+		print(key)
+		
 		neighb_station = set()
 
-		for neighbour in regions.get(key):
-			neighb_station.add(neighbour.radio)
+
+		for neighbor in regions.get(key):
+			neighb_station.add(neighbor.radio)
+		print(neighb_station)
 
 		for i in range(7):
 			if radio in neighb_station:
@@ -21,6 +26,7 @@ def radio(regions):
 			else:
 				break
 		key.radio = radio
-	
+
 	return regions
 
+print(radio(final_regions))

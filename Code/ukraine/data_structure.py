@@ -14,12 +14,11 @@ class Region:
 	def __repr__(self):
 
 		return str(self) + " \n" 
-		
-def data_structure(regions):
 
-	all_neighbours = []
+def data_structure(regions):
+	all_neighbors = []
 	temp = {}
-	data_structure = {}
+	final_regions = {}
 
 	# make dict for every region with objects as values
 	for key in regions:
@@ -28,19 +27,18 @@ def data_structure(regions):
 	# make region objects for every neighbour
 	for values in regions.values():
 		new = []
-		for neighbour in values:
+		for neighbor in values:
 			for key in temp:
-				if neighbour == key:
-					neighbour = temp.get(key)
-					new.append(neighbour)
-		all_neighbours.append(new)
+				if neighbor == key:
+					neighbor = temp.get(key)
+					new.append(neighbor)
+		all_neighbors.append(new)
 
 	counter = 0
 
 	# make final dict with key(region) as object and values(neighbours) as objects
 	for value in temp.values():
-		data_structure[value] = all_neighbours[counter]
+		final_regions[value] = all_neighbors[counter]
 		counter += 1
-	
-	return data_structure
-	
+
+	return final_regions

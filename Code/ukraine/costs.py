@@ -31,11 +31,9 @@ def costs():
 			
 			maxi = max(radios)
 			
-
 			cash = mini * maxi
 			
 			moneyz += cash
-			
 			
 			radios.remove(maxi)
 			
@@ -43,7 +41,6 @@ def costs():
 
 		money.append(moneyz)
 
-	#print(money)
 	return(money, list(x.values()))
 
 
