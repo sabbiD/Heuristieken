@@ -19,5 +19,5 @@ def colours(regions):
 		
 	return region_colours
 
-print(colours(random))
+#print(colours(random))
 
