@@ -52,7 +52,7 @@ python main.py
 
 Radio-functie:
 
-<img src="Heuristieken/ukraine_radio_function.png" width = "400" height = "274"/>
+![alt text](https://raw.githubusercontent.com/sabbiD/Heuristieken/blob/master/ukraine_radio_function.png)
 Verdeling 1: Simpele radio-functie
 
 
