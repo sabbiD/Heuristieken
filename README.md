@@ -55,6 +55,11 @@ Radio-functie:
 ![alt text](https://github.com/sabbiD/Heuristieken/blob/master/ukraine_radio_function.png)
 Verdeling 1: Simpele radio-functie
 
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/random.png)
+Verdeling 2: Random functie
+
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/greedy.png)
+Verdeling 3: Greedy functie
 
 
 ## Auteurs (Authors)
