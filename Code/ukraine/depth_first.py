@@ -1,12 +1,12 @@
 from ukraine import country
 from kgbUA import final_regions
-
+import time
 # http://www.koderdojo.com/blog/depth-first-search-in-python-recursive-and-non-recursive-programming
 data = final_regions
 
 def dfs(graph, start):
+	start_time = time.time()
 	stack, path = [start], []
-	
 	
 	while stack:
 		vertex = stack.pop()
@@ -17,22 +17,19 @@ def dfs(graph, start):
 			path.append(vertex)	
 
 		for neighbour in graph[vertex]:
-			print(graph[vertex])
 			
 			if vertex.radio == neighbour.radio:
-				#print(vertex.radio)
-				vertex.radio += 1
-
-			#print(neighbour)
+				neighbour.radio += 1
+			
 			stack.append(neighbour)
-	#print(path)
+	
+	print("--- %s seconds ---" % (time.time() - start_time))
 	return path
 
 start = list(final_regions.keys())[0]
 
+depth = dfs(data, start)
 
-d = dfs(data, start)
-print(d)
 
 
 
