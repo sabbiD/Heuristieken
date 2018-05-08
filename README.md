@@ -48,6 +48,14 @@ Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld
 ```
 python main.py
 ```
+### Preliminary results
+
+Radio-functie:
+
+<img src="Heuristieken/ukraine_radio_function.png" width = "400" height = "274"/>
+Verdeling 1: Simpele radio-functie
+
+
 
 ## Auteurs (Authors)
 
