@@ -52,7 +52,7 @@ python main.py
 
 Radio-functie:
 
-![alt text](https://raw.githubusercontent.com/sabbiD/Heuristieken/blob/master/ukraine_radio_function.png)
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/ukraine_radio_function.png)
 Verdeling 1: Simpele radio-functie
 
 
