@@ -52,7 +52,7 @@ python main.py
 
 Radio-functie:
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/ukraine_radio_function.png)
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/radio.png)
 Verdeling 1: Simpele radio-functie
 
 ![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/random.png)
