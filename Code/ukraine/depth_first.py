@@ -18,10 +18,17 @@ def dfs(graph, start):
 
 		for neighbour in graph[vertex]:
 			
+			if neighbour in path:
+				used = neighbour.radio
+			
+				if used == vertex.radio:
+					vertex.radio +=1
+
 			if vertex.radio == neighbour.radio:
 				neighbour.radio += 1
 			
 			stack.append(neighbour)
+
 	
 	print("--- %s seconds ---" % (time.time() - start_time))
 	return path
@@ -29,6 +36,8 @@ def dfs(graph, start):
 start = list(final_regions.keys())[0]
 
 depth = dfs(data, start)
+
+
 
 
 
