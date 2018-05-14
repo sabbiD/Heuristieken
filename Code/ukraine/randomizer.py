@@ -19,15 +19,17 @@ def randomizer(regions):
 		for buur in regions.get(key):
 			neighb_station.add(buur.radio)
 
-			if key.radio in neighb_station:
-				radios.remove(key.radio)
+		if key.radio in neighb_station:
+			radios.remove(key.radio)
 
-				if not radios:
-					return 1
-					
-				key.radio = random.choice(radios)
+			if not radios:
+				return 1
+				
+			key.radio = random.choice(radios)
 
-			else:
-				break
+		else:
+			break
 
 	return regions
+
+#print(randomizer(final_regions))

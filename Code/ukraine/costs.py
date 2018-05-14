@@ -1,6 +1,4 @@
-from score import score
-
-def costs():
+def costs(score):
 	kosten1 = [12, 26, 27, 30, 37, 39, 41]
 	kosten2 = [19, 20, 21, 23, 36, 37, 38]
 	kosten3 = [16, 17, 31, 33, 36, 56, 57]
@@ -11,20 +9,15 @@ def costs():
 
 	money = []
 
-
-	x = score()
 	radios = []
-
 
 	for i in costs:
 		moneyz = 0		
-		for key in x:
-			radio = x.get(key)
+		for key in score:
+			radio = score.get(key)
 				
 			radios.append(radio)
 			
-
-
 		for n in range(4):
 
 			mini = min(i)
@@ -41,8 +34,7 @@ def costs():
 
 		money.append(moneyz)
 
-	return(money, list(x.values()))
-
+	return(money, list(score.values()))
 
 
 

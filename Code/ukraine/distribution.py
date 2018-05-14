@@ -1,7 +1,4 @@
-from score import score
 import csv
-from costs import costs
-
 
 def distribution(score):
 

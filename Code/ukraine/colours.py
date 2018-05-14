@@ -15,9 +15,9 @@ def colours(regions):
 	region_colours = {}
 
 	for key in regions:
-		region_colours[index] = colours[str(key.radio)]
+		region_colours[key.index] = colours[str(key.radio)]
 		
 	return region_colours
 
-#print(colours(random))
+print(colours(random))
 

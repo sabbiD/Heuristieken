@@ -1,7 +1,7 @@
 # for running without main.py uncomment
 # from data_structure import data_structure
 # from ukraine import country
-# import random
+import random
 
 # regions = country()
 

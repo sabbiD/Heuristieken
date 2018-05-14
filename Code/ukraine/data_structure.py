@@ -1,6 +1,6 @@
-from ukraine import country
+#from ukraine import country
 
-regions = country()
+#regions = country()
 
 class Region:
 	def __init__(self, index, radio=1):

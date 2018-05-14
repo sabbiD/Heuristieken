@@ -1,10 +1,24 @@
+# from ukraine import country
+# #from randomizer import randomizer
+# from data_structure import data_structure
+# #from radio_costs import radio_costs
+# from radio import radio
+
+# regions = country()
+
+# final_regions = data_structure(regions)
+
+# regions = radio(final_regions)
+
 def score(regions):
 	for i in range(1):
-		used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0}
+		used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0, "6": 0, "7": 0}
+
+		score = regions
 
 		fail = 0
 
-		if regions == 1:
+		if score == 1:
 			fail = 1
 		else:
 			
@@ -14,12 +28,13 @@ def score(regions):
 			children = set()
 
 			#Get the mother radiostation from the random set		
-			for key in regions:
+			for key in score:
 				
 				mother = key.radio
-			
+
 				# Get the children radio stations
-				for i in regions.get(key):
+				for i in score.get(key):
+
 					children.add(i.radio)
 
 				children = set()
@@ -30,8 +45,10 @@ def score(regions):
 				else:
 					add = str(mother)
 					used_stations[add]+=1
-		return used_stations
+
+		return fail, used_stations
 		
+#print(score(final_regions))
 	
 
 

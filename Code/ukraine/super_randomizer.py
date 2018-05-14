@@ -34,10 +34,10 @@ def randomizer(regions):
 				if not radios:
 					return 1
 					
-				key.radio = random.choice(radios)
 
 			else:
 				break
+		buur.radio = random.choice(radios)
 	
 	print("--- %s seconds ---" % (time.time() - start_time))
 	return regions

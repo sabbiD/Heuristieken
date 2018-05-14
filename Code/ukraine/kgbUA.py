@@ -100,5 +100,7 @@ def randomizer(regions):
 
 	return regions
 
+print(randomizer(final_regions))
+
 
 

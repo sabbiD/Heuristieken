@@ -1,7 +1,6 @@
 import csv
-from costs import costs
 
-def distribution(score):
+def distribution(score, costs):
 
 	radio = []
 	for key in score:
@@ -9,24 +8,24 @@ def distribution(score):
 		if key == 0:
 			break
 		
-		div = key #score.get(key)
-		div = round((int(div)/27)*100, 1)
+		div = score.get(key)
+		div = round((div/27)*100, 1)
 		radio.append(div) 
-
-
-	return radio
 
 	f = open('ukraine.csv', 'w')
 	for i in range(50):
 
-		money = costs(score)
-		dist = money[1]
+		dist = costs[1]
 
-		set_random = distribution(dist)
+		set_random = radio
 
-		f.writelines(str(money) + "\n" + str(set_random)+ "\n")
+		f.writelines(str(costs) + "\n" + str(set_random)+ "\n")
 
 	f.close()
+
+	return radio
+
+
 
 
 
