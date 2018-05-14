@@ -52,13 +52,13 @@ python main.py
 
 Radio-functie:
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/radio.png)
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/radio.png)
 Verdeling 1: Simpele radio-functie
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/random.png)
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/random.png)
 Verdeling 2: Random functie
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Code/ukraine/greedy.png)
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/greedy.png)
 Verdeling 3: Greedy functie
 
 
