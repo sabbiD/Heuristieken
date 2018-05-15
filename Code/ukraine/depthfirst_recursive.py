@@ -1,12 +1,12 @@
-from kgbUA import final
+from kgbUA import final_regions
 import sys
 
 
-adjacency_matrix = final
+adjacency_matrix = final_regions
 
 
 # copy of dict with all regions
-new_final = dict(final)
+new_final = dict(final_regions)
 
 # stack for regions leftover
 stack = []
@@ -38,7 +38,7 @@ def dfs_recursive(graph, vertex, path=[]):
 
 dfs_recursive(adjacency_matrix, list(new_final.keys())[0])
 #print(final)
-dfs_recursive(adjacency_matrix, list(final.keys())[0])
+dfs_recursive(adjacency_matrix, list(final_regions.keys())[0])
 
 
 #print(final)

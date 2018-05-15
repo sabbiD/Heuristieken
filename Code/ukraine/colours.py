@@ -10,8 +10,7 @@ final_regions = data_structure(regions)
 random = radio(final_regions)
 
 def colours(regions):
-	colours = {"1": "#1f78b4", "2": "#b2df8a", "3": "#33a02c", "4": "#fb9a99", "5": "#f03b20"}
-
+	colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
 	region_colours = {}
 
 	for key in regions:
