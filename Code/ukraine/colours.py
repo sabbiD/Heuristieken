@@ -3,11 +3,7 @@ from ukraine import country
 from randomizer import randomizer
 from radio import radio
 
-regions = country()
 
-final_regions = data_structure(regions)
-
-random = radio(final_regions)
 
 def colours(regions):
 	colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
@@ -18,5 +14,5 @@ def colours(regions):
 		
 	return region_colours
 
-print(colours(random))
+
 

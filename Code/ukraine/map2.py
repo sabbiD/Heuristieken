@@ -5,18 +5,17 @@ from shapely.geometry import Polygon
 from descartes.patch import PolygonPatch
 from colours import colours 
 import fiona
-from depth_first import dfs
+from kajsa_search import kajsa_search
 from data_structure import data_structure
 from ukraine import country
 from depthfirst_recursive import final_regions
 
-#regions = country()
-#final_regions = data_structure(regions)
-#start = list(final_regions.keys())[0]
-#depth = dfs(final_regions, start)
-#for key in final_regions:
-#	key.radio = 1
-#print(final_regions)
+regions = country()
+final_regions = data_structure(regions)
+
+start = list(final_regions.keys())[0]
+depth = kajsa_search(final_regions, start)
+
 
 def make_map(final_regions):
 
@@ -81,5 +80,6 @@ def make_map(final_regions):
 	plt.xlim(22, 41)
 	plt.ylim(43, 53)
 	plt.show()
+make_map(depth)
 
 make_map(final_regions)

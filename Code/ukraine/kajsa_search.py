@@ -4,7 +4,10 @@ import time
 # http://www.koderdojo.com/blog/depth-first-search-in-python-recursive-and-non-recursive-programming
 data = final_regions
 
-def dfs(graph, start):
+for key in data:
+	key.radio = 1
+
+def kajsa_search(graph, start):
 	start_time = time.time()
 	stack, path = [start], []
 	
@@ -37,7 +40,7 @@ def dfs(graph, start):
 
 start = list(final_regions.keys())[0]
 
-depth = dfs(data, start)
+kajsa_search(data, start)
 
 
 
