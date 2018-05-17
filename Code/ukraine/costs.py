@@ -9,13 +9,14 @@ def costs(score):
 	costs = [kosten1, kosten2, kosten3, kosten4]
 
 
-	money = []
+	money = {1 : 0, 2:0, 3:0, 4:0}
 
 	radios = []
-
+	counter = 1
 	for i in costs:
 		moneyz = 0		
 		for key in score:
+			
 			radio = score.get(key)
 				
 			radios.append(radio)
@@ -34,24 +35,47 @@ def costs(score):
 			
 			i.remove(mini)
 
-		money.append(moneyz)
+		money[counter]=moneyz
+		counter += 1
 
 	return(money)#, list(score.values()))
 
 def distribution(score):
 	if score == 1:
 		return score
-	radio = []
+	use = 0
+	even = 0 
 	for key in score:
-		percent = []
-		
+
 		value = score.get(key)
-		value = round((value/27)*100, 1)
-		percent.append(key)
-		percent.append(value)
-		radio.append(percent)
+		if value != 0:
+			use+=1
+	
+	ultimate = round(27/use,1)
+	
+	
+	for key in score:
+		value = score.get(key)
 		
-	return radio
+		
+		if value == 0:
+			even += ultimate
+		
+		
+		else:
+			percent = round(27/value,1)
+			diff = ultimate - percent
+
+			
+			if diff > 0:
+				even+=diff
+				
+			else: 
+				diff = (diff - diff) - diff
+				even+=diff
+				
+
+	return even
 
 
 
