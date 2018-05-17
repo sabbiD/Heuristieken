@@ -17,6 +17,8 @@ from score import score
 from costs import costs
 from distribution import distribution
 from map2 import make_map
+from depthfirst_recursive import dfs_recursive
+from reset import reset
 
 def main():
 
@@ -45,21 +47,51 @@ def main():
     # ask user which algorithm they would like to run
     # run algorithms multiple times? ask how many iterations etc, maybe put in csv and visualize best option???
     # add other algorithms when done
-    print("There are multiple algorithms to choose from: radio, random, greedy, depth-first,...")
+    print("There are multiple algorithms to choose from: radio, random, greedy, depth-first, depth-recursive")
     algorithm = input("which algorithm would you like to run? ")
 
     if (algorithm == "radio"):
         # simpele radiofunctie
+        for key in data:
+            key.radio = 1
         radios = radio(data)
         make_map(radios)
 
     elif (algorithm == "random"):
-        random = randomy(data)
+        for key in data:
+            key.radio = 1
+
+        for i in range(100):
+            random = randomy(data)
+            if random != 1:
+                andom = r
         make_map(random)
 
     elif (algorithm == "greedy"):
+        reset(data)
         greed = greedy(data)
         make_map(greed)
+
+    elif (algorithm == "depth-recursive"):
+        reset(data)
+        adjacency_matrix = data
+
+        # copy of dict with all regions
+        new_final = dict(data)
+
+        # stack for regions leftover
+        stack = []
+        for key in list(new_final):
+
+            if len(new_final[key]) < 5:
+                stack += [key]
+                del new_final[key]
+
+        dfs_recursive(data, list(new_final.keys())[0])
+        #print(data)
+        dfs_recursive(data, list(data.keys())[0])
+        #print(data)
+        make_map(data)
 
     else:
         print("error")

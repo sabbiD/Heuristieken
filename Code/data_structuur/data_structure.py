@@ -1,5 +1,5 @@
 class Region:
-	def __init__(self, index, radio=1):
+	def __init__(self, index, radio=0):
 		self.index = index
 		self.radio = radio
 

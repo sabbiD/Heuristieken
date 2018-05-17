@@ -1,6 +1,8 @@
 # for running without main.py uncomment
 from data_structure import data_structure
 from ukraine import country
+from map2 import make_map
+import random
 
 regions = country()
 
@@ -9,13 +11,18 @@ final_regions = data_structure(regions)
 def greedy(regions):
 
 	for key in regions:
+		key.radio = 0
+	keys = list(regions.keys())
+	random.shuffle(keys)
+	print(keys)
 
+	for key in keys:
 		radios = [1, 2, 3, 4, 5, 6, 7]
 		options = [1, 2, 3, 4, 5, 6, 7]
 
 		# first region V already has first option
 		if key == next(iter(regions)):
-			continue
+			key.radio = 1
 
 		# colour all remaining V-1 regions with lowest possible option
 		else:
@@ -40,4 +47,7 @@ def greedy(regions):
 		key.radio = min(options)
 
 	return regions
+
+print(greedy(final_regions))
+make_map(final_regions)
 

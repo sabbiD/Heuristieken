@@ -17,13 +17,12 @@ def costs(score):
 			radio = score.get(key)
 				
 			radios.append(radio)
-			
-		for n in range(4):
+		print(radios)	
+		for n in range(len(radios)):
 
 			mini = min(i)
-			
 			maxi = max(radios)
-			
+		
 			cash = mini * maxi
 			
 			moneyz += cash
