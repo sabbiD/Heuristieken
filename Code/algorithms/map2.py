@@ -4,8 +4,15 @@ import matplotlib.pyplot as plt
 from shapely.geometry import Polygon
 from descartes.patch import PolygonPatch
 from colours import colours 
+from hill_climber import hill_climber
 import fiona
+from data_structure import data_structure
+from ukraine import country
 
+regions = country()
+final_regions = data_structure(regions)
+
+hill = hill_climber(final_regions)
 def make_map(final_regions):
 
 	sf = shp.Reader("ukr_admbnda_adm1_q2_sspe_20171221.shp")
@@ -69,3 +76,5 @@ def make_map(final_regions):
 	plt.xlim(22, 41)
 	plt.ylim(43, 53)
 	plt.show()
+
+make_map(hill)

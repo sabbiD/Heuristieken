@@ -17,7 +17,7 @@ def randomy(regions):
 		
 	for key in keys:
 
-		radios = [1, 2, 3, 4, 5, 6, 7]
+		radios = [1, 2, 3, 4]
 
 		neighb_station = set()
 

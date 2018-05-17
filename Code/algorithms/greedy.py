@@ -15,7 +15,7 @@ def greedy(regions):
 
 		# first region V already has first option
 		if key == next(iter(regions)):
-			continue
+			key.radio = 1
 
 		# colour all remaining V-1 regions with lowest possible option
 		else:
@@ -39,4 +39,5 @@ def greedy(regions):
 		# choose lowest available option
 		key.radio = min(options)
 
+	print(regions)
 	return regions

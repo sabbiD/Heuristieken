@@ -1,10 +1,10 @@
 # for running without main.py uncomment
-# from data_structure import data_structure
-# from ukraine import country
+from data_structure import data_structure
+from ukraine import country
 
-# regions = country()
+regions = country()
 
-# final_regions = data_structure(regions)
+final_regions = data_structure(regions)
 
 def greedy(regions):
 
@@ -40,3 +40,4 @@ def greedy(regions):
 		key.radio = min(options)
 
 	return regions
+
