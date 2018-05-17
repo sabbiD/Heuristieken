@@ -1,21 +1,11 @@
-# for trying out code without main.py uncomment
-# from ukraine import country
-# from data_structure import data_structure
+from helpers import neighbour_set
 
-# regions = country()
+def radio(order, data):
 
-# final_regions = data_structure(regions)
-
-def radio(regions):
-
-	for key in regions:
+	for key in order:
 		radio = 1
-		
-		neighb_station = set()
-
-
-		for neighbor in regions.get(key):
-			neighb_station.add(neighbor.radio)
+			
+		neighb_station = neighbour_set(data, key)
 
 		for i in range(7):
 			if radio in neighb_station:
@@ -25,6 +15,4 @@ def radio(regions):
 				break
 		key.radio = radio
 
-	return regions
-
-# print(radio(final_regions))
+	return data

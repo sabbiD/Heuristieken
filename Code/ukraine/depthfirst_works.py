@@ -1,30 +1,30 @@
-from kgbUA import final
 import sys
 import random
-
+from helpers import neighbour_set
 
 adjacency_matrix = final
 
-radios = [1, 2, 3, 4, 5, 6, 7]
+# for key in final:
+# 	key.radio = 0
+# #print(final)
 
-for key in final:
-	key.radio = 0
-#print(final)
+# # copy of dict with all regions
+# new_final = dict(final)
 
-# copy of dict with all regions
-new_final = dict(final)
+# # stack for regions leftover
+# for key in list(new_final):
 
-# stack for regions leftover
-for key in list(new_final):
+# 	if len(new_final[key]) < 5:
+# 		del new_final[key]
 
-	if len(new_final[key]) < 5:
-		del new_final[key]
-
-#now only contains regions >5 neighbours
-#print(new_final)
+# #now only contains regions >5 neighbours
+# #print(new_final)
 
 
 def dfs_recursive(graph, vertex, path=[]):
+
+	radios = [1, 2, 3, 4, 5, 6, 7]
+
 	path += [vertex] 
 	neigh_station = set()
 
@@ -32,7 +32,6 @@ def dfs_recursive(graph, vertex, path=[]):
 	for region in graph.get(vertex):
 		
 		neigh_station.add(region.radio)
-	#print(neigh_station)
 	
 	options = [1, 2, 3, 4, 5, 6, 7]
 	
@@ -59,5 +58,4 @@ def dfs_recursive(graph, vertex, path=[]):
 	return path 
 
 dfs_recursive(adjacency_matrix, list(new_final.keys())[0])
-#print(final)
 dfs_recursive(adjacency_matrix, list(final.keys())[0])

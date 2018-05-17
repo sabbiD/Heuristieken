@@ -1,19 +1,10 @@
 # for running without main.py uncomment
-from data_structure import data_structure
-from ukraine import country
-from map2 import make_map
 from ldo import ldo
+from neighbour_set import neighbour_set
 
-regions = country()
+def greedy(order, data):
 
-final_regions = data_structure(regions)
-
-order = ldo(final_regions)
-
-
-def greedy(regions):
-
-	for key in regions:
+	for key in data:
 		key.radio = 0
 
 	i = 0
@@ -29,12 +20,7 @@ def greedy(regions):
 		# colour all remaining V-1 regions with lowest possible option
 		else:
 
-			neighb_station = set()
-
-			# get neighbor radios
-			for neighbor in regions.get(key):
-
-				neighb_station.add(neighbor.radio)
+			neighb_station = neighbour_set(data, key)
 			
 			# check all possible radios
 			for i in range(len(radios)):
@@ -48,8 +34,5 @@ def greedy(regions):
 		# choose lowest available option
 		key.radio = min(options)
 		i += 1
-	return regions
-
-greedy(final_regions)
-make_map(final_regions)
+	return data
 

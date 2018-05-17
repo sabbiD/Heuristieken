@@ -1,51 +1,27 @@
-# for running without main.py uncomment
-# from data_structure import data_structure
-# from ukraine import country
+from helpers import neighbour_set
 import random
 
-# regions = country()
-
-# final_regions = data_structure(regions)
-
-def randomy(regions):
+def randomy(regions, radios):
 	
-	for key in regions:
-			key.radio = 1
-
 	keys = list(regions.keys())
 	random.shuffle(keys)
-		
+
 	for key in keys:
+		available = list(radios)
 
-		radios = [1, 2, 3, 4]
-
-		neighb_station = set()
-
-		for buur in regions.get(key):
-			neighb_station.add(buur.radio)
+		neighb_station = neighbour_set(regions, key)
 
 		for i in neighb_station:
 
-			radios.remove(i)
-			if not radios:
+			if i != 0:
+				available.remove(i)
+
+			if not available:
+
 				return 1
 
-
-		key.radio = random.choice(radios)
+		key.radio = random.choice(available)
 
 	return regions
-
-# print(randomy(final_regions))
-
-# def check(regions):
-
-# 	no = 0
-# 	for i in range(10000):
-# 		x = randomy(regions)
-
-# 		if x == 1:
-# 			no += 1
-# 		else:
-# 			return x
 
 

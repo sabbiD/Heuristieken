@@ -2,7 +2,7 @@ from shapely.geometry import shape
 import fiona
 import string
 
-def country(file_name):
+def country(file_name, name):
 
 	file_name = file_name
 
@@ -11,7 +11,7 @@ def country(file_name):
 	#print(fiona.open(file_name)[0]['properties'])
 
 	# Haal een tuple met de coordinaten en de naam uit de shapefile
-	geoms =[(shape(feature['geometry']), feature['properties']['ADM1_PCODE']) for
+	geoms =[(shape(feature['geometry']), feature['properties'][name]) for
 	    feature in fiona.open(file_name)]
 
 	class Region:
@@ -40,7 +40,6 @@ def country(file_name):
 		regions[name] = neighbours
 		counter += 1
 		neighbours = []
-
 
 	return(regions)
 

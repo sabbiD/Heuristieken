@@ -1,31 +1,24 @@
-# for running without main.py uncomment
-# from data_structure import data_structure
-# from ukraine import country
+from helpers import neighbour_set
 
-# regions = country()
+def greedy(order, data):
 
-# final_regions = data_structure(regions)
+	for key in data:
+		key.radio = 0
 
-def greedy(regions):
-
-	for key in regions:
-
+	i = 0
+	for key in order:
 		radios = [1, 2, 3, 4, 5, 6, 7]
 		options = [1, 2, 3, 4, 5, 6, 7]
 
 		# first region V already has first option
-		if key == next(iter(regions)):
+		if i == 0:
+			print(key)
 			key.radio = 1
 
 		# colour all remaining V-1 regions with lowest possible option
 		else:
 
-			neighb_station = set()
-
-			# get neighbor radios
-			for neighbor in regions.get(key):
-
-				neighb_station.add(neighbor.radio)
+			neighb_station = neighbour_set(data, key)
 			
 			# check all possible radios
 			for i in range(len(radios)):
@@ -38,6 +31,6 @@ def greedy(regions):
 
 		# choose lowest available option
 		key.radio = min(options)
+		i += 1
+	return data
 
-	print(regions)
-	return regions

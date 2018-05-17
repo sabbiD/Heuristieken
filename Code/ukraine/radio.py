@@ -1,20 +1,28 @@
 # for trying out code without main.py uncomment
-# from ukraine import country
-# from data_structure import data_structure
+from ukraine import country
+from data_structure import data_structure
+from helpers import ldo
+from helpers import reset
+from helpers import random_order
 
-# regions = country()
+regions = country()
 
-# final_regions = data_structure(regions)
+final_regions = data_structure(regions)
 
-def radio(regions):
+order = random_order(final_regions)
+#print(order)
 
-	for key in regions:
+def radio(order):
+
+	reset(final_regions)
+	#print(order)
+	for key in order:
 		radio = 1
 		
 		neighb_station = set()
 
 
-		for neighbor in regions.get(key):
+		for neighbor in final_regions.get(key):
 			neighb_station.add(neighbor.radio)
 
 		for i in range(7):
@@ -25,6 +33,6 @@ def radio(regions):
 				break
 		key.radio = radio
 
-	return regions
+	return final_regions
 
-# print(radio(final_regions))
+print(radio(order))

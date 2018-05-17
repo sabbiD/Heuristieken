@@ -10,7 +10,7 @@ import random
 def randomy(regions):
 	
 	for key in regions:
-			key.radio = 1
+			key.radio = 0
 
 	keys = list(regions.keys())
 	random.shuffle(keys)
@@ -34,18 +34,5 @@ def randomy(regions):
 		key.radio = random.choice(radios)
 
 	return regions
-
-# print(randomy(final_regions))
-
-# def check(regions):
-
-# 	no = 0
-# 	for i in range(10000):
-# 		x = randomy(regions)
-
-# 		if x == 1:
-# 			no += 1
-# 		else:
-# 			return x
 
 
