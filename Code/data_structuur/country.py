@@ -31,10 +31,8 @@ def country(file_name, name):
 
 	# Vindt de neighbours van iedere regio in je shapefile
 	for line, name in geoms:
-		#print("\nCurrent country: {}\nNeighbours: ".format(name))
 		for lin, name_other in geoms:
 			if line.touches(lin):
-				#print("\t", name_other)
 				neighbours.append(name_other)
 
 		regions[name] = neighbours

@@ -1,6 +1,6 @@
 from helpers import neighbour_set
 
-def greedy(order, data):
+def greedy(data, order):
 
 	for key in data:
 		key.radio = 0
@@ -12,7 +12,6 @@ def greedy(order, data):
 
 		# first region V already has first option
 		if i == 0:
-			print(key)
 			key.radio = 1
 
 		# colour all remaining V-1 regions with lowest possible option

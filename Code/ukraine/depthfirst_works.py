@@ -43,7 +43,6 @@ def dfs_recursive(graph, vertex, path=[]):
 
 		if radios[i] in neigh_station:
 			options.remove(radios[i])
-	
 
 		vertex.radio = min(options)
 

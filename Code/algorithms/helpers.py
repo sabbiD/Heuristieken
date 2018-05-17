@@ -5,8 +5,6 @@ def neighbour_set(regions, key):
 
 	neighb_station = set()
 	for neighbor in regions.get(key):
-		print("key is {}".format(key))
-		print("neighbor is {}".format(key))
 
 		neighb_station.add(neighbor.radio)
 
@@ -34,7 +32,6 @@ def random_order(final_regions):
 	order = list(final_regions.keys())
 	random.shuffle(order)
 	return order
-
 
 def reset(final_regions):
 	for key in final_regions:

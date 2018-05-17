@@ -1,8 +1,8 @@
 import random
-from hill_helpers import shared_regions, change_region, ldo_hill, random_hill
+from hill_helpers import shared_regions, change_region, ldo_hill
 import operator
 
-def hill_climber(order_string, data):
+def hill_climber(data, amount_radios):
 
 	radios = [1,2,3,4]
 
@@ -11,7 +11,8 @@ def hill_climber(order_string, data):
 
 		key.radio = random.choice(radios)
 
-	# costs = 0
+	costs = 0
+	iterations = 0
 
 	# check how many conflicts there are
 	shared = shared_regions(data)
@@ -19,21 +20,17 @@ def hill_climber(order_string, data):
 	# list of keys that have a conflict
 	conflict_radios = shared[1]
 
-	if order_string == "ldo":
-		order = ldo_hill(conflict_radios, data)
-	else:
-		order = random_hill(conflict_radios)
-
 	# amount of conflicts
 	conflicts = shared[0]
 
 	while conflicts is not 0:
 
 		# change a random region
-		key_region = order[0]
+		key_region = random.choice(conflict_radios)
+
 		old_radio = key_region.radio
 
-		change_radio = change_region(key_region, data, radios)
+		change_radio = change_region(key_region, data, amount_radios)
 		new_radio = change_radio
 
 		# count amount of conflicts
@@ -45,17 +42,18 @@ def hill_climber(order_string, data):
 		if new_conflicts < conflicts:
 			conflicts = new_conflicts
 			conflict_radios = shared_new[1]
-		if order_string == "ldo":
-			order = ldo_hill(conflict_radios, data)
-		else:
-			order = random_hill(conflict_radios)			
-			# costs += 1
+			costs += 1
 
 		# else: turn radio back, continue with old state
 		else:
 			key_region.radio = old_radio
 
-	return data
+		iterations += 1
+
+		# sometimes infinite loop if random order does not work out
+		if iterations == 1000:
+			return 1
+	return data, costs
 
 
 

@@ -1,29 +1,67 @@
 import csv
+from randomy import randomy
+from data_structure import data_structure
+from score import score
+from costs import costs
+from costs import distribution
+from randomy import randomy
+from radio import radio
+from greedy import greedy
+from depth_first import dfs_recursive
+from hill_climber import hill_climber
+from helpers import reset, random_order
+import time
 
-def distribution(score, costs):
+def compare(algorithm, argument, regions, iterations, soort):
+	start_time = time.time()
+	fail = 0
+	radio = {4:0, 5:0, 6:0, 7:0}
 
-	radio = []
-	for key in score:
+	all_scores = []
+	all_costs = []
+	all_amount = []
+	all_even = []
+	
+	for i in range(iterations):
 
-		if key == 0:
-			break
-		
-		div = score.get(key)
-		div = round((div/27)*100, 1)
-		radio.append(div) 
+		if algorithm == dfs_recursive:
+			main_radio = algorithm(regions, argument[0])
+		else:
+			reset(regions)
+			if soort == "random":
+				argument = random_order(regions)
+			main_radio = algorithm(regions, argument)
 
-	f = open('ukraine.csv', 'w')
-	for i in range(50):
+		if main_radio == 1:
+			fail+=1
 
-		dist = costs[1]
+		else:
+			scores = score(regions)
+			main_score = scores[0]
+			amount = scores[1]
+			radio[amount]+= 1
+			all_amount.append(amount)
 
-		set_random = radio
+			all_scores.append(main_score)
 
-		f.writelines(str(costs) + "\n" + str(set_random)+ "\n")
+			distributions = distribution(main_score)
+			
+			all_even.append(distributions)
 
-	f.close()
+			main_costs = (costs(main_score))
 
-	return radio
+			all_costs.append(main_costs)
+
+	main_time = time.time() - start_time
+	
+	return all_scores, all_costs, all_amount, all_even, radio, main_time, fail
+
+
+
+
+
+
+
 
 
 

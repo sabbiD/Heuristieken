@@ -1,19 +1,6 @@
-# from ukraine import country
-# #from randomizer import randomizer
-# from data_structure import data_structure
-# #from radio_costs import radio_costs
-# from radio import radio
-
-# regions = country()
-
-# final_regions = data_structure(regions)
-
-# regions = radio(final_regions)
-
 def score(regions):
 	
 	if regions != 1:
-		
 	
 		for i in range(len(regions)):
 			used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0, "6": 0, "7": 0}
@@ -54,8 +41,7 @@ def score(regions):
 		return used_stations, amount
 	else:
 		return regions
-		
-#print(score(final_regions))
+
 	
 
 

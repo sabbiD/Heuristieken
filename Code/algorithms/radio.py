@@ -1,6 +1,6 @@
 from helpers import neighbour_set
 
-def radio(order, data):
+def radio(data, order):
 
 	for key in order:
 		radio = 1
