@@ -17,7 +17,7 @@ def score(regions):
 	
 		for i in range(len(regions)):
 			used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0, "6": 0, "7": 0}
-
+			used = set()
 			score = regions
 
 			fail = 0
@@ -47,10 +47,11 @@ def score(regions):
 						fail+=1
 						
 					else:
+						used.add(mother)
 						add = str(mother)
 						used_stations[add]+=1
-
-		return used_stations
+		amount = max(used)
+		return used_stations, amount
 	else:
 		return regions
 		
