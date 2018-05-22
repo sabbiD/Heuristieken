@@ -16,9 +16,6 @@ from greedy import greedy
 from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
 from distribution import compare
-# from score import score
-# from costs import costs
-# from distribution import distribution
 from helpers import ldo, reset, random_order
 from map import make_map
 from csv_writer import write_csv
@@ -94,7 +91,7 @@ def main():
 				order_choice = input("Would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
 
 				while not (order_choice == "random" or order_choice == "ldo"):
-				    order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
+					order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
 
 				if order_choice == "random":
 					order = random_order(data)
@@ -103,7 +100,7 @@ def main():
 
 				reset(data)
 				radios = radio(data, order)
-				#make_map(radios, file_name, number, x, y)
+				make_map(radios, file_name, number, x, y)
 
 			# random algorithm with 4, 5, 6, or 7 stations
 			elif (algorithm == "random"):
@@ -111,7 +108,7 @@ def main():
 				amount_radios = input("With how many stations would you like to run the algorithm (4, 5, 6, 7)? ").lower()
 
 				while not(amount_radios == "4" or amount_radios == "5" or amount_radios == "6" or amount_radios == "7"):
-				    amount_radios = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
+					amount_radios = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
 
 				if amount_radios == "4":
 					radios = [1, 2, 3, 4]
@@ -135,10 +132,10 @@ def main():
 			# greedy algorithm with random order or ldo order
 			elif (algorithm == "greedy"):
 
-				order_choice = input("Would you like to use a random order (random) or a largest degree ordering (ldo)?").lower()
+				order_choice = input("Would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
 
 				while not(order_choice == "random" or order_choice == "ldo"):
-				    order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
+					order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
 
 				if order_choice == "random":
 					order = random_order(data)
@@ -147,13 +144,13 @@ def main():
 
 				reset(data)
 				greed = greedy(data, order)
-				#make_map(greed, file_name, number, x, y)
+				make_map(greed, file_name, number, x, y)
 
 			elif (algorithm == "depth-first"):
 				order_choice = input("would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
 
 				while not(order_choice == "random" or order_choice == "ldo"):
-				    order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
+					order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
 
 				if order_choice == "random":
 					order = random_order(data)
@@ -190,7 +187,7 @@ def main():
 						break
 
 				print("It took {} tries to create a valid distribution! {} radios were changed".format(count, hill[1]))
-				#make_map(hill[0], file_name, number, x, y)
+				make_map(hill[0], file_name, number, x, y)
 
 
 			# SECOND PART: 
@@ -202,12 +199,17 @@ def main():
 				score_answer = input("This is not a valid option. Please choose from y (yes) or n (no): ").lower()
 
 			if score_answer == "y":
-				iterations = int(input("How many iterations would you like to run? "))
 
-				while not (isinstance(iterations, int)):
-					iterations = int(input("This is not a valid amount of iterations. Please enter an integer"))
+				while True:
+					try:
+						iterations = int(input("How many iterations would you like to run? "))
+					except ValueError:
+						print("This is not a valid amount of iterations. Please enter an integer ")
+						continue
+					else:
+						break
 
-				name = input("What is the csv file name? The output will be saved in the folder 'Results'.")
+				name = input("What is the csv file name? The output will be saved in the folder 'Results': ")
 
 				if (algorithm == "random"):
 					soort = "random"

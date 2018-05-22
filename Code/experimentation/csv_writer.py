@@ -25,11 +25,20 @@ def write_csv(compare, name):
 		lowest.append(value)
 		cheapest.append(lowest_key)
 	
+	# costs
 	lowest_v = min(lowest)
+	highest_v = max(lowest)
+	mean_v = sum(lowest)/len(lowest)
+
+
+	# distribution
+	lowest_d = min(compare[3])
+	highest_d = max(compare[3])
+	mean_d = sum(compare[3])/len(compare[3])
 
 	with open('../Heuristieken/Results/{}'.format(name), 'w') as csvfile:
 		fieldnames = ['Try No', 'Score', 'Even Distribution Score', 'Cheapest Station', 'Costs', 'Amount of Stations',
-		 'Lowest price', 'Average Time', 'Fails', 'How many Stations']
+		 'Lowest price', "Highest price", "Mean price", "Lowest distribution", "Highest distribution", "Mean distribution", 'Average Time', 'Fails', 'How many Stations']
 		writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
 
 		writer.writeheader()
@@ -40,7 +49,7 @@ def write_csv(compare, name):
 				 'Amount of Stations':amount[i]})
 			
 		
-		writer.writerow({'Lowest price': lowest_v, 'Average Time': time, 'Fails': fail, 'How many Stations': used})
+		writer.writerow({'Lowest price': lowest_v, "Highest price": highest_v, "Mean price": mean_v, "Lowest distribution": lowest_d, "Highest distribution": highest_d, "Mean distribution": mean_d, "Average Time": time, 'Fails': fail, 'How many Stations': used})
 
 
 

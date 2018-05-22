@@ -9,7 +9,7 @@ from radio import radio
 from greedy import greedy
 from depth_first import depth_first
 from hill_climber import hill_climber
-from helpers import reset, random_order
+from helpers import reset, random_order, ldo
 import random
 import time
 
@@ -30,6 +30,8 @@ def compare(algorithm, argument, regions, iterations, soort):
 		reset(regions)
 		if soort == "random_order":
 			argument = random_order(regions)
+		elif soort == "ldo":
+			argument = ldo(regions)
 			
 		if algorithm == depth_first:
 			first = random.choice(argument)
