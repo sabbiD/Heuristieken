@@ -23,7 +23,7 @@ def write_csv(compare, name):
 		lowest.append([lowest_key, value])
 	
 
-	lowest_v = 1000
+	lowest_v = 1000000
 
 	for n in lowest:
 		
