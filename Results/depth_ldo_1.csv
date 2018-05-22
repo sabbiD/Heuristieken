@@ -1,0 +1,3 @@
+Try No,Score,Even Distribution Score,Cheapest Station,Costs,Amount of Stations,Lowest price,Time,Fails,How many Stations
+0,"{'1': 9, '2': 7, '3': 5, '4': 4, '5': 2, '6': 0, '7': 0}",24.200000000000003,2,580,5,,,,
+,,,,,,580,0.002681732177734375,0,"{4: 0, 5: 1, 6: 0, 7: 0}"

@@ -48,6 +48,19 @@ Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld
 ```
 python main.py
 ```
+### Preliminary results
+
+Radio-functie:
+
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/radio.png)
+Verdeling 1: Simpele radio-functie
+
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/random.png)
+Verdeling 2: Random functie
+
+![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/greedy.png)
+Verdeling 3: Greedy functie
+
 
 ## Auteurs (Authors)
 
