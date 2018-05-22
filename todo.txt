@@ -1,8 +1,0 @@
-- shape files andere landen toevoegen 
-- uitzoeken shapefiles in data mapje???
-- depth-first met minder stations
-- radio-even fixen?
-- randomy met 4 radios --> werkt niet vaak maar toch maken en toevoegen aan main? (als we iteraties doen)
-- hoe vergelijken we algoritmes? --> tijd toevoegen aan algoritmes, meerdere iteraties etc
-- bound algoritme
-- hill climber

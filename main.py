@@ -4,6 +4,8 @@ directory = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(directory, "Code"))
 sys.path.append(os.path.join(directory, "Code", "algorithms"))
 sys.path.append(os.path.join(directory, "Code", "data_structuur"))
+sys.path.append(os.path.join(directory, "Code", "experimentation"))
+sys.path.append(os.path.join(directory, "Data"))
 
 # importeer de gebruikte structuur
 from country import country
@@ -31,33 +33,33 @@ def main():
 
         choice = input("Please choose a country (ukraine, us, china, russia): ")
 
-        # while choice is "ukraine" or choice is "us" or choice is "russia" or choice is "china":
-        #     choice = input("This is not a valid country. Please choose from Ukraine, US, Russia or China: ")
+        while not (choice == "ukraine" or choice == "us" or choice == "russia" or choice == "china"):
+            choice = input("This is not a valid country. Please choose from Ukraine, US, Russia or China: ").lower()
 
         # create correct variables for data structure and map
         if (choice.lower() == "ukraine"):
-            file_name = "ukr_admbnda_adm1_q2_sspe_20171221.shp"
+            file_name = os.path.join(directory, "Data", "ukr_admbnda_adm1_q2_sspe_20171221.shp")
             name = "ADM1_PCODE"
             number = 4
             x = [22, 41]
             y = [43, 53]
 
         elif (choice.lower() == "us"):
-            file_name = "cb_2016_us_state_500k.shp"        
+            file_name = os.path.join(directory, "Data", "cb_2016_us_state_500k.shp")     
             name = "STATEFP"
             number = 3
             x = [-130, -60]
             y = [25, 50]
 
         elif (choice.lower() == "russia"):
-            file_name = "RUS_adm1.shp"
+            file_name = os.path.join(directory, "Data", "RUS_adm1.shp")
             name = "ID_1"
             number = 3
             x = [15, 190]
             y = [35, 85]
 
         elif (choice.lower() == "china"):
-            file_name = "CHN_adm1.shp"
+            file_name = os.path.join(directory, "Data", "CHN_adm1.shp")
             name = "ID_1"
             number = 3
             x = [70, 135]

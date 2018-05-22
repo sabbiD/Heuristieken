@@ -22,6 +22,7 @@ def ldo(data):
 		neighbors[key] = neighb_count
 
 	order = []
+	
 	for i in data:
 		keys = max(neighbors.items(), key=operator.itemgetter(1))[0]
 		order.append(keys)
