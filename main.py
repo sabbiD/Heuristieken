@@ -22,6 +22,7 @@ from distribution import compare
 from helpers import ldo, reset, random_order
 #from map import make_map
 from csv_writer import write_csv
+from plot import histogram
 
 def main():
 
@@ -198,7 +199,7 @@ def main():
 
             if score_answer == "y":
                 iterations = int(input("How many iterations would you like to run? "))
-                name = input("What is the csv file name? The output will be saved in the folder 'Results'.")
+                name = input("What is the csv file name? The output will be saved in the folder 'Results', together with the plot displaying the cost distribution.")
 
                 if (algorithm == "random"):
                     soort = "random"
@@ -232,6 +233,7 @@ def main():
 
 
                 write_csv(result, name)
+                histogram(result[1], name)
 
             algorithm_answer = input("Would you like to try another algorithm for this country (y/n) ")
 
