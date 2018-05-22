@@ -22,6 +22,7 @@ from distribution import compare
 from helpers import ldo, reset, random_order
 from map import make_map
 from csv_writer import write_csv
+from plot import histogram
 
 def main():
 
@@ -239,6 +240,7 @@ def main():
 					result = compare(hill_climber, radios, data, iterations, soort)
 
 				write_csv(result, name)
+				histogram(result[1], name)
 
 			algorithm_answer = input("\nWould you like to try another algorithm for this country (y/n) ")
 
@@ -250,10 +252,9 @@ def main():
 
 				while not (country_answer == "y" or country_answer == "n"):
 					country_answer = input("This is not a valid option. Please choose from y (yes) or n (no): ").lower()
-
+					
 	if country_answer == "n":
 		print("\nThank you and goodbye! Kisses from KGB.\nP.S. We know where you live...")
-
 
 if __name__ == "__main__":
 	main()
