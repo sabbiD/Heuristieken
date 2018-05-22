@@ -2,7 +2,7 @@ import sys
 import random
 from helpers import neighbour_set
 
-def dfs_recursive(graph, vertex, path=[]):
+def dfs_recursive(graph, vertex, path):
 
 	radios = [1, 2, 3, 4, 5, 6, 7]
 
@@ -13,7 +13,6 @@ def dfs_recursive(graph, vertex, path=[]):
 		if len(neighb_station) == 0:
 
 			key.radio = 1
-	print(graph)
 
 	path += [vertex] 
 
@@ -30,7 +29,7 @@ def dfs_recursive(graph, vertex, path=[]):
 		if radios[i] in neighb_station:
 			options.remove(radios[i])
 	
-		vertex.radio = min(options)
+	vertex.radio = min(options)
 
 	for neighbour in graph[vertex]:	
 		
@@ -39,5 +38,11 @@ def dfs_recursive(graph, vertex, path=[]):
 		if neighbour not in path:
 			neighb_station = []
 			path = dfs_recursive(graph, neighbour, path)
-
+			
 	return path 
+
+def depth_first(regions, order):
+
+	dfs_recursive(regions, order, path=[])
+
+	return regions

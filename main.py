@@ -13,7 +13,7 @@ from data_structure import data_structure
 from randomy import randomy
 from radio import radio
 from greedy import greedy
-from depth_first import dfs_recursive
+from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
 from distribution import compare
 # from score import score
@@ -161,9 +161,8 @@ def main():
 					order = ldo(data)
 
 				reset(data)
-
-				dfs_recursive(data, order[0])
-				#make_map(data, file_name, number, x, y)
+				depth = depth_first(data, order[0])
+				make_map(depth, file_name, number, x, y)
 
 			elif (algorithm == "hill-climber"):
 
@@ -216,24 +215,24 @@ def main():
 
 				elif (algorithm == "radio"):
 					if order_choice == "random":
-						soort = "randomy"
+						soort = "random_order"
 					else:
 						soort = "ldo"
 					result = compare(radio, order, data, iterations, soort)
 
 				elif algorithm == "greedy":
 					if order_choice == "random":
-						soort = "randomy"
+						soort = "random_order"
 					else:
 						soort = "ldo"
 					result = compare(greedy, order, data, iterations, soort)
 
 				elif algorithm == "depth-first":
 					if order_choice == "random":
-						soort = "order"
+						soort = "random"
 					else:
 						soort = "ldo"
-					result = compare(dfs_recursive, order, data, iterations, soort)
+					result = compare(depth_first, order, data, iterations, soort)
 
 				elif algorithm == "hill-climber":
 					soort = "hill-climber"
