@@ -28,8 +28,8 @@ def compare(algorithm, argument, regions, iterations, soort):
 			main_radio = algorithm(regions, argument[0])
 		else:
 			reset(regions)
-			if soort == "random":
-				argument = random_order(regions)
+			# if soort == "random":
+			# 	argument = random_order(regions)
 			main_radio = algorithm(regions, argument)
 
 		if main_radio == 1:

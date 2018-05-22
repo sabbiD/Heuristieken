@@ -30,7 +30,7 @@ def write_csv(compare, name):
 		if (lowest_v > n[1]):
 			lowest_v = n[1]
 
-	with open('{}'.format(name), 'w') as csvfile:
+	with open('../Heuristieken/Results/{}'.format(name), 'w') as csvfile:
 		fieldnames = ['Try No', 'Score', 'Even Distribution Score', 'Cheapest Station', 'Costs', 'Amount of Stations',
 		 'Lowest price', 'Time', 'Fails', 'How many Stations']
 		writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
