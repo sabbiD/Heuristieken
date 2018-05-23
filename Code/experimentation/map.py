@@ -8,23 +8,22 @@ from colours import colours
 import fiona
 from data_structure import data_structure
 
-def make_map(final_regions, file_name, number, x, y):
+def make_map(final_regions, file_name, number, x, y, country, algorithm, order_choice):
 
 	sf = shp.Reader(file_name)
-	print(fiona.open("ukr_admbnda_adm1_q2_sspe_20171221.shp")[0]['properties'])
-
 	plt.figure()
 	ax = plt.axes()
 
 	# plot title with country name
-	ax.set_title(list(sf.iterRecords())[0][12], fontsize=20)
+	ax.set_title(country, fontsize=20)
+	ax.set_title(algorithm, order_choice)
 
 	# initialize counter for number of region
 	counter = 0
 	name_list = []
 
 	for i in list(sf.iterRecords()):
-
+		print(i)
 		# append region names to list 
 		name_list.append(list(sf.iterRecords())[counter][number])
 		counter += 1
@@ -64,10 +63,6 @@ def make_map(final_regions, file_name, number, x, y):
 
 
 		counter += 1
-
-
-	# colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
-
 
 	# add legend to plot 
 	station_1 = mlines.Line2D([], [], color=color_legend["1"], marker="s", fillstyle="full", label='Station 1', markersize=15)
