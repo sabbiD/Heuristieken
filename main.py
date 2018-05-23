@@ -231,7 +231,7 @@ def main():
 
 				elif algorithm == "depth-first":
 					if order_choice == "random":
-						soort = "random"
+						soort = "random_order"
 					else:
 						soort = "ldo"
 					result = compare(depth_first, order, data, iterations, soort)
