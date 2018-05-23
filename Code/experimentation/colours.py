@@ -1,5 +1,5 @@
 def colours(regions):
-	colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
+	colours = {"1": "#a6cee3", "2": "#1f78b4", "3": "#b2df8a", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fb9a99", "7": "#fdbf6f"}
 
 	region_colours = {}
 
