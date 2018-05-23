@@ -15,15 +15,15 @@ def make_map(final_regions, file_name, number, x, y, country, algorithm, order_c
 	ax = plt.axes()
 
 	# plot title with country name
-	ax.set_title(country, fontsize=20)
-	ax.set_title(algorithm, order_choice)
+	plt.title(country, fontsize=20)
+	plt.text( x[0] + 5, y[0] + 1, algorithm + "\n" + order_choice, ha='center', fontsize=15)
 
 	# initialize counter for number of region
 	counter = 0
 	name_list = []
 
 	for i in list(sf.iterRecords()):
-		print(i)
+		
 		# append region names to list 
 		name_list.append(list(sf.iterRecords())[counter][number])
 		counter += 1
@@ -45,7 +45,7 @@ def make_map(final_regions, file_name, number, x, y, country, algorithm, order_c
 		#if region is made up of one part color whole part 
 		if nparts == 1:
 			polygon = Polygon(shape.points)
-			patch = PolygonPatch(polygon, facecolor=color_regions[color_value], alpha=1.0, zorder=2)
+			patch = PolygonPatch(polygon, facecolor=color_regions[color_value])
 			ax.add_patch(patch)
 
 		# if more than one part than color every part of region the same color
@@ -58,9 +58,9 @@ def make_map(final_regions, file_name, number, x, y, country, algorithm, order_c
 					il = len(shape.points)
 
 				polygon = Polygon(shape.points[iO:il+1])
-				patch = PolygonPatch(polygon, facecolor=color_regions[color_value], alpha=1.0, zorder=2)
+				patch = PolygonPatch(polygon, facecolor=color_regions[color_value])
 				ax.add_patch(patch)
-
+				#ax.set_title(algorithm, fontsize=15)
 
 		counter += 1
 
