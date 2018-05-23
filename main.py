@@ -165,8 +165,8 @@ def main():
 
 				amount_radios = input("With how many stations would you like to run the algorithm (4, 5, 6, 7)? ").lower()
 
-				while not(amount == "4" or amount == "5" or amount == "6" or amount == "7"):
-					amount = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
+				while not(amount_radios == "4" or amount_radios == "5" or amount_radios == "6" or amount_radios == "7"):
+					amount_radios = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
 
 				if amount_radios == "4":
 					radios = [1, 2, 3, 4]
@@ -179,15 +179,20 @@ def main():
 
 				hill = hill_climber(data, radios)
 				count = 1
+				success = "yes"
 				while hill == 1:
 					hill = hill_climber(data, radios)
 					count += 1
-					if count == 10000:
-						print("No valid distribution could be made for {} radios".format(amount_radios))
+
+					# 
+					if count == 1000:
+						print("In 1000 tries, no valid distribution could be made for {} radios".format(amount_radios))
+						success = "no"
 						break
 
-				print("It took {} tries to create a valid distribution! {} radios were changed".format(count, hill[1]))
-				make_map(hill[0], file_name, number, x, y)
+				if success == "yes":
+					print("It took {} tries to create a valid distribution! {} radios were changed".format(count, hill[1]))
+					make_map(hill[0], file_name, number, x, y)
 
 
 			# SECOND PART: 

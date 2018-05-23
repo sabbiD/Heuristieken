@@ -51,8 +51,9 @@ def hill_climber(data, amount_radios):
 		iterations += 1
 
 		# sometimes infinite loop if random order does not work out
-		if iterations == 1000:
+		if iterations == 100:
 			return 1
+
 	return data, costs
 
 
