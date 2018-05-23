@@ -44,7 +44,11 @@ def compare(algorithm, argument, regions, iterations, soort):
 			fail += 1
 
 		else:
-			scores = score(regions)
+			if algorithm == hill_climber:
+				scores = score(main_radio[0])
+			else:
+				scores = score(main_radio)
+				
 			main_score = scores[0]
 			amount = scores[1]
 			radio[amount]+= 1

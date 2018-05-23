@@ -43,6 +43,9 @@ def dfs_recursive(graph, vertex, path):
 
 def depth_first(regions, order):
 
+	if not regions[order]:
+		return 1
+
 	dfs_recursive(regions, order, path=[])
 
 	return regions
