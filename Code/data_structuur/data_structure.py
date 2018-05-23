@@ -11,7 +11,7 @@ class Region:
 
 		return str(self) + " \n" 
 
-def data_structure(regions):
+def data_structure(regions, country):
 	all_neighbors = []
 	temp = {}
 	final_regions = {}
@@ -37,4 +37,14 @@ def data_structure(regions):
 		final_regions[value] = all_neighbors[counter]
 		counter += 1
 
+	region_count = len(final_regions)
+
+	max_neighbours = 0
+
+	for key in final_regions:
+		length_neighbours = len(final_regions[key])
+		if length_neighbours > max_neighbours:
+			max_neighbours = length_neighbours
+
+	print("Data structure created!\n{} has {} regions. The maximum amount of neighbours is {}".format(country, region_count, max_neighbours))
 	return final_regions
