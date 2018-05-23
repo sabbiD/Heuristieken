@@ -6,4 +6,4 @@ def colours(regions):
 	for key in regions:
 		region_colours[key.index] = colours[str(key.radio)]
 		
-	return region_colours
+	return region_colours, colours
