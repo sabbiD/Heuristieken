@@ -8,23 +8,22 @@ from colours import colours
 import fiona
 from data_structure import data_structure
 
-def make_map(final_regions, file_name, number, x, y):
+def make_map(final_regions, file_name, number, x, y, country, algorithm, order_choice):
 
 	sf = shp.Reader(file_name)
-	print(fiona.open("ukr_admbnda_adm1_q2_sspe_20171221.shp")[0]['properties'])
-
 	plt.figure()
 	ax = plt.axes()
 
 	# plot title with country name
-	ax.set_title(list(sf.iterRecords())[0][12], fontsize=20)
+	plt.title(country, fontsize=20)
+	plt.text( x[0] + 5, y[0] + 1, algorithm + "\n" + order_choice, ha='center', fontsize=15)
 
 	# initialize counter for number of region
 	counter = 0
 	name_list = []
 
 	for i in list(sf.iterRecords()):
-
+		
 		# append region names to list 
 		name_list.append(list(sf.iterRecords())[counter][number])
 		counter += 1
@@ -46,7 +45,7 @@ def make_map(final_regions, file_name, number, x, y):
 		#if region is made up of one part color whole part 
 		if nparts == 1:
 			polygon = Polygon(shape.points)
-			patch = PolygonPatch(polygon, facecolor=color_regions[color_value], alpha=1.0, zorder=2)
+			patch = PolygonPatch(polygon, facecolor=color_regions[color_value])
 			ax.add_patch(patch)
 
 		# if more than one part than color every part of region the same color
@@ -59,15 +58,11 @@ def make_map(final_regions, file_name, number, x, y):
 					il = len(shape.points)
 
 				polygon = Polygon(shape.points[iO:il+1])
-				patch = PolygonPatch(polygon, facecolor=color_regions[color_value], alpha=1.0, zorder=2)
+				patch = PolygonPatch(polygon, facecolor=color_regions[color_value])
 				ax.add_patch(patch)
-
+				#ax.set_title(algorithm, fontsize=15)
 
 		counter += 1
-
-
-	# colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
-
 
 	# add legend to plot 
 	station_1 = mlines.Line2D([], [], color=color_legend["1"], marker="s", fillstyle="full", label='Station 1', markersize=15)
