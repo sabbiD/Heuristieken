@@ -1,7 +1,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
-def histogram(result, name):
+def histogram(result, name, algorithm, choice):
 	"{}.png".format(name)
 	totals = []
 	for i in result:
@@ -19,6 +19,7 @@ def histogram(result, name):
 	plt.axvline(average, color='k', linestyle='dashed', linewidth=1)
 	plt.xlabel('Costs')
 	plt.ylabel('Count')
+	plt.title(algorithm + ' algorithm, ' + choice)
 	plt.savefig("../Heuristieken/Results/{}.png".format(name))
 
 	plt.show()
