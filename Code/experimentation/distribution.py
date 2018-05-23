@@ -48,7 +48,7 @@ def compare(algorithm, argument, regions, iterations, soort):
 				scores = score(main_radio[0])
 			else:
 				scores = score(main_radio)
-				
+
 			main_score = scores[0]
 			amount = scores[1]
 			radio[amount]+= 1
@@ -66,6 +66,9 @@ def compare(algorithm, argument, regions, iterations, soort):
 
 			main_time = time.time() - start_time
 			all_time.append(main_time)
+
+			if i == 100000 or i == 250000 or i == 500000 or i == 750000:
+				print(i)
 
 	mean_time = sum(all_time)/len(all_time)
 	

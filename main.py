@@ -67,8 +67,7 @@ def main():
 
 		# create data structure
 		regions = country(file_name, name)
-		data = data_structure(regions)
-		print("Data structure created!")
+		data = data_structure(regions, choice)
 
 		# FIRST PART: 
 		# ask user which algorithm they would like to run and visualize this in a map
@@ -100,7 +99,7 @@ def main():
 
 				reset(data)
 				radios = radio(data, order)
-				make_map(radios, file_name, number, x, y)
+				make_map(radios, file_name, number, x, y, choice, algorithm, order_choice)
 
 			# random algorithm with 4, 5, 6, or 7 stations
 			elif (algorithm == "random"):
@@ -127,7 +126,7 @@ def main():
 					random = randomy(data, radios)
 					count += 1
 				print("It took {} tries to create a valid distribution!".format(count))
-				make_map(random, file_name, number, x, y)
+				make_map(random, file_name, number, x, y, choice, algorithm, amount_radios)
 
 			# greedy algorithm with random order or ldo order
 			elif (algorithm == "greedy"):
@@ -144,7 +143,7 @@ def main():
 
 				reset(data)
 				greed = greedy(data, order)
-				make_map(greed, file_name, number, x, y)
+				make_map(greed, file_name, number, x, y, choice, algorithm, order_choice)
 
 			elif (algorithm == "depth-first"):
 				order_choice = input("would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
@@ -159,7 +158,7 @@ def main():
 
 				reset(data)
 				depth = depth_first(data, order[0])
-				make_map(depth, file_name, number, x, y)
+				make_map(depth, file_name, number, x, y, choice, algorithm, order_choice)
 
 			elif (algorithm == "hill-climber"):
 
@@ -192,7 +191,7 @@ def main():
 
 				if success == "yes":
 					print("It took {} tries to create a valid distribution! {} radios were changed".format(count, hill[1]))
-					make_map(hill[0], file_name, number, x, y)
+					make_map(hill[0], file_name, number, x, y, choice, algorithm, order_choice)
 
 
 			# SECOND PART: 
@@ -246,7 +245,7 @@ def main():
 					result = compare(hill_climber, radios, data, iterations, soort)
 
 				write_csv(result, name)
-				histogram(result[1], name)
+				histogram(result[1], name, algorithm, choice)
 
 			algorithm_answer = input("\nWould you like to try another algorithm for this country (y/n) ")
 
