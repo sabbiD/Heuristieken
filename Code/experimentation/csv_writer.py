@@ -1,13 +1,13 @@
+# Team KGB, Radio Russa
+# csv_writer.py writes the results to a CSV file
 import csv
-# from distribution import compare
-# from score import score
-# from costs import costs
-# from costs import distribution
 
 
 def write_csv(compare, name):
 	
 	name = name + '.csv'
+	
+	# Collect data from results
 	score = compare[0]
 	cost = compare[1]
 	amount = compare[2]
@@ -19,22 +19,24 @@ def write_csv(compare, name):
 	lowest= []
 	cheapest = []
 
+	# Loop through costs, keep track of cost scheme and price
 	for i in cost:
 		lowest_key = min(i, key=i.get)
 		value = i.get(lowest_key)
 		lowest.append(value)
 		cheapest.append(lowest_key)
 	
-	# costs
+	# If there was a fail, make "lowest" 0
 	if not lowest:
 		lowest = [0]
 
+	# Calculate lowest, highest and average score
 	lowest_v = min(lowest)
 	highest_v = max(lowest)
 	mean_v = sum(lowest)/len(lowest)
 
 
-	# distribution
+	# If there is no distribution, set values to 0, otherwise calculate lowest, highest and average distribution
 	if not compare[3]:
 		lowest_d = 0
 		highest_d = 0
@@ -44,6 +46,7 @@ def write_csv(compare, name):
 		highest_d = max(compare[3])
 		mean_d = sum(compare[3])/len(compare[3])
 
+	# Write to CSV file with the given name
 	with open('../Heuristieken/Results/{}'.format(name), 'w') as csvfile:
 		fieldnames = ['Try No', 'Score', 'Even Distribution Score', 'Cheapest Station', 'Costs', 'Amount of Stations',
 		 'Lowest price', "Highest price", "Mean price", "Lowest distribution", "Highest distribution", "Mean distribution", 'Average Time', 'Fails', 'How many Stations']
