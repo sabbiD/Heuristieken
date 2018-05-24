@@ -1,4 +1,0 @@
-Try No,Score,Even Distribution Score,Cheapest Station,Costs,Amount of Stations,Lowest price,Highest price,Mean price,Lowest distribution,Highest distribution,Mean distribution,Average Time,Fails,How many Stations
-0,"{'1': 9, '2': 6, '3': 5, '4': 7, '5': 0, '6': 0, '7': 0}",30.8,2,552,4,,,,,,,,,
-1,"{'1': 6, '2': 9, '3': 6, '4': 6, '5': 0, '6': 0, '7': 0}",31.1,2,555,4,,,,,,,,,
-,,,,,,552,555,553.5,30.8,31.1,30.950000000000003,0.003137946128845215,998,"{4: 2, 5: 0, 6: 0, 7: 0}"

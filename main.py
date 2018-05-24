@@ -15,6 +15,8 @@ from radio import radio
 from greedy import greedy
 from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
+from simulated_annealing import simulated_annealing
+from branch_bound import branch_bound
 from distribution import compare
 from helpers import ldo, reset, random_order
 from map import make_map
@@ -79,9 +81,9 @@ def main():
 			algorithm_answer = input("This is not a valid option. Please choose from y (yes) or n (no): ").lower()
 
 		while algorithm_answer == "y":
-			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber)? ").lower()
+			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber, simulated-annealing, branch-bound)? ").lower()
 
-			while not (algorithm == "radio" or algorithm == "random" or algorithm == "greedy" or algorithm == "depth-first" or algorithm == "hill-climber"):
+			while not (algorithm == "radio" or algorithm == "random" or algorithm == "greedy" or algorithm == "depth-first" or algorithm == "hill-climber" or algorithm == "simulated-annealing" or algorithm == "branch-bound"):
 				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first or hill-climber: ").lower()
 
 			# radio algorithm with either random order or ldo order
@@ -193,6 +195,29 @@ def main():
 				if success == "yes":
 					print("It took {} tries to create a valid distribution!".format(count))
 					make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
+
+			elif (algorithm == "simulated-annealing"):
+
+				amount_radios = input("With how many stations would you like to run the algorithm (4, 5, 6, 7)? ").lower()
+
+				while not(amount_radios == "4" or amount_radios == "5" or amount_radios == "6" or amount_radios == "7"):
+					amount_radios = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
+
+				if amount_radios == "4":
+					radios = [1, 2, 3, 4]
+				elif amount_radios == "5":
+					radios = [1, 2, 3, 4, 5]
+				elif amount_radios == "6":
+					radios = [1, 2, 3, 4, 5, 6]
+				elif amount_radios == "7":
+					radios = [1, 2, 3, 4, 5, 6, 7]
+
+				anneal = simulated_annealing(data, radios)
+				make_map(anneal, file_name, number, x, y, choice, algorithm, amount_radios)
+
+			elif (algorithm == "branch-bound"):
+				branch = branch_bound(data)
+				make_map(branch, file_name, number, x, y, choice, algorithm, "")
 
 
 			# SECOND PART: 
