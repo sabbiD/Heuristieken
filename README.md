@@ -60,7 +60,7 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangem
 ### Results
 
 Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.
-Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden), voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
+Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
 
 N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.
 
@@ -71,7 +71,9 @@ N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling 
 ##### Randomizer (met constraints)
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
 
---> Grafiekjes hier met de normale verdelingen. 
+Kostenverdeling US:
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png"/>
+
 Klein uitlegje over grafiekjes + soort van tussen conclusie?
 
 ###### Voorbeeld 1: Oekraïne
@@ -110,8 +112,8 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
---> Grafiekjes hier met de normale verdelingen. 
-Klein uitlegje over grafiekjes + soort van tussen conclusie?
+Kostenverdeling US:
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png"/>
 
 ###### Voorbeeld 1: China
 Volgorde: Random
@@ -150,7 +152,8 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 
 Bij de greedy functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
---> grafiekjes met uitleg
+Kostenverdeling US:
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/greedy.png"/>
 
 ###### Voorbeeld 1: China
 Volgorde: Random
@@ -189,8 +192,8 @@ Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze 
 
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
---> Grafiekjes hier met de normale verdelingen. 
-Klein uitlegje over grafiekjes + soort van tussen conclusie?
+Kostenverdeling US:
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/depth-first.png"/>
 
 ###### Voorbeeld 1: Rusland
 Volgorde: Random
@@ -232,8 +235,9 @@ Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4,
 
 N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
 
--> Grafiekjes hier met de normale verdelingen. 
-Klein uitlegje over grafiekjes + soort van tussen conclusie?
+Kostenverdeling US:
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png"/>
+
 
 ###### Voorbeeld 1: Oekraine
 Aantal zendmasten: 4
