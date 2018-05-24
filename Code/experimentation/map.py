@@ -29,9 +29,7 @@ def make_map(final_regions, file_name, number, x, y, country, algorithm, order_c
 	ax = plt.axes()
 
 	# Add plot title with country name
-	plt.title(country, fontsize=20)
-	plt.text(x[0] + 5, y[0] + 1, algorithm + "\n" + order_choice, 
-		ha='center', fontsize=15)
+	plt.title(country + ", algorithm " + algorithm + ", " + order_choice, fontsize=20)
 
 	# Initialize counter for number of region
 	counter = 0

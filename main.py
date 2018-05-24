@@ -16,7 +16,7 @@ from greedy import greedy
 from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
 from simulated_annealing import simulated_annealing
-from branch_bound import branch_bound
+# from branch_bound import branch_bound
 from distribution import compare
 from helpers import ldo, reset, random_order
 from map import make_map
@@ -215,9 +215,9 @@ def main():
 				anneal = simulated_annealing(data, radios)
 				make_map(anneal, file_name, number, x, y, choice, algorithm, amount_radios)
 
-			elif (algorithm == "branch-bound"):
-				branch = branch_bound(data)
-				make_map(branch, file_name, number, x, y, choice, algorithm, "")
+			# elif (algorithm == "branch-bound"):
+			# 	branch = branch_bound(data)
+			# 	make_map(branch, file_name, number, x, y, choice, algorithm, "")
 
 
 			# SECOND PART: 
