@@ -8,10 +8,9 @@ Afbeelding 1: De verdeling van provincies van Oekraine.
 
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
+Een meer evenredige verdeling (waarbij er een evenredig aantal van alle types gebruikt wordt) is hierbij voordeliger.
 
-De tweede stap is om een zo evenredig mogelijke verdeling van het type zendmasten te maken.
-
-De derde stap is om met behulp van onderstaand kostenschema (Tabel 1) de voordeligste inrichting van zendmasten te bepalen.
+De volgende stap is om met behulp van onderstaand kostenschema (Tabel 1) de voordeligste inrichting van zendmasten te bepalen.
 
 Tabel 1: Kostenschema 
 
@@ -29,12 +28,18 @@ Tabel 1: Kostenschema
 
 ## Aan de slag (Getting Started)
 
-### Verseisten (Prerequisites)
+### Vereisten (Prerequisites)
 
 Deze codebase is volledig geschreven in [Python3.6.3](https://www.python.org/downloads/). In requirements.txt staan alle benodigde packages om de code succesvol te draaien. Deze zijn gemakkelijk te installeren via pip dmv. de volgende instructie:
 
 ```
 pip install -r requirements.txt
+```
+
+Als dit niet werkt, installeer dan Anaconda of Miniconda en installeer de packages met:
+
+```
+while read requirement; do conda install --yes $requirement; done < requirements.txt 2>error.log
 ```
 
 ### Structuur (Structure)
@@ -48,18 +53,12 @@ Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld
 ```
 python main.py
 ```
-### Preliminary results
 
-Radio-functie:
+In main.py kun je eerst een land kiezen, waarna hiervoor de datastructurr aangemaakt wordt. Vervolgens kun je een bepaald algoritme runnen voor dit land, waarna de ingekleurde map wordt getoond. Vervolgens kan het algoritme een x aantal keer gerund worden, waarna een CSV bestand met de resultaten wordt aangemaakt en een histogram met de kostenverdeling getoond wordt. 
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/radio.png)
-Verdeling 1: Simpele radio-functie
+### Results
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/random.png)
-Verdeling 2: Random functie
 
-![alt text](https://github.com/sabbiD/Heuristieken/blob/master/Results/greedy.png)
-Verdeling 3: Greedy functie
 
 
 ## Auteurs (Authors)
