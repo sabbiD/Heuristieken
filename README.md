@@ -45,7 +45,9 @@ while read requirements; do conda install --yes $requirement; done < requirement
 
 ### Structuur (Structure)
 
-Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map resultaten worden alle resultaten opgeslagen door de code.
+Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map Results worden alle resultaten opgeslagen door de code.
+
+In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search, sebile_search en sebile_search_2.0 zijn werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
 
 ### Test (Testing)
 
@@ -73,7 +75,7 @@ De randomizer genereert een random verdeling van zendmasten, met de constraint d
 
 Kostenverdeling US:
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png" width = "750" height = "500"/>
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor 4, 5 of 7 zenders met het randomizer algoritme. Hierin is te zien dat, hoewel minder zendmasten leidt tot lagere kosten, er ook veel meer fails zijn en het algoritme bij 4 zendmasten vrijwel nooit werkt. 
 
@@ -115,7 +117,9 @@ Bij de radio functie is het van belang in welke volgorde de zendmasten van de re
 
 Kostenverdeling US:
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png" width = "750" height = "500"/>
+
+In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
 
 ###### Voorbeeld 1: China
 Volgorde: Random
@@ -156,7 +160,7 @@ Bij de greedy functie is het van belang in welke volgorde de zendmasten van de r
 
 Kostenverdeling US:
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/greedy.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/greedy.png" width = "750" height = "500"/>
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de twee volgorde mogelijkheden van het greedy algoritme. Hierin is te zien dat de LDO volgorde meestal tot een goedkopere verdeling leidt dan een random volgorde. 
 
@@ -199,7 +203,9 @@ Bij de radio functie is het van belang in welke volgorde de zendmasten van de re
 
 Kostenverdeling US:
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/dept-first.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/dept-first.png" width = "750" height = "500"/>
+
+In bovenstaande grafiek is de kostenverdeling voor de US voor het depth-first algoritme te zien met random en LDO volgorde. Omdat LDO begint met het land met de meeste buren en er maar twee landen met het hoogste aantal buren zijn, zijn er maar 2 verschillende verdelingen. Hierdoor zijn de kosten van de random verdeling over het algemeen lager, omdat bij een random verdeling n aantal volgordes mogelijk zijn, waarbij n het aantal landen is. 
 
 ###### Voorbeeld 1: Rusland
 Volgorde: Random
@@ -243,7 +249,9 @@ N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7
 
 Kostenverdeling US:
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png" width = "750" height = "500"/>
+
+In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US met 5 en 7 zenders. Voor 4 zenders was in 100.000 iteraties geen oplossing te vinden. 5 zenders leidt tot een goedkopere oplossing, maar leidt ook tot veel meer fails.
 
 
 ###### Voorbeeld 1: Oekraine
