@@ -4,7 +4,7 @@ Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van 
 Er zijn 7 type zendmasten mogelijk.
 
 <img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" width = "400" height = "274"/>
-Afbeelding 1: De verdeling van provincies van Oekraine.    
+Afbeelding 1: De verdeling van provincies van Oekraine.    \
 
 
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
@@ -34,7 +34,7 @@ De statespace van dit probleem is r^n, waarbij r het aantal types zendmasten is,
 Het probleem is te vergelijken met het colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
 
 Het blijkt in de praktijk echter moeilijk te zijn om met simpele algoritmes een map in te kleuren met maar 4 kleuren.
-###BRON
+### BRON
 Vaak is 5 een makkelijker aantal.
 
 Bij ons is ook gebleken dat het niet in alle gevallen mogelijk was om maar 4 types zendmasten te gebruiken. Vooral voor Rusland, een land met 83 regio's en maximaal 9 buren, bleek dit erg lastig te zijn.
