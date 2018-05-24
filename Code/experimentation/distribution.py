@@ -61,7 +61,7 @@ def compare(algorithm, argument, regions, iterations, soort):
 
 			all_scores.append(main_score)
 
-			distributions = distribution(main_score)
+			distributions = distribution(main_score, regions)
 			
 			all_even.append(distributions)
 

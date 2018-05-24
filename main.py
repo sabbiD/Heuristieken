@@ -16,10 +16,10 @@ from greedy import greedy
 from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
 from simulated_annealing import simulated_annealing
-from branch_bound import branch_bound
+#from branch_bound import branch_bound
 from distribution import compare
 from helpers import ldo, reset, random_order
-from map import make_map
+#from map import make_map
 from csv_writer import write_csv
 from plot import histogram
 
@@ -101,7 +101,7 @@ def main():
 
 				reset(data)
 				radios = radio(data, order)
-				make_map(radios, file_name, number, x, y, choice, algorithm, order_choice)
+				#make_map(radios, file_name, number, x, y, choice, algorithm, order_choice)
 
 			# random algorithm with 4, 5, 6, or 7 stations
 			elif (algorithm == "random"):
@@ -128,7 +128,7 @@ def main():
 					random = randomy(data, radios)
 					count += 1
 				print("It took {} tries to create a valid distribution!".format(count))
-				make_map(random, file_name, number, x, y, choice, algorithm, amount_radios)
+				#make_map(random, file_name, number, x, y, choice, algorithm, amount_radios)
 
 			# greedy algorithm with random order or ldo order
 			elif (algorithm == "greedy"):
@@ -145,7 +145,7 @@ def main():
 
 				reset(data)
 				greed = greedy(data, order)
-				make_map(greed, file_name, number, x, y, choice, algorithm, order_choice)
+				#make_map(greed, file_name, number, x, y, choice, algorithm, order_choice)
 
 			elif (algorithm == "depth-first"):
 				order_choice = input("would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
@@ -160,7 +160,7 @@ def main():
 
 				reset(data)
 				depth = depth_first(data, order[0])
-				make_map(depth, file_name, number, x, y, choice, algorithm, order_choice)
+				#make_map(depth, file_name, number, x, y, choice, algorithm, order_choice)
 
 			elif (algorithm == "hill-climber"):
 
@@ -194,7 +194,7 @@ def main():
 
 				if success == "yes":
 					print("It took {} tries to create a valid distribution!".format(count))
-					make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
+					#make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
 
 			elif (algorithm == "simulated-annealing"):
 
@@ -213,11 +213,11 @@ def main():
 					radios = [1, 2, 3, 4, 5, 6, 7]
 
 				anneal = simulated_annealing(data, radios)
-				make_map(anneal, file_name, number, x, y, choice, algorithm, amount_radios)
+				#make_map(anneal, file_name, number, x, y, choice, algorithm, amount_radios)
 
 			elif (algorithm == "branch-bound"):
 				branch = branch_bound(data)
-				make_map(branch, file_name, number, x, y, choice, algorithm, "")
+				#make_map(branch, file_name, number, x, y, choice, algorithm, "")
 
 
 			# SECOND PART: 

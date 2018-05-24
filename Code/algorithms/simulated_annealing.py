@@ -62,7 +62,7 @@ def simulated_annealing(data, amount_radios):
 		print("temp is {}".format(temperature))
 		temperature *= 1-cooling_rate
 
-		if conflicts = 0:
+		if conflicts == 0:
 			break
 
 	return data
