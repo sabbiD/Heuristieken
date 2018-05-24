@@ -80,7 +80,7 @@ Maximale verdeling: 12.55
 Tijd per succesvolle iteratie (ms): 0.8
 Percentage fails: 92%
 
-<img src="https://github.com/sabbiD/Heuristieken/Results/ukraine_random_4.png" width = "400" height = "274"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png" width = "400" height = "274"/>
 
 ###### Voorbeeld 2: Rusland
 Aantal zendmasten: 5
