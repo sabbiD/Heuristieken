@@ -68,6 +68,8 @@ N.B. Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling me
 ##### Randomizer (met constraints)
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
 
+--> Grafiekjes hier met de normale verdelingen. 
+
 ###### Voorbeeld 1: Oekraïne
 Aantal zendmasten: 4
 
