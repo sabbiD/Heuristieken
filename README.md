@@ -142,13 +142,44 @@ Percentage fails: 0%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
 
-
 ##### Greedy
+Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. 
 
-###### Voorbeeld 1: US
+Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
+
+Bij de greedy functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
+
+--> grafiekjes met uitleg
+
+###### Voorbeeld 1: China
+Volgorde: Random
+Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
+
+Minimale kosten: 622
+Maximale kosten: 714
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  1 ms
+Percentage fails: 0%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
 
 ##### Voorbeeld 2: Oekraine
+Volgorde: LDO
+Aantal zendmasten: 4: 86%, 5: 14%, 6: 0%, 7: 0%
 
+Minimale kosten: 549
+Maximale kosten: 586
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  1 ms
+Percentage fails: 0%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
 
 ##### Depth-first
 
@@ -162,6 +193,7 @@ Percentage fails: 0%
 ###### Voorbeeld 1: Oekraine
 
 ##### Voorbeeld 2: China
+
 
 #### Vergelijking algoritmes
 
