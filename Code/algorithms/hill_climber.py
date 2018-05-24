@@ -10,6 +10,7 @@ from hill_helpers import shared_regions, change_region
 def hill_climber(data, amount_radios):
 
 	radios = amount_radios
+	
 	# Create initial state randomly
 	for region in data:
 		region.radio = random.choice(radios)

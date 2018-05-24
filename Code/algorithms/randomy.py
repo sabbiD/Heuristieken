@@ -1,26 +1,36 @@
+# Team KGB, Radio Russia
+# randomy creates a random distribution of x radiotypes with the
+# constraint that a neighbouring region cannot have the same type.
+
 from helpers import neighbour_set
 import random
 
+
+# Creates a random distribution of x radio types (with constraints)
 def randomy(regions, radios):
 	
-	keys = list(regions.keys())
-	random.shuffle(keys)
+	# Create a random order
+	order = list(regions.keys())
+	random.shuffle(order)
 
-	for key in keys:
+	# Change each region in random order
+	for region in order:
 		available = list(radios)
 
-		neighb_station = neighbour_set(regions, key)
+		# Create set of neighbours
+		neighb_station = neighbour_set(regions, region)
 
 		for i in neighb_station:
 
+			# Remove all neighbouring stations from available radios
 			if i != 0:
 				available.remove(i)
 
 			if not available:
-
 				return 1
 
-		key.radio = random.choice(available)
+		# Pick a random available radio
+		region.radio = random.choice(available)
 
 	return regions
 

@@ -1,14 +1,9 @@
-from ukraine import country
-from kgbUA import final_regions
-import time
-# http://www.koderdojo.com/blog/depth-first-search-in-python-recursive-and-non-recursive-programming
-data = final_regions
+# Team KGB, Radio Russia
+# kajsa.search.py creates a distribution of radio-stations, loosely based on depth-first search.
+# Help from: http://www.koderdojo.com/blog/depth-first-search-in-python-recursive-and-non-recursive-programming
 
-for key in data:
-	key.radio = 1
 
 def kajsa_search(graph, start):
-	start_time = time.time()
 	stack, path = [start], []
 	
 	while stack:
@@ -34,13 +29,8 @@ def kajsa_search(graph, start):
 			
 			stack.append(neighbour)
 
-	
-	print("--- %s seconds ---" % (time.time() - start_time))
 	return path
 
-start = list(final_regions.keys())[0]
-
-kajsa_search(data, start)
 
 
 

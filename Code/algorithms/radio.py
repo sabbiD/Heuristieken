@@ -10,7 +10,7 @@ def radio(data, order):
 	for region in order:
 		radio = 1
 			
-		# Set with neighbouring radios
+		# Create set with neighbouring radios
 		neighb_station = neighbour_set(data, region)
 
 		# Start with option 1, if option is in neighbour set, increment option

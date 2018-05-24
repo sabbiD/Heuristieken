@@ -1,45 +1,39 @@
+# Team KGB, Radio Russia
+# country.py uses shapefiles to create a dictionary with regions as keys,
+# and a list of neighbours as values.
+# With help from: Wouter and Quinten
+
 from shapely.geometry import shape
 import fiona
 import string
 
+
+# Create dictionary of regions with neighbours as values
 def country(file_name, name):
 
 	file_name = file_name
 
-	# NOTE: Gebruik deze lines om te kijken hoe de key heet die je nodig hebt
-	# voor de namen/id's
-	#print(fiona.open(file_name)[0]['properties'])
-
-	# Haal een tuple met de coordinaten en de naam uit de shapefile
+	# Retrieve tuple with name and coordinates from shapefile
 	geoms =[(shape(feature['geometry']), feature['properties'][name]) for
 	    feature in fiona.open(file_name)]
 
-	class Region:
-		def __init__(self, index, radio=0):
-			self.index = index
-			self.radio = radio
-
-		def __str__(self):
-
-			return ("Region {}: Radio {}".format(self.index
-				, self.radio))
-
-	# make dictionary with all regions and its neighbours
+	# Create dictionary with all regions and its neighbours
 	regions = dict()
 	counter = 0;
 	neighbours = []
 
-	# Vindt de neighbours van iedere regio in je shapefile
+	# Find neighbours of each region in the shapefile
 	for line, name in geoms:
-		for lin, name_other in geoms:
+		for lin, name_neighbour in geoms:
 			if line.touches(lin):
-				neighbours.append(name_other)
+				neighbours.append(name_neighbour)
 
 		regions[name] = neighbours
 		counter += 1
 		neighbours = []
 
 	return(regions)
+	
 
 
 
