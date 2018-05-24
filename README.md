@@ -75,7 +75,7 @@ Kostenverdeling US:
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png"/>
 
-Klein uitlegje over grafiekjes + soort van tussen conclusie?
+In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor 4, 5 of 7 zenders met het randomizer algoritme. Hierin is te zien dat, hoewel minder zendmasten leidt tot lagere kosten, er ook veel meer fails zijn en het algoritme bij 4 zendmasten vrijwel nooit werkt. 
 
 ###### Voorbeeld 1: Oekraïne
 Aantal zendmasten: 4
@@ -114,6 +114,7 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
 Kostenverdeling US:
+
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png"/>
 
 ###### Voorbeeld 1: China
@@ -154,7 +155,10 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 Bij de greedy functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
 Kostenverdeling US:
+
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/greedy.png"/>
+
+In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de twee volgorde mogelijkheden van het greedy algoritme. Hierin is te zien dat de LDO volgorde meestal tot een goedkopere verdeling leidt dan een random volgorde. 
 
 ###### Voorbeeld 1: China
 Volgorde: Random
@@ -194,7 +198,8 @@ Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze 
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
 Kostenverdeling US:
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/depth-first.png"/>
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/dept-first.png"/>
 
 ###### Voorbeeld 1: Rusland
 Volgorde: Random
@@ -237,6 +242,7 @@ Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4,
 N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
 
 Kostenverdeling US:
+
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png"/>
 
 
