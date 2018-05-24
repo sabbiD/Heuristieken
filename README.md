@@ -117,6 +117,8 @@ Kostenverdeling US:
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png"/>
 
+In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
+
 ###### Voorbeeld 1: China
 Volgorde: Random
 Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
@@ -201,6 +203,8 @@ Kostenverdeling US:
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/dept-first.png"/>
 
+In bovenstaande grafiek is de kostenverdeling voor de US voor het depth-first algoritme te zien met random en LDO volgorde. Omdat LDO begint met het land met de meeste buren en er maar twee landen met het hoogste aantal buren zijn, zijn er maar 2 verschillende verdelingen. Hierdoor zijn de kosten van de random verdeling over het algemeen lager, omdat bij een random verdeling n aantal volgordes mogelijk zijn, waarbij n het aantal landen is. 
+
 ###### Voorbeeld 1: Rusland
 Volgorde: Random
 Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%
@@ -244,6 +248,8 @@ N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7
 Kostenverdeling US:
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png"/>
+
+In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US met 5 en 7 zenders. Voor 4 zenders was in 100.000 iteraties geen oplossing te vinden. 5 zenders leidt tot een goedkopere oplossing, maar leidt ook tot veel meer fails.
 
 
 ###### Voorbeeld 1: Oekraine
