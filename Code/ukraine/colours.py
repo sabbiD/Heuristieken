@@ -1,5 +1,5 @@
 from data_structure import data_structure
-from ukraine import country
+# from ukraine import country
 from randomizer import randomizer
 from radio import radio
 
