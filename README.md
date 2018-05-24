@@ -62,12 +62,12 @@ pip install -r requirements.txt
 Als dit niet werkt, installeer dan Anaconda of Miniconda en installeer de packages met:
 
 ```
-while read requirements; do conda install --yes $requirement; done < requirements.txt 2>error.log
+while read requirement; do conda install --yes $requirement; done < requirements.txt 2>error.log
 ```
 
 ### Structuur (Structure)
 
-Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map Results worden alle resultaten opgeslagen door de code.
+Alle Python scripts staan in de folder Code. Deze is onderverdeeld in algorithms, data_structuur, experimentation en test_code. In de map Data zitten alle shapefiles en in de map Results staan alle resultaten.
 
 In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search, sebile_search en sebile_search_2.0 zijn (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
 
@@ -83,17 +83,17 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangem
 
 ## Results
 
-Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.
-Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
+Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.  
+Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land.  
 
-N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.
+N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
 
-N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.
+N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.  
 
 ### Algoritmes
 
 #### Randomizer (met constraints)
-De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
+De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".  
 
 Kostenverdeling US:
 
