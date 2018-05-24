@@ -72,6 +72,7 @@ N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling 
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
 
 Kostenverdeling US:
+
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png"/>
 
 Klein uitlegje over grafiekjes + soort van tussen conclusie?
