@@ -58,7 +58,22 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructurr aangem
 
 ### Results
 
+Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.
+Per algoritme volgt eerst een uitleg, waarna twee voorbeelden van het algoritme worden getoond (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
 
+#### Algoritme testcases
+
+##### Randomizer (met constraints)
+
+##### Radio functie
+
+##### Greedy
+
+##### Depth-first
+
+##### Hill-climber
+
+#### Vergelijking algoritmes
 
 
 ## Auteurs (Authors)
