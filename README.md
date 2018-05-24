@@ -45,7 +45,9 @@ while read requirements; do conda install --yes $requirement; done < requirement
 
 ### Structuur (Structure)
 
-Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map resultaten worden alle resultaten opgeslagen door de code.
+Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map Results worden alle resultaten opgeslagen door de code.
+
+In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search, sebile_search en sebile_search_2.0 zijn werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
 
 ### Test (Testing)
 
