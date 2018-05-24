@@ -310,35 +310,35 @@ Hieronder volgt per land een tabel met de resultaten van alle algoritmes, waarin
 Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:
 De absolute minimum kosten (zonder enige constraints)
 De absolute maximum kosten (zonder enige constraints)
-Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling, zonder constraints)
+Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints)
 
 #### Oekraïne
 Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
 
-Absolute minimum kosten:
-Absolute maximum kosten:
-Middenweg:
+Absolute minimum kosten: 3 * 27 = **81**
+Absolute maximum kosten: 58 * 27 = **1566**
+Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
 #### China
 China heeft 31 regio's. Het maximaal aantal buren is 8.
 
-Absolute minimum kosten:
-Absolute maximum kosten:
-Middenweg:
+Absolute minimum kosten: 3 * 31 = **93**
+Absolute maximum kosten: 58 * 31 = **1798**
+Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**
 
 #### US
 Us heeft 56 regio's. Het maximaal aantal buren is 8.
 
-Absolute minimum kosten:
-Absolute maximum kosten:
-Middenweg:
+Absolute minimum kosten: 3 * 56 = **168**
+Absolute maximum kosten: 58 * 56 = **3248**
+Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**
 
 #### Rusland
 Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
 
-Absolute minimum kosten:
-Absolute maximum kosten:
-Middenweg:
+Absolute minimum kosten: 3 * 83 = **249**
+Absolute maximum kosten: 58 * 83 = **4814**
+Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
 
 ### Conclusie
 
