@@ -25,6 +25,7 @@ Tabel 1: Kostenschema
 | G              | 41            | 38        | 57       | 48       |
 
 
+STATESPACE/KOSTEN SPACE TOEVOEGEN????
 
 ## Aan de slag (Getting Started)
 
@@ -182,20 +183,89 @@ Percentage fails: 0%
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
 
 ##### Depth-first
+UITLEG DEPTH FIRST!
+
+Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze worden gemarkeerd als fails. Verder is het aantal types zendmasten variabel.
+
+Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
+
+--> Grafiekjes hier met de normale verdelingen. 
+Klein uitlegje over grafiekjes + soort van tussen conclusie?
 
 ###### Voorbeeld 1: Rusland
+Volgorde: Random
+Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%
+
+Minimale kosten: 1697
+Maximale kosten: 1782
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  10 ms
+Percentage fails: 4%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
 
 ##### Voorbeeld 2: US
+Volgorde: LDO
+Aantal zendmasten: 4: 0%, 5: 50, 6: 50%, 7: 0%
+
+Minimale kosten: 1162
+Maximale kosten: 1170
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  6 ms
+Percentage fails: 0%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
 
 
 ##### Hill-climber
+Het hill-climber algoritme werkt als volgt: er wordt een initiële (random) verdeling van zendmasten gemaakt. Daarna wordt er geteld hoeveel regios een conflict hebben (dus hoeveel regios een zendmast hebben die hetzelfde is als een van de buurregio's). Hierna wordt er uit de conflict regio's een random regio gekozen, waarvan het station zo wordt aangepast dat dit conflict opgelost wordt. Vervolgens wordt er geteld of het totale aantal conflicten nu minder is dan voorheen. Zo ja, wordt de nieuwe staat aangenomen en wordt het volgende random conflict station aangepast. Zo nee, wordt de nieuwe staat niet aangenomen en wordt met de oude staat verder gegaan. 
+
+De hill-climber komt in sommige gevallen in een lokaal maximum terecht waarin geen oplossing mogelijk is. Als dit het geval is wordt het algoritme na 100 iteraties afgebroken en wordt dit geteld als een fail.
+
+Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4, 5, 6 of 7).
+
+N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
+
+-> Grafiekjes hier met de normale verdelingen. 
+Klein uitlegje over grafiekjes + soort van tussen conclusie?
 
 ###### Voorbeeld 1: Oekraine
+Aantal zendmasten: 4
+
+Minimale kosten: 545
+Maximale kosten: 558
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  2 ms
+Percentage fails: 99.8%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
 
 ##### Voorbeeld 2: China
+Aantal zendmasten: 5
 
+Minimale kosten: 650
+Maximale kosten: 733
+
+Minimale verdeling:
+Maximale verdeling:
+
+Tijd per succesvolle iteratie (ms):  1.5 ms
+Percentage fails: 99.5%
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
 
 #### Vergelijking algoritmes
+
+--> PER LAND DE MINIMALE/MAXIMALE KOSTEN ERBOVEN ZETTEN?
 
 ##### Oekraïne
 
