@@ -70,14 +70,20 @@ De randomizer genereert een random verdeling van zendmasten, met de constraint d
 
 ###### Voorbeeld 1: Oekraïne
 Aantal zendmasten: 4
-20.25
+
+
 Minimale kosten: 544
+
 Maximale kosten: 558
 
+
 Minimale verdeling: 8.05
+
 Maximale verdeling: 12.55
 
+
 Tijd per succesvolle iteratie (ms): 0.8
+
 Percentage fails: 92%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png"/>
