@@ -101,31 +101,31 @@ Kostenverdeling US:
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor 4, 5 of 7 zenders met het randomizer algoritme. Hierin is te zien dat, hoewel minder zendmasten leidt tot lagere kosten, er ook veel meer fails zijn en het algoritme bij 4 zendmasten vrijwel nooit werkt. 
 
 ##### Voorbeeld 1: Oekraïne
-Aantal zendmasten: 4
+Aantal zendmasten: 4  
 
-Minimale kosten: 544
-Maximale kosten: 558
+Minimale kosten: 544  
+Maximale kosten: 558  
 
-Minimale verdeling: 8.05
-Maximale verdeling: 12.55
+Minimale verdeling: 8.05  
+Maximale verdeling: 12.55  
 
-Tijd per succesvolle iteratie (ms): 0.8
+Tijd per succesvolle iteratie (ms): 0.8  
 
-Percentage fails: 92%
+Percentage fails: 92%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png"/>
 
 ##### Voorbeeld 2: Rusland
-Aantal zendmasten: 5
+Aantal zendmasten: 5  
 
-Minimale kosten: 1848
-Maximale kosten: 1964
+Minimale kosten: 1848  
+Maximale kosten: 1964  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  10 ms
-Percentage fails: 93%
+Tijd per succesvolle iteratie (ms):  10 ms  
+Percentage fails: 93%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_random_5.png"/>
 
@@ -143,32 +143,32 @@ Kostenverdeling US:
 In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
 
 ##### Voorbeeld 1: China
-Volgorde: Random
-Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
+Volgorde: Random  
+Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%  
 
-Minimale kosten: 622
-Maximale kosten: 714
+Minimale kosten: 622  
+Maximale kosten: 714  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms
-Percentage fails: 0%
+Tijd per succesvolle iteratie (ms):  1 ms  
+Percentage fails: 0%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_radio_random.png"/>
 
 #### Voorbeeld 2: US
-Volgorde: LDO
-Aantal zendmasten: 4: 59%, 5: 41%, 6: 0%, 7: 0%
+Volgorde: LDO  
+Aantal zendmasten: 4: 59%, 5: 41%, 6: 0%, 7: 0%  
 
-Minimale kosten: 1120
-Maximale kosten: 1167
+Minimale kosten: 1120  
+Maximale kosten: 1167  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  4 ms
-Percentage fails: 0%
+Tijd per succesvolle iteratie (ms):  4 ms  
+Percentage fails: 0%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
 
@@ -186,32 +186,32 @@ Kostenverdeling US:
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de twee volgorde mogelijkheden van het greedy algoritme. Hierin is te zien dat de LDO volgorde meestal tot een goedkopere verdeling leidt dan een random volgorde. 
 
 ##### Voorbeeld 1: China
-Volgorde: Random
-Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
+Volgorde: Random  
+Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%  
 
-Minimale kosten: 622
-Maximale kosten: 714
+Minimale kosten: 622  
+Maximale kosten: 714  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms
-Percentage fails: 0%
+Tijd per succesvolle iteratie (ms):  1 ms  
+Percentage fails: 0%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
 
 #### Voorbeeld 2: Oekraine
-Volgorde: LDO
-Aantal zendmasten: 4: 86%, 5: 14%, 6: 0%, 7: 0%
+Volgorde: LDO  
+Aantal zendmasten: 4: 86%, 5: 14%, 6: 0%, 7: 0%  
 
-Minimale kosten: 549
-Maximale kosten: 586
+Minimale kosten: 549  
+Maximale kosten: 586  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms
-Percentage fails: 0%
+Tijd per succesvolle iteratie (ms):  1 ms  
+Percentage fails: 0%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
 
@@ -229,32 +229,32 @@ Kostenverdeling US:
 In bovenstaande grafiek is de kostenverdeling voor de US voor het depth-first algoritme te zien met random en LDO volgorde. Omdat LDO begint met het land met de meeste buren en er maar twee landen met het hoogste aantal buren zijn, zijn er maar 2 verschillende verdelingen. Hierdoor zijn de kosten van de random verdeling over het algemeen lager, omdat bij een random verdeling n aantal volgordes mogelijk zijn, waarbij n het aantal landen is. 
 
 ##### Voorbeeld 1: Rusland
-Volgorde: Random
-Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%
+Volgorde: Random  
+Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%  
 
-Minimale kosten: 1697
-Maximale kosten: 1782
+Minimale kosten: 1697  
+Maximale kosten: 1782  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  10 ms
-Percentage fails: 4%
+Tijd per succesvolle iteratie (ms):  10 ms  
+Percentage fails: 4%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
 
 #### Voorbeeld 2: US
-Volgorde: LDO
-Aantal zendmasten: 4: 0%, 5: 50, 6: 50%, 7: 0%
+Volgorde: LDO  
+Aantal zendmasten: 4: 0%, 5: 50%, 6: 50%, 7: 0%  
 
-Minimale kosten: 1162
-Maximale kosten: 1170
+Minimale kosten: 1162  
+Maximale kosten: 1170  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  6 ms
-Percentage fails: 0%
+Tijd per succesvolle iteratie (ms):  6 ms  
+Percentage fails: 0%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
 
@@ -268,7 +268,7 @@ Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4,
 
 N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
 
-Kostenverdeling US:
+Kostenverdeling US:  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png" width = "750" height = "500"/>
 
@@ -276,30 +276,30 @@ In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de
 
 
 ##### Voorbeeld 1: Oekraine
-Aantal zendmasten: 4
+Aantal zendmasten: 4  
 
-Minimale kosten: 545
-Maximale kosten: 558
+Minimale kosten: 545  
+Maximale kosten: 558  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  2 ms
-Percentage fails: 99.8%
+Tijd per succesvolle iteratie (ms):  2 ms  
+Percentage fails: 99.8%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
 
 #### Voorbeeld 2: China
-Aantal zendmasten: 5
+Aantal zendmasten: 5  
 
-Minimale kosten: 650
-Maximale kosten: 733
+Minimale kosten: 650  
+Maximale kosten: 733  
 
-Minimale verdeling:
-Maximale verdeling:
+Minimale verdeling:  
+Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1.5 ms
-Percentage fails: 99.5%
+Tijd per succesvolle iteratie (ms):  1.5 ms  
+Percentage fails: 99.5%  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
 
@@ -307,40 +307,38 @@ Percentage fails: 99.5%
 
 Hieronder volgt per land een tabel met de resultaten van alle algoritmes, waarin de kosten, verdeling, tijd, aantal stations en fails met elkaar worden vergeleken.
 
-Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:
-De absolute minimum kosten (zonder enige constraints)
-De absolute maximum kosten (zonder enige constraints)
-Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints)
+Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:  
+De absolute minimum kosten (zonder enige constraints)  
+De absolute maximum kosten (zonder enige constraints)  
+Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints)  
 
 #### Oekraïne
 Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
 
-Absolute minimum kosten: 3 * 27 = **81**
-
-Absolute maximum kosten: 58 * 27 = **1566**
-
+Absolute minimum kosten: 3 * 27 = **81**  
+Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
 #### China
 China heeft 31 regio's. Het maximaal aantal buren is 8.
 
-Absolute minimum kosten: 3 * 31 = **93** 
-Absolute maximum kosten: 58 * 31 = **1798**
-Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**
+Absolute minimum kosten: 3 * 31 = **93**  
+Absolute maximum kosten: 58 * 31 = **1798**  
+Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
 
 #### US
 Us heeft 56 regio's. Het maximaal aantal buren is 8.
 
-Absolute minimum kosten: 3 * 56 = **168**
-Absolute maximum kosten: 58 * 56 = **3248**
-Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**
+Absolute minimum kosten: 3 * 56 = **168**  
+Absolute maximum kosten: 58 * 56 = **3248**  
+Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
 
 #### Rusland
 Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
 
-Absolute minimum kosten: 3 * 83 = **249**
-Absolute maximum kosten: 58 * 83 = **4814**
-Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
+Absolute minimum kosten: 3 * 83 = **249**  
+Absolute maximum kosten: 58 * 83 = **4814**  
+Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**  
 
 ### Conclusie
 
