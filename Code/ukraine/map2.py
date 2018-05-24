@@ -4,18 +4,20 @@ import matplotlib.pyplot as plt
 from shapely.geometry import Polygon
 from descartes.patch import PolygonPatch
 from colours import colours 
-from colours import regions
+# from colours import regions
 import fiona
 from data_structure import data_structure
-from ukraine import country
+from country import country
 from randomizer import randomizer
 from radio import radio
+import matplotlib.lines as mlines
 
-regions = country()
+
+regions = country("ukr_admbnda_adm1_q2_sspe_20171221.shp", "ADM1_PCODE")
 
 final_regions = data_structure(regions)
 
-random = radio(final_regions)
+random = randomizer(final_regions)
 #print(random)
 
 sf = shp.Reader("ukr_admbnda_adm1_q2_sspe_20171221.shp")
@@ -23,6 +25,7 @@ sf = shp.Reader("ukr_admbnda_adm1_q2_sspe_20171221.shp")
 
 plt.figure()
 ax = plt.axes()
+ax.set_title(list(sf.iterRecords())[0][12], fontsize=20)
 
 counter = 0
 name_list = []
@@ -75,7 +78,20 @@ for shape in list(sf.iterShapes()):
 
 	counter += 1
 
+colours = {"1": "#b3e2cd", "2": "#fdcdac", "3": "#cbd5e8", "4": "#f4cae4", "5": "#e6f5c9", "6": "#fff2ae", "7": "#f1e2cc"}
+
+
 # specific coordinates for ukraine
+station_1 = mlines.Line2D([], [], color=colours["1"], marker="s", fillstyle="full", label='Station 1', markersize=15)
+station_2 = mlines.Line2D([], [], color=colours["2"], marker="s", fillstyle="full", label='Station 2', markersize=15)
+station_3 = mlines.Line2D([], [], color=colours["3"], marker="s", fillstyle="full", label='Station 3', markersize=15)
+station_4 = mlines.Line2D([], [], color=colours["4"], marker="s", fillstyle="full", label='Station 4', markersize=15)
+station_5 = mlines.Line2D([], [], color=colours["5"], marker="s", fillstyle="full", label='Station 5', markersize=15)
+station_6 = mlines.Line2D([], [], color=colours["6"], marker="s", fillstyle="full", label='Station 6', markersize=15)
+station_7 = mlines.Line2D([], [], color=colours["7"], marker="s", fillstyle="full", label='Station 7', markersize=15)
+
+plt.legend(handles=[station_1, station_2, station_3, station_4, station_5, station_6, station_7], shadow=True, fancybox=True, prop={'size': 12})
+
 plt.xlim(22, 41)
 plt.ylim(43, 53)
 plt.show()

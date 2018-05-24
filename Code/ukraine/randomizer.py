@@ -1,10 +1,10 @@
 from data_structure import data_structure
-from ukraine import country
+# from ukraine import country
 import random
 
-regions = country()
+# regions = country()
 
-final_regions = data_structure(regions)
+# final_regions = data_structure(regions)
 
 def randomizer(regions):
 	
