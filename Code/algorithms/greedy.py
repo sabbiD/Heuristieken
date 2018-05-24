@@ -1,35 +1,37 @@
+# Team KGB, Radio Russa
+# greedy.py contains a greedy function for map colouring.
+# With help from https://www.slideshare.net/PriyankJain26/graph-coloring-48222920
+
 from helpers import neighbour_set
+
 
 def greedy(data, order):
 
-	for key in data:
-		key.radio = 0
-
 	i = 0
-	for key in order:
+	for region in order:
+		
 		radios = [1, 2, 3, 4, 5, 6, 7]
 		options = [1, 2, 3, 4, 5, 6, 7]
 
-		# first region V already has first option
+		# First region V already has first option
 		if i == 0:
-			key.radio = 1
+			region.radio = 1
 
-		# colour all remaining V-1 regions with lowest possible option
+		# Colour all remaining V-1 regions with lowest possible option
 		else:
 
-			neighb_station = neighbour_set(data, key)
+			neighb_station = neighbour_set(data, region)
 			
-			# check all possible radios
+			# Create a list with possible radios to be used
 			for i in range(len(radios)):
-
-				# if option is in neighbours
 				if radios[i] in neighb_station:
 
-					# remove option
+					# Remove from list if neighbour has this radio
 					options.remove(radios[i])
 
-		# choose lowest available option
-		key.radio = min(options)
-		i += 1
-	return data
+		# Choose lowest available option
+		region.radio = min(options)
 
+		i += 1
+
+	return data

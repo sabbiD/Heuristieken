@@ -28,30 +28,33 @@ def compare(algorithm, argument, regions, iterations, soort):
 		start_time = time.time()
 
 		reset(regions)
+
+
+		# Order choice
 		if soort == "random_order":
 			argument = random_order(regions)
 		elif soort == "ldo":
 			argument = ldo(regions)
+
 			
 		if algorithm == depth_first:
-			first = random.choice(argument)
 			main_radio = algorithm(regions, argument[0])
 		
 		else:
 			main_radio = algorithm(regions, argument)
 
+
 		if main_radio == 1:
 			fail += 1
 
+
 		else:
-			if algorithm == hill_climber:
-				scores = score(main_radio[0])
-			else:
-				scores = score(main_radio)
+
+			scores = score(main_radio)
 
 			main_score = scores[0]
 			amount = scores[1]
-			radio[amount]+= 1
+			radio[amount] += 1
 			all_amount.append(amount)
 
 			all_scores.append(main_score)
@@ -67,10 +70,11 @@ def compare(algorithm, argument, regions, iterations, soort):
 			main_time = time.time() - start_time
 			all_time.append(main_time)
 
-			if i == 100000 or i == 250000 or i == 500000 or i == 750000:
-				print(i)
+	if not all_time:
+		mean_time = 0
+	else:
+		mean_time = sum(all_time)/len(all_time)
 
-	mean_time = sum(all_time)/len(all_time)
 	
 	return all_scores, all_costs, all_amount, all_even, radio, mean_time, fail
 

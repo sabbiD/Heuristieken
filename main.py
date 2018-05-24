@@ -179,6 +179,7 @@ def main():
 				hill = hill_climber(data, radios)
 				count = 1
 				success = "yes"
+
 				while hill == 1:
 					hill = hill_climber(data, radios)
 					count += 1
@@ -190,8 +191,8 @@ def main():
 						break
 
 				if success == "yes":
-					print("It took {} tries to create a valid distribution! {} radios were changed".format(count, hill[1]))
-					make_map(hill[0], file_name, number, x, y, choice, algorithm, order_choice)
+					print("It took {} tries to create a valid distribution!".format(count))
+					make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
 
 
 			# SECOND PART: 
@@ -216,10 +217,12 @@ def main():
 				name = input("What is the csv file name? The output will be saved in the folder 'Results': ")
 
 				if (algorithm == "random"):
+					keuze_soort = amount_radios
 					soort = "random"
 					result = compare(randomy, radios, data, iterations, soort)
 
 				elif (algorithm == "radio"):
+					keuze_soort = order_choice
 					if order_choice == "random":
 						soort = "random_order"
 					else:
@@ -227,6 +230,7 @@ def main():
 					result = compare(radio, order, data, iterations, soort)
 
 				elif algorithm == "greedy":
+					keuze_soort = order_choice
 					if order_choice == "random":
 						soort = "random_order"
 					else:
@@ -234,6 +238,7 @@ def main():
 					result = compare(greedy, order, data, iterations, soort)
 
 				elif algorithm == "depth-first":
+					keuze_soort = order_choice
 					if order_choice == "random":
 						soort = "random_order"
 					else:
@@ -241,11 +246,12 @@ def main():
 					result = compare(depth_first, order, data, iterations, soort)
 
 				elif algorithm == "hill-climber":
+					keuze_soort = amount_radios
 					soort = "hill-climber"
 					result = compare(hill_climber, radios, data, iterations, soort)
 
 				write_csv(result, name)
-				histogram(result[1], name, algorithm, choice)
+				histogram(result[1], name, algorithm, choice, keuze_soort)
 
 			algorithm_answer = input("\nWould you like to try another algorithm for this country (y/n) ")
 

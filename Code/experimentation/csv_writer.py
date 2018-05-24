@@ -26,15 +26,23 @@ def write_csv(compare, name):
 		cheapest.append(lowest_key)
 	
 	# costs
+	if not lowest:
+		lowest = [0]
+
 	lowest_v = min(lowest)
 	highest_v = max(lowest)
 	mean_v = sum(lowest)/len(lowest)
 
 
 	# distribution
-	lowest_d = min(compare[3])
-	highest_d = max(compare[3])
-	mean_d = sum(compare[3])/len(compare[3])
+	if not compare[3]:
+		lowest_d = 0
+		highest_d = 0
+		mean_d = 0
+	else:
+		lowest_d = min(compare[3])
+		highest_d = max(compare[3])
+		mean_d = sum(compare[3])/len(compare[3])
 
 	with open('../Heuristieken/Results/{}'.format(name), 'w') as csvfile:
 		fieldnames = ['Try No', 'Score', 'Even Distribution Score', 'Cheapest Station', 'Costs', 'Amount of Stations',
