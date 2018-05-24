@@ -40,4 +40,9 @@ def reset(final_regions):
 	for key in final_regions:
 		key.radio = 0
 
+def basic_ldo(data):
+	new_data = data.copy()
+
+	for region in data:
+		
 
