@@ -65,4 +65,9 @@ def reset(data):
 	for region in data:
 		region.radio = 0
 
+def basic_ldo(data):
+	new_data = data.copy()
+
+	for region in data:
+		
 

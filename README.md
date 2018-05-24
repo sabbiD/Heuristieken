@@ -3,8 +3,9 @@
 Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van zendmasten te creëren voor de provincies van de landen Oekraine, de Verenigde Staten, China en Rusland.
 Er zijn 7 type zendmasten mogelijk.
 
-<img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" width = "400" height = "274"/>
-Afbeelding 1: De verdeling van provincies van Oekraine.
+<img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" width = "400" height = "274"/>  
+Afbeelding 1: De verdeling van provincies van Oekraine.  
+  
 
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
@@ -33,7 +34,7 @@ De statespace van dit probleem is r^n, waarbij r het aantal types zendmasten is,
 Het probleem is te vergelijken met het colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
 
 Het blijkt in de praktijk echter moeilijk te zijn om met simpele algoritmes een map in te kleuren met maar 4 kleuren.
-###BRON
+### BRON
 Vaak is 5 een makkelijker aantal.
 
 Bij ons is ook gebleken dat het niet in alle gevallen mogelijk was om maar 4 types zendmasten te gebruiken. Vooral voor Rusland, een land met 83 regio's en maximaal 9 buren, bleek dit erg lastig te zijn.
@@ -61,12 +62,12 @@ pip install -r requirements.txt
 Als dit niet werkt, installeer dan Anaconda of Miniconda en installeer de packages met:
 
 ```
-while read requirements; do conda install --yes $requirement; done < requirements.txt 2>error.log
+while read requirement; do conda install --yes $requirement; done < requirements.txt 2>error.log
 ```
 
 ### Structuur (Structure)
 
-Alle Python scripts staan in de folder Code. In de map Data zitten alle input waardes en in de map Results worden alle resultaten opgeslagen door de code.
+Alle Python scripts staan in de folder Code. Deze is onderverdeeld in algorithms, data_structuur, experimentation en test_code. In de map Data zitten alle shapefiles en in de map Results staan alle resultaten.
 
 In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search, sebile_search en sebile_search_2.0 zijn (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
 
@@ -82,50 +83,55 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangem
 
 ## Results
 
-Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.
-Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
+Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.  
 
-N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.
+Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US (100.000 iteraties).  
 
-N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.
+Daarna worden twee voorbeelden van het algoritme gegeven, waarbij een visualisatie van de map van een juiste verdeling getoond wordt. Hierbij worden vervolgens de resultaten getoond van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results).  
+
+Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land.  
+
+N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
+
+N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.  
 
 ### Algoritmes
 
 #### Randomizer (met constraints)
-De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
+De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".  
 
-Kostenverdeling US:
+**Kostenverdeling US:**
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/randomizer.png" width = "750" height = "500"/>
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor 4, 5 of 7 zenders met het randomizer algoritme. Hierin is te zien dat, hoewel minder zendmasten leidt tot lagere kosten, er ook veel meer fails zijn en het algoritme bij 4 zendmasten vrijwel nooit werkt. 
 
 ##### Voorbeeld 1: Oekraïne
-Aantal zendmasten: 4  
+Aantal zendmasten: **4**  
 
-Minimale kosten: 544  
-Maximale kosten: 558  
+Minimale kosten: **544**  
+Maximale kosten: **558**  
 
-Minimale verdeling: 8.05  
-Maximale verdeling: 12.55  
+Minimale verdeling: **8.05**  
+Maximale verdeling: **12.55**  
 
-Tijd per succesvolle iteratie (ms): 0.8  
+Tijd per succesvolle iteratie (ms): **0.8**  
 
-Percentage fails: 92%  
+Percentage fails: **92%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png"/>
 
 ##### Voorbeeld 2: Rusland
-Aantal zendmasten: 5  
+Aantal zendmasten: **5**  
 
-Minimale kosten: 1848  
-Maximale kosten: 1964  
+Minimale kosten: **1848**  
+Maximale kosten: **1964**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  10 ms  
-Percentage fails: 93%  
+Tijd per succesvolle iteratie (ms):  **10 ms**  
+Percentage fails: **93%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_random_5.png"/>
 
@@ -136,39 +142,39 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
-Kostenverdeling US:
+**Kostenverdeling US:**
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/radio.png" width = "750" height = "500"/>
 
 In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
 
 ##### Voorbeeld 1: China
-Volgorde: Random  
-Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%  
+Volgorde: **Random**  
+Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**  
 
-Minimale kosten: 622  
-Maximale kosten: 714  
+Minimale kosten: **622**  
+Maximale kosten: **714**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms  
-Percentage fails: 0%  
+Tijd per succesvolle iteratie (ms):  **1 ms**  
+Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_radio_random.png"/>
 
 #### Voorbeeld 2: US
-Volgorde: LDO  
-Aantal zendmasten: 4: 59%, 5: 41%, 6: 0%, 7: 0%  
+Volgorde: **LDO**  
+Aantal zendmasten: **4: 59%, 5: 41%, 6: 0%, 7: 0%**  
 
-Minimale kosten: 1120  
-Maximale kosten: 1167  
+Minimale kosten: **1120**  
+Maximale kosten: **1167**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  4 ms  
-Percentage fails: 0%  
+Tijd per succesvolle iteratie (ms):  **4 ms**  
+Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
 
@@ -179,39 +185,39 @@ Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is h
 
 Bij de greedy functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
-Kostenverdeling US:
+**Kostenverdeling US:**
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/greedy.png" width = "750" height = "500"/>
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de twee volgorde mogelijkheden van het greedy algoritme. Hierin is te zien dat de LDO volgorde meestal tot een goedkopere verdeling leidt dan een random volgorde. 
 
 ##### Voorbeeld 1: China
-Volgorde: Random  
-Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%  
+Volgorde: **Random**  
+Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**  
 
-Minimale kosten: 622  
-Maximale kosten: 714  
+Minimale kosten: **622** 
+Maximale kosten: **714**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms  
-Percentage fails: 0%  
+Tijd per succesvolle iteratie (ms):  **1 ms**  
+Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
 
 #### Voorbeeld 2: Oekraine
-Volgorde: LDO  
-Aantal zendmasten: 4: 86%, 5: 14%, 6: 0%, 7: 0%  
+Volgorde: **LDO**  
+Aantal zendmasten: **4: 86%, 5: 14%, 6: 0%, 7: 0%**  
 
-Minimale kosten: 549  
-Maximale kosten: 586  
+Minimale kosten: **549**  
+Maximale kosten: **586**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1 ms  
-Percentage fails: 0%  
+Tijd per succesvolle iteratie (ms):  **1 ms**  
+Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
 
@@ -222,39 +228,39 @@ Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze 
 
 Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
 
-Kostenverdeling US:
+**Kostenverdeling US:**
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/dept-first.png" width = "750" height = "500"/>
 
 In bovenstaande grafiek is de kostenverdeling voor de US voor het depth-first algoritme te zien met random en LDO volgorde. Omdat LDO begint met het land met de meeste buren en er maar twee landen met het hoogste aantal buren zijn, zijn er maar 2 verschillende verdelingen. Hierdoor zijn de kosten van de random verdeling over het algemeen lager, omdat bij een random verdeling n aantal volgordes mogelijk zijn, waarbij n het aantal landen is. 
 
 ##### Voorbeeld 1: Rusland
-Volgorde: Random  
-Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%  
+Volgorde: **Random**  
+Aantal zendmasten: **4: 0%, 5: 66%, 6: 30%, 7: 0%**  
 
-Minimale kosten: 1697  
-Maximale kosten: 1782  
+Minimale kosten: **1697**  
+Maximale kosten: **1782**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  10 ms  
-Percentage fails: 4%  
+Tijd per succesvolle iteratie (ms):  **10 ms**  
+Percentage fails: **4%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
 
 #### Voorbeeld 2: US
-Volgorde: LDO  
-Aantal zendmasten: 4: 0%, 5: 50%, 6: 50%, 7: 0%  
+Volgorde: **LDO**  
+Aantal zendmasten: **4: 0%, 5: 50%, 6: 50%, 7: 0%**  
 
-Minimale kosten: 1162  
-Maximale kosten: 1170  
+Minimale kosten: **1162**  
+Maximale kosten: **1170**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  6 ms  
-Percentage fails: 0%  
+Tijd per succesvolle iteratie (ms): **6 ms**  
+Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
 
@@ -268,7 +274,7 @@ Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4,
 
 N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
 
-Kostenverdeling US:  
+**Kostenverdeling US:**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png" width = "750" height = "500"/>
 
@@ -276,30 +282,30 @@ In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de
 
 
 ##### Voorbeeld 1: Oekraine
-Aantal zendmasten: 4  
+Aantal zendmasten: **4**  
 
-Minimale kosten: 545  
-Maximale kosten: 558  
+Minimale kosten: **545**  
+Maximale kosten: **558**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  2 ms  
-Percentage fails: 99.8%  
+Tijd per succesvolle iteratie (ms):  **2 ms**  
+Percentage fails: **99.8%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
 
 #### Voorbeeld 2: China
-Aantal zendmasten: 5  
+Aantal zendmasten: **5**  
 
-Minimale kosten: 650  
-Maximale kosten: 733  
+Minimale kosten: **650**  
+Maximale kosten: **733**  
 
 Minimale verdeling:  
 Maximale verdeling:  
 
-Tijd per succesvolle iteratie (ms):  1.5 ms  
-Percentage fails: 99.5%  
+Tijd per succesvolle iteratie (ms):  **1.5 ms**  
+Percentage fails: **99.5%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
 
