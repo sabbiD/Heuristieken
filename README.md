@@ -69,20 +69,16 @@ N.B. Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling me
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
 
 --> Grafiekjes hier met de normale verdelingen. 
+Klein uitlegje over grafiekjes + soort van tussen conclusie?
 
 ###### Voorbeeld 1: Oekraïne
 Aantal zendmasten: 4
 
-
 Minimale kosten: 544
-
 Maximale kosten: 558
 
-
 Minimale verdeling: 8.05
-
 Maximale verdeling: 12.55
-
 
 Tijd per succesvolle iteratie (ms): 0.8
 
@@ -99,14 +95,13 @@ Maximale kosten: 1964
 Minimale verdeling:
 Maximale verdeling:
 
-Tijd per succesvolle iteratie (ms): 
-Percentage fails:
+Tijd per succesvolle iteratie (ms):  10 ms
+Percentage fails: 93%
 
-
-1848	1964	1926.124425	28.8	29.6	29.51782589	0.014136709	93257	{4: 0, 5: 6743, 6: 0, 7: 0}
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_random_5.png"/>
 
 ##### Radio functie
-ijiowjfjwf
+De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt 
 
 ###### Voorbeeld 1: China
 
