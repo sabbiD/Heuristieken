@@ -78,7 +78,7 @@ python main.py
 
 In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangemaakt wordt. Vervolgens kun je een bepaald algoritme runnen voor dit land, waarna de ingekleurde map wordt getoond. Vervolgens kan het algoritme een x aantal keer gerund worden, waarna een CSV bestand met de resultaten wordt aangemaakt en een histogram met de kostenverdeling getoond wordt. Hierna kun je kiezen of je nog een algoritme voor een land wilt runnen. Zo nee, kun je een ander land kiezen of stoppen. 
 
-### Results
+## Results
 
 Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.
 Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land. 
@@ -87,9 +87,9 @@ N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De koste
 
 N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.
 
-#### Algoritmes
+### Algoritmes
 
-##### Randomizer (met constraints)
+#### Randomizer (met constraints)
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".
 
 Kostenverdeling US:
@@ -98,7 +98,7 @@ Kostenverdeling US:
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor 4, 5 of 7 zenders met het randomizer algoritme. Hierin is te zien dat, hoewel minder zendmasten leidt tot lagere kosten, er ook veel meer fails zijn en het algoritme bij 4 zendmasten vrijwel nooit werkt. 
 
-###### Voorbeeld 1: Oekraïne
+##### Voorbeeld 1: Oekraïne
 Aantal zendmasten: 4
 
 Minimale kosten: 544
@@ -113,7 +113,7 @@ Percentage fails: 92%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png"/>
 
-###### Voorbeeld 2: Rusland
+##### Voorbeeld 2: Rusland
 Aantal zendmasten: 5
 
 Minimale kosten: 1848
@@ -127,7 +127,7 @@ Percentage fails: 93%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_random_5.png"/>
 
-##### Radio functie
+#### Radio functie
 De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy).
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
@@ -140,7 +140,7 @@ Kostenverdeling US:
 
 In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
 
-###### Voorbeeld 1: China
+##### Voorbeeld 1: China
 Volgorde: Random
 Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
 
@@ -155,7 +155,7 @@ Percentage fails: 0%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_radio_random.png"/>
 
-##### Voorbeeld 2: US
+#### Voorbeeld 2: US
 Volgorde: LDO
 Aantal zendmasten: 4: 59%, 5: 41%, 6: 0%, 7: 0%
 
@@ -170,7 +170,7 @@ Percentage fails: 0%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
 
-##### Greedy
+#### Greedy
 Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. 
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
@@ -183,7 +183,7 @@ Kostenverdeling US:
 
 In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de twee volgorde mogelijkheden van het greedy algoritme. Hierin is te zien dat de LDO volgorde meestal tot een goedkopere verdeling leidt dan een random volgorde. 
 
-###### Voorbeeld 1: China
+##### Voorbeeld 1: China
 Volgorde: Random
 Aantal zendmasten: 4: 12%, 5: 78%, 6: 10%, 7: 0.01%
 
@@ -198,7 +198,7 @@ Percentage fails: 0%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
 
-##### Voorbeeld 2: Oekraine
+#### Voorbeeld 2: Oekraine
 Volgorde: LDO
 Aantal zendmasten: 4: 86%, 5: 14%, 6: 0%, 7: 0%
 
@@ -213,7 +213,7 @@ Percentage fails: 0%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
 
-##### Depth-first
+#### Depth-first
 UITLEG DEPTH FIRST!
 
 Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze worden gemarkeerd als fails. Verder is het aantal types zendmasten variabel.
@@ -226,7 +226,7 @@ Kostenverdeling US:
 
 In bovenstaande grafiek is de kostenverdeling voor de US voor het depth-first algoritme te zien met random en LDO volgorde. Omdat LDO begint met het land met de meeste buren en er maar twee landen met het hoogste aantal buren zijn, zijn er maar 2 verschillende verdelingen. Hierdoor zijn de kosten van de random verdeling over het algemeen lager, omdat bij een random verdeling n aantal volgordes mogelijk zijn, waarbij n het aantal landen is. 
 
-###### Voorbeeld 1: Rusland
+##### Voorbeeld 1: Rusland
 Volgorde: Random
 Aantal zendmasten: 4: 0%, 5: 66%, 6: 30%, 7: 0%
 
@@ -241,7 +241,7 @@ Percentage fails: 4%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
 
-##### Voorbeeld 2: US
+#### Voorbeeld 2: US
 Volgorde: LDO
 Aantal zendmasten: 4: 0%, 5: 50, 6: 50%, 7: 0%
 
@@ -257,7 +257,7 @@ Percentage fails: 0%
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
 
 
-##### Hill-climber
+#### Hill-climber
 Het hill-climber algoritme werkt als volgt: er wordt een initiële (random) verdeling van zendmasten gemaakt. Daarna wordt er geteld hoeveel regios een conflict hebben (dus hoeveel regios een zendmast hebben die hetzelfde is als een van de buurregio's). Hierna wordt er uit de conflict regio's een random regio gekozen, waarvan het station zo wordt aangepast dat dit conflict opgelost wordt. Vervolgens wordt er geteld of het totale aantal conflicten nu minder is dan voorheen. Zo ja, wordt de nieuwe staat aangenomen en wordt het volgende random conflict station aangepast. Zo nee, wordt de nieuwe staat niet aangenomen en wordt met de oude staat verder gegaan. 
 
 De hill-climber komt in sommige gevallen in een lokaal maximum terecht waarin geen oplossing mogelijk is. Als dit het geval is wordt het algoritme na 100 iteraties afgebroken en wordt dit geteld als een fail.
@@ -273,7 +273,7 @@ Kostenverdeling US:
 In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US met 5 en 7 zenders. Voor 4 zenders was in 100.000 iteraties geen oplossing te vinden. 5 zenders leidt tot een goedkopere oplossing, maar leidt ook tot veel meer fails.
 
 
-###### Voorbeeld 1: Oekraine
+##### Voorbeeld 1: Oekraine
 Aantal zendmasten: 4
 
 Minimale kosten: 545
@@ -287,7 +287,7 @@ Percentage fails: 99.8%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
 
-##### Voorbeeld 2: China
+#### Voorbeeld 2: China
 Aantal zendmasten: 5
 
 Minimale kosten: 650
@@ -301,19 +301,19 @@ Percentage fails: 99.5%
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
 
-#### Vergelijking algoritmes
+### Vergelijking algoritmes
 
 --> PER LAND DE MINIMALE/MAXIMALE KOSTEN ERBOVEN ZETTEN?
 
-##### Oekraïne
+#### Oekraïne
 
-##### China
+#### China
 
-##### US
+#### US
 
-##### Rusland
+#### Rusland
 
-#### Conclusie
+### Conclusie
 
 
 ## Auteurs (Authors)
