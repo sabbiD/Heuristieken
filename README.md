@@ -84,7 +84,12 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangem
 ## Results
 
 Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.  
-Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US, voor 100.000 iteraties. Daarna worden twee voorbeelden van het algoritme gegeven, waarbij de resultaten getoond worden van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results). Hierna volgt een vergelijking van de algoritmes m.b.v. een tabel per land.  
+
+Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US (100.000 iteraties).  
+
+Daarna worden twee voorbeelden van het algoritme gegeven, waarbij een visualisatie van de map van een juiste verdeling getoond wordt. Hierbij worden vervolgens de resultaten getoond van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results).  
+
+Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land.  
 
 N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
 
