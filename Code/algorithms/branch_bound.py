@@ -53,11 +53,10 @@ def dfs_recursive(graph, vertex, path):
 		
 		other_neighbour = random.choice(graph[vertex])
 		
-		# if other_neighbour not in path:
-		neighb_station = []
-		print(other_neighbour)
-		
-		path = dfs_recursive(graph, other_neighbour, path)
+		if other_neighbour not in path:
+			neighb_station = []
+			
+			path = dfs_recursive(graph, other_neighbour, path)
 
 	vertex.radio = min(options)
 
@@ -70,14 +69,14 @@ def dfs_recursive(graph, vertex, path):
 			
 	return path 
 
-def branch_bound(regions):#, order):
+def branch_bound(regions, order):
 
 	reset(regions)
 
 	global old_bound
 	old_bound = 0
 
-	dfs_recursive(regions, list(regions.keys())[0], path=[])
-
+	dfs_recursive(regions, order[0] , path=[])
+	#list(regions.keys())[0]
 	return regions
 

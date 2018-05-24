@@ -217,7 +217,19 @@ def main():
 
 
 			elif (algorithm == "branch-bound"):
-				branch = branch_bound(data)
+
+				order_choice = input("Would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
+
+				while not(order_choice == "random" or order_choice == "ldo"):
+					order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
+
+				if order_choice == "random":
+					order = random_order(data)
+				elif order_choice == "ldo":
+					order = ldo(data)
+
+				reset(data)
+				branch = branch_bound(data, order)
 				make_map(branch, file_name, number, x, y, choice, algorithm, "")
 
 
@@ -275,6 +287,11 @@ def main():
 					keuze_soort = amount_radios
 					soort = "hill-climber"
 					result = compare(hill_climber, radios, data, iterations, soort)
+
+				elif algorithm == "branch-bound":
+					keuze_soort = order_choice
+					soort = "branch-bound"
+					result = compare(branch_bound, order, data, iterations, soort)
 
 				write_csv(result, name)
 				histogram(result[1], name, algorithm, choice, keuze_soort)
