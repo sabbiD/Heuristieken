@@ -24,10 +24,11 @@ def simulated_annealing(data, amount_radios):
 
 	costs = 0
 	iterations = 0
-	temperature = 10000
-	cooling_rate = 0.00001
+	temperature = 1.0
+	temperature_min = 0.0000001
+	cooling_rate = 0.8
 
-	while temperature > 1:
+	while temperature > temperature_min:
 
 		# Change a random region
 		key_region = random.choice(conflict_radios)
@@ -39,16 +40,18 @@ def simulated_annealing(data, amount_radios):
 		shared_new = shared_regions(data)
 		new_conflicts = shared_new[0]
 
-		print("conflicts: {}".format(conflicts))
-		print("new conflicts: {}".format(new_conflicts))
+		# print("conflicts: {}".format(conflicts))
+		# print("new conflicts: {}".format(new_conflicts))
 
 
-		if new_conflicts > conflicts: 
-			probability = math.exp(conflicts - new_conflicts) / temperature
+		if new_conflicts >= conflicts: 
+			probability = 2.71828 * ((new_conflicts -conflicts) / temperature)
 
 			if probability < random.random():
 				key_region.radio = old_radio
-				temperature *= 1-cooling_rate
+				iterations += 1
+				print(iterations)
+				# temperature *= cooling_rate
 				continue
 
 		conflicts = new_conflicts
@@ -56,13 +59,12 @@ def simulated_annealing(data, amount_radios):
 
 		# Increment costs if a change was made
 		costs += 1
-
-		print("iter is {}".format(iterations))
 		iterations += 1
-		print("temp is {}".format(temperature))
-		temperature *= 1-cooling_rate
+		temperature *= cooling_rate
+		print(iterations)
 
-		if conflicts = 0:
+		if conflicts == 0:
 			break
 
+	print(conflicts)
 	return data

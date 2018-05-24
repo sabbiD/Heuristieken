@@ -57,7 +57,7 @@ def costs(score):
 	return(money)
 
 
-def distribution(score):
+def distribution(score, data):
 	
 	# Check for fails
 	if score == 1:
@@ -73,8 +73,9 @@ def distribution(score):
 		if value != 0:
 			use += 1
 	
+	length = len(data)
 	# Calculate the ultimate even percentage
-	ultimate = round(27/use,1)
+	ultimate = round(length/use,1)
 	
 	# Second loop, calculate the difference between the ultimate percentage and our percentage
 	for key in score:
@@ -84,7 +85,7 @@ def distribution(score):
 			continue
 		
 		else:
-			percent = round(27/value,1)
+			percent = round(length/value,1)
 			diff = ultimate - percent
 
 			# If difference is positive: add to "even"
