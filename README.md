@@ -305,15 +305,40 @@ Percentage fails: 99.5%
 
 ### Vergelijking algoritmes
 
---> PER LAND DE MINIMALE/MAXIMALE KOSTEN ERBOVEN ZETTEN?
+Hieronder volgt per land een tabel met de resultaten van alle algoritmes, waarin de kosten, verdeling, tijd, aantal stations en fails met elkaar worden vergeleken.
+
+Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:
+De absolute minimum kosten (zonder enige constraints)
+De absolute maximum kosten (zonder enige constraints)
+Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling, zonder constraints)
 
 #### Oekraïne
+Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
+
+Absolute minimum kosten:
+Absolute maximum kosten:
+Middenweg:
 
 #### China
+China heeft 31 regio's. Het maximaal aantal buren is 8.
+
+Absolute minimum kosten:
+Absolute maximum kosten:
+Middenweg:
 
 #### US
+Us heeft 56 regio's. Het maximaal aantal buren is 8.
+
+Absolute minimum kosten:
+Absolute maximum kosten:
+Middenweg:
 
 #### Rusland
+Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
+
+Absolute minimum kosten:
+Absolute maximum kosten:
+Middenweg:
 
 ### Conclusie
 
