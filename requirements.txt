@@ -1,2 +1,5 @@
 fiona
 shapely
+numpy
+matplotlib
+descartes
