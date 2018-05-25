@@ -1,7 +1,7 @@
 """ Depth-first
 	
-	A recursive depth-first search algorithm used for map coloring.
-	
+	A recursive depth-first search algorithm used for map coloring. 
+	The depth_first function below it is used to run iterations of algorithms.
 	
 """
 

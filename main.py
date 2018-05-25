@@ -32,6 +32,7 @@ from helpers import ldo, reset, random_order
 from map import make_map
 from csv_writer import write_csv
 from plot import histogram
+from depth_first_limit import depth_limit
 
 
 def main():
@@ -87,19 +88,19 @@ def main():
 		# FIRST PART: 
 		# ask user which algorithm they would like to run and visualize this in a map
 
-		print("\nThere are multiple algorithms to choose from: radio, random, greedy, depth-first, hill-climber, hill-climber-costs")
+		print("\nThere are multiple algorithms to choose from: radio, random, greedy, depth-first, hill-climber, hill-climber-costs, depth-first-limit")
 		algorithm_answer = input("Would you like to run an algorithm (y/n)? ").lower()
 
 		while not (algorithm_answer == "y" or algorithm_answer == "n"):
 			algorithm_answer = input("This is not a valid option. Please choose from y (yes) or n (no): ").lower()
 
 		while algorithm_answer == "y":
-			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber, hill-climber-costs)? ").lower()
+			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber, hill-climber-costs, depth-first-limit)? ").lower()
 
 			while not (algorithm == "radio" or algorithm == "random" 
 				or algorithm == "greedy" or algorithm == "depth-first" or 
-				algorithm == "hill-climber" or algorithm == "hill-climber-costs"):
-				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first, hill-climber or hill-climber-costs: ").lower()
+				algorithm == "hill-climber" or algorithm == "hill-climber-costs" or algorithm == "depth-first-limit"):
+				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first, hill-climber, hill-climber-costs or depth-first-limit: ").lower()
 
 			# Radio algorithm with either random order or ldo order
 			if (algorithm == "radio"):
@@ -239,6 +240,21 @@ def main():
 
 				make_map(hill_costs, file_name, number, x, y, choice, algorithm, amount_radios)
 
+			# Depth first algorithm with limit for costs
+			elif (algorithm == "depth-first-limit"):
+				order_choice = input("would you like to use a random order (random) or a largest degree ordering (ldo)? ").lower()
+
+				while not(order_choice == "random" or order_choice == "ldo"):
+					order_choice = input("This is not a valid order. Please enter random or ldo: ").lower()
+
+				if order_choice == "random":
+					order = random_order(data)
+				elif order_choice == "ldo":
+					order = ldo(data)
+
+				reset(data)
+				depth = depth_limit(data, order)
+				make_map(depth, file_name, number, x, y, choice, algorithm, order_choice)
 
 			# SECOND PART: 
 			# Run algorithm x times and write scores to csv for comparison.
@@ -310,6 +326,15 @@ def main():
 					type_choice = amount_radios
 					type_algorithm = "hill-climber"
 					result = compare(hill_climber_costs, radios, data, iterations, type_algorithm)
+
+				# Hill-climber algorithm with costs
+				elif algorithm == "depth-first-limit":
+					type_choice = order_choice
+					if order_choice == "random":
+						type_algorithm = "random_order"
+					else:
+						type_algorithm = "ldo"
+					result = compare(depth_limit, order, data, iterations, type_algorithm)
 
 				# Create CSV and histogram
 				write_csv(result, name)

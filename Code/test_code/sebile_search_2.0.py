@@ -1,5 +1,6 @@
 """ Sebile search 2.0
-
+	
+	A recursive depth-first search algorithm that uses a limit dependent on neighboursize of region to determine optimal costs.
 
 """
 import sys
@@ -37,7 +38,6 @@ def dfs_recursive(graph, vertex, path):
 		
 		if radios[i] in neighb_station:
 			
-			#if radios[i] in options:
 			options.remove(radios[i])
 	
 	limit = 0
@@ -73,14 +73,21 @@ def dfs_recursive(graph, vertex, path):
 			
 	return path 
 
-def branch_bound(regions, order):
+def depth_limit(regions):
 
 	reset(regions)
 
-	global old_bound
-	old_bound = 0
+	new_regions = regions.copy()
 
-	dfs_recursive(regions, order[0] , path=[])
-	#list(regions.keys())[0]
+	for region in new_regions:
+
+		if len(new_regions[region]) < 5:
+
+			del new_regions[region]
+
+
+	dfs_recursive(regions, list(new_regions.keys())[0] , path=[])
+	dfs_recursive(regions, list(regions.keys())[0], path=[])
+	
 	return regions
 
