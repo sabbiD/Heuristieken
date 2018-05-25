@@ -1,6 +1,9 @@
-# Team KGB, Radio Russa
-# distribution.py contains a compare function that collects all the necessary results from the algorithm,
-# later enabelling us to compare them with each other. Takes commandos from main.py
+""" Compare function for costs and distribution
+	
+	distribution.py contains a compare function that collects all the necessary results from the algorithm,
+	later enabelling us to compare them with each other. Takes commandos from main.py
+
+"""
 
 from score import score
 from costs import costs
@@ -10,7 +13,7 @@ from helpers import reset, random_order, ldo
 import random
 import time
 
-def compare(algorithm, argument, regions, iterations, soort):
+def compare(algorithm, argument, regions, iterations, type):
 
 	fail = 0
 	radio = {4:0, 5:0, 6:0, 7:0}
@@ -29,9 +32,9 @@ def compare(algorithm, argument, regions, iterations, soort):
 		reset(regions)
 
 		# Order choice, random or ldo
-		if soort == "random_order":
+		if type == "random_order":
 			argument = random_order(regions)
-		elif soort == "ldo":
+		elif type == "ldo":
 			argument = ldo(regions)
 
 		# Call the desired algorithm	
@@ -56,7 +59,7 @@ def compare(algorithm, argument, regions, iterations, soort):
 			
 			radio[amount] += 1
 			
-			# Append data to lists, including costs, distribution score and time
+			# Append data to lists, keeping track of costs, distribution, and time
 			all_amount.append(amount)
 
 			all_scores.append(main_score)
@@ -73,7 +76,7 @@ def compare(algorithm, argument, regions, iterations, soort):
 			
 			all_time.append(main_time)
 
-	# Check for fails
+	# Check for fails from timer
 	if not all_time:
 		mean_time = 0
 	else:
