@@ -1,3 +1,7 @@
+""" Depth-first
+
+	
+"""
 import sys
 import random
 from helpers import neighbour_set

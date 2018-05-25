@@ -1,10 +1,13 @@
-# Team KGB, Radio Russia
-# hill_helpers.py contains the helper functions for hill_climber.py
-# shared_regions checks whether a region has a conflict (i.e. has the same radio
-# station as one of its neighbours), and returns the amount of conflicts and which
-# regions have a conflict.
-# change_regions changes the radio station of a conflicting regions such that
-# this region does not have a conflict anymore.
+""" Helpers, Hill-Climber
+	
+	hill_helpers.py contains the helper functions for hill_climber.py
+	shared_regions checks whether a region has a conflict (i.e. has the same radio
+	station as one of its neighbours), and returns the amount of conflicts and which
+	regions have a conflict.
+	change_regions changes the radio station of a conflicting regions such that
+	this region does not have a conflict anymore.
+
+"""
 
 import random
 import operator

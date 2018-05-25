@@ -1,6 +1,9 @@
-# Team KGB, Radio Russa
-# greedy.py contains a greedy function for map colouring.
-# With help from https://www.slideshare.net/PriyankJain26/graph-coloring-48222920
+""" Greedy algorithm
+
+	greedy.py contains a greedy function for map colouring.
+	With help from https://www.slideshare.net/PriyankJain26/graph-coloring-48222920
+
+"""
 
 from helpers import neighbour_set
 
