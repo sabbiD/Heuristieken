@@ -79,10 +79,10 @@ def distribution(score, data):
 	
 	length = len(data)
 	
-	# Calculate the ultimate even percentage
-	ultimate = round(length/use,1)
+	# Calculate the ultimate usage
+	ultimate = length/use
 	
-	# Second loop, calculate the difference between the ultimate percentage and our percentage
+	# Second loop, calculate the difference between the ultimate usage and our usage
 	for key in score:
 		value = score.get(key)	
 		
@@ -90,8 +90,8 @@ def distribution(score, data):
 			continue
 		
 		else:
-			percent = round(length/value,1)
-			diff = ultimate - percent
+			
+			diff = value - ultimate
 
 			# If difference is positive: add to "even"
 			if diff > 0:
