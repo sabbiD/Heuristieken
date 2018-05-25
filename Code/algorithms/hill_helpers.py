@@ -54,4 +54,17 @@ def change_region(key_region, final_regions, radios):
 		else:
 			key_region.radio = min(options)
 
-			return key_region.radio
+			return key_region.radio, final_regions
+
+
+# Check how many conflicts there are, return amount of conflicts + list of 
+# regions that have a conflict
+def calculate_costs(final_regions):
+
+	costs_2 = {1: 19, 2: 20, 3: 21, 4: 23, 5: 36, 6: 37, 7: 38} 
+
+	costs = 0
+	for region in final_regions:
+		costs += costs_2[region.radio]
+
+	return costs

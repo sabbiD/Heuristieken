@@ -23,6 +23,7 @@ from radio import radio
 from greedy import greedy
 from depth_first import dfs_recursive, depth_first
 from hill_climber import hill_climber
+from hill_climber_costs import hill_climber_costs
 from distribution import compare
 from helpers import ldo, reset, random_order
 from map import make_map
@@ -90,11 +91,11 @@ def main():
 			algorithm_answer = input("This is not a valid option. Please choose from y (yes) or n (no): ").lower()
 
 		while algorithm_answer == "y":
-			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber)? ").lower()
+			algorithm = input("\nWhich algorithm would you like to run (radio, random, greedy, depth-first, hill-climber, hill-climber-costs)? ").lower()
 
 			while not (algorithm == "radio" or algorithm == "random" 
 				or algorithm == "greedy" or algorithm == "depth-first" or 
-				algorithm == "hill-climber"):
+				algorithm == "hill-climber" or algorithm == "hill-climber-costs"):
 				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first or hill-climber: ").lower()
 
 			# Radio algorithm with either random order or ldo order
@@ -204,7 +205,7 @@ def main():
 					count += 1
 
 					# Break after 1000 iterations
-					if count == 1000:
+					if count == 10000:
 						print("In 1000 tries, no valid distribution could be made for {} radios".format(amount_radios))
 						success = "no"
 						break
@@ -212,6 +213,29 @@ def main():
 				if success == "yes":
 					print("It took {} tries to create a valid distribution!".format(count))
 					make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
+
+
+			# Hill-climber algorithm with 4, 5, 6 or 7 radios
+			elif (algorithm == "hill-climber-costs"):
+
+				amount_radios = input("With how many stations would you like to run the algorithm (4, 5, 6, 7)? ").lower()
+
+				while not(amount_radios == "4" or amount_radios == "5" or amount_radios == "6" or amount_radios == "7"):
+					amount_radios = input("This is not a valid amount. Please enter 4, 5, 6 or 7: ").lower()
+
+				if amount_radios == "4":
+					radios = [1, 2, 3, 4]
+				elif amount_radios == "5":
+					radios = [1, 2, 3, 4, 5]
+				elif amount_radios == "6":
+					radios = [1, 2, 3, 4, 5, 6]
+				elif amount_radios == "7":
+					radios = [1, 2, 3, 4, 5, 6, 7]
+
+				hill_costs = hill_climber_costs(data, radios)
+
+				make_map(hill_costs, file_name, number, x, y, choice, algorithm, amount_radios)
+
 
 
 			# SECOND PART: 
