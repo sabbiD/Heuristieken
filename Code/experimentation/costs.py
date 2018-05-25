@@ -102,7 +102,7 @@ def distribution(score, data):
 				diff = (diff - diff) - diff
 				even += diff
 				
-	# Even contains the accumulated differences between the ultimate percentages and our percentages
+
 	return even
 
 
