@@ -1,9 +1,12 @@
-# Team KGB, Radio Russia
-# helpers.py contains the helper functions for the algorithms.
-# neighbour set creates a set of the neighbours of a region.
-# random_order creates a random ordering of the data
-# ldo creates a LDO ordering of the data
-# reset puts all radio stations to 0
+""" Helpers
+
+	helpers.py contains the helper functions for the algorithms.
+	neighbour set creates a set of the neighbours of a region.
+	random_order creates a random ordering of the data
+	ldo creates a LDO ordering of the data
+	reset puts all radio stations to 0
+	 
+"""
 
 import operator
 import random

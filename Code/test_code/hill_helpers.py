@@ -1,13 +1,15 @@
-""" Hill-helpers
-
-	hill_helpers.py contains the helper functions for hill_climber.py
+""" Helpers, Hill-Climber
+	
+	hill_helpers.py contains the helper functions for hill_climber.py and hill_climber_costs.py
 	shared_regions checks whether a region has a conflict (i.e. has the same radio
 	station as one of its neighbours), and returns the amount of conflicts and which
 	regions have a conflict.
 	change_regions changes the radio station of a conflicting regions such that
 	this region does not have a conflict anymore.
+	calculate_costs calculates the costs of a certain configuration of stations.
 
 """
+
 import random
 import operator
 from helpers import neighbour_set
@@ -48,12 +50,29 @@ def change_region(key_region, final_regions, radios):
 		if radios[i] in neighb_station:
 			options.remove(radios[i])
 
-		# If there are no options left, keep old radio
-		if not options:
-			return key_region.radio
+	# If there are no options left, keep old radio
+	if not options:
 
-		# Change radio to lowest possible option
-		else:
-			key_region.radio = min(options)
+		return key_region.radio, final_regions
 
-			return key_region.radio
+	# Change radio to lowest possible option
+	else:
+
+		key_region.radio = min(options)
+		
+		return key_region.radio, final_regions
+
+
+# Check the costs of a certain radio configuration
+def calculate_costs(final_regions):
+
+	# Cost scheme 2 (cheapest)
+	costs_2 = {1: 19, 2: 20, 3: 21, 4: 23, 5: 36, 6: 37, 7: 38} 
+
+	costs = 0
+
+	# Add cost of each station
+	for region in final_regions:
+		costs += costs_2[region.radio]
+
+	return costs

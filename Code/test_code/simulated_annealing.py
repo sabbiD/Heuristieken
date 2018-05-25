@@ -1,9 +1,11 @@
 
 """ Simulated annealing
 
-	common way is to always accept better solutions
-	accept worse solutions with a probability of , where  is the current temperature,  
-	is the energy (or cost) of the current solution and  is the energy of a candidate solution being considered.
+	Attempts to create a valid distribution of radio stations by changing
+	a radiostation, and checking whether this reduces the amount of conflicts.
+	If changing does not reduce the amount of conflicts, there is a certain 
+	probability that the change is accepted, since sometimes it is necessary
+	to accept a worse state in order to get a better solution in the end.
 
 """
 
@@ -31,7 +33,7 @@ def simulated_annealing(data, amount_radios):
 	iterations = 0
 	temperature = 1.0
 	temperature_min = 0.0000001
-	cooling_rate = 0.8
+	cooling_rate = 0.99
 
 	while temperature > temperature_min:
 
@@ -45,18 +47,13 @@ def simulated_annealing(data, amount_radios):
 		shared_new = shared_regions(data)
 		new_conflicts = shared_new[0]
 
-		# print("conflicts: {}".format(conflicts))
-		# print("new conflicts: {}".format(new_conflicts))
-
-
 		if new_conflicts >= conflicts: 
 			probability = 2.71828 * ((new_conflicts -conflicts) / temperature)
 
 			if probability < random.random():
 				key_region.radio = old_radio
 				iterations += 1
-				print(iterations)
-				# temperature *= cooling_rate
+				temperature *= cooling_rate
 				continue
 
 		conflicts = new_conflicts
@@ -66,10 +63,8 @@ def simulated_annealing(data, amount_radios):
 		costs += 1
 		iterations += 1
 		temperature *= cooling_rate
-		print(iterations)
 
 		if conflicts == 0:
 			break
 
-	print(conflicts)
 	return data

@@ -1,6 +1,6 @@
 """ Helpers, Hill-Climber
 	
-	hill_helpers.py contains the helper functions for hill_climber.py
+	hill_helpers.py contains the helper functions for hill_climber.py and hill_climber_costs.py
 	shared_regions checks whether a region has a conflict (i.e. has the same radio
 	station as one of its neighbours), and returns the amount of conflicts and which
 	regions have a conflict.
