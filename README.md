@@ -126,8 +126,8 @@ Aantal zendmasten: **5**
 Minimale kosten: **1848**  
 Maximale kosten: **1964**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **2.4**
+Maximale verdeling: **21.6**
 
 Tijd per succesvolle iteratie (ms):  **10 ms**  
 Percentage fails: **93%**  
