@@ -46,15 +46,17 @@ def change_region(key_region, final_regions, radios):
 		if radios[i] in neighb_station:
 			options.remove(radios[i])
 
-		# If there are no options left, keep old radio
-		if not options:
-			return key_region.radio
+	# If there are no options left, keep old radio
+	if not options:
 
-		# Change radio to lowest possible option
-		else:
-			key_region.radio = min(options)
+		return key_region.radio, final_regions
 
-			return key_region.radio, final_regions
+	# Change radio to lowest possible option
+	else:
+
+		key_region.radio = min(options)
+		
+		return key_region.radio, final_regions
 
 
 # Check how many conflicts there are, return amount of conflicts + list of 

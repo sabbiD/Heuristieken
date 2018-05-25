@@ -25,14 +25,11 @@ def hill_climber_costs(data, amount_radios):
 
 	# Amount of conflicts
 	conflicts = shared[0]
-	print(conflicts)
-
 
 	# Check the costs
 	costs = calculate_costs(random_state)
-	print(costs)
 
-	for i in range(1000):
+	for i in range(100):
 
 		# Change a random region
 		key_region = random.choice(list(random_state.keys()))
@@ -41,15 +38,7 @@ def hill_climber_costs(data, amount_radios):
 		new_radio = change_radio[0]
 		new_state = change_radio[1]
 
-		# Count amount of conflicts
-		new_costs = calculate_costs(new_state)
-		new_shared = shared_regions(random_state)
-		
-		# Amount of conflicts
-		new_conflicts = new_shared[0]
-		print(new_conflicts)
-
-		# If amount of conflicts is less than before, take change as new state
+		# If cost is less than before, take new state
 		if new_costs < costs:
 			costs = new_costs
 			random_state = new_state
@@ -58,5 +47,4 @@ def hill_climber_costs(data, amount_radios):
 		else:
 			key_region.radio = old_radio
 
-	print(costs)
 	return new_state
