@@ -152,10 +152,10 @@ Volgorde: **Random**
 Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**  
 
 Minimale kosten: **622**  
-Maximale kosten: **714**  
+Maximale kosten: **713**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **1.5** 
+Maximale verdeling: **25.5**
 
 Tijd per succesvolle iteratie (ms):  **1 ms**  
 Percentage fails: **0%**  
@@ -197,8 +197,8 @@ Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**
 Minimale kosten: **622** 
 Maximale kosten: **714**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **1.5** 
+Maximale verdeling: **25.5**
 
 Tijd per succesvolle iteratie (ms):  **1 ms**  
 Percentage fails: **0%**  
@@ -286,8 +286,8 @@ Aantal zendmasten: **4**
 Minimale kosten: **545**  
 Maximale kosten: **558**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: 
+Maximale verdeling: 
 
 Tijd per succesvolle iteratie (ms):  **2 ms**  
 Percentage fails: **99.8%**  
@@ -300,8 +300,8 @@ Aantal zendmasten: **5**
 Minimale kosten: **650**  
 Maximale kosten: **733**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **1.6**
+Maximale verdeling: **15.2**  
 
 Tijd per succesvolle iteratie (ms):  **1.5 ms**  
 Percentage fails: **99.5%**  
