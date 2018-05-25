@@ -1,6 +1,9 @@
-# Team KGB, Radio Russa
-# colours.py contains a colour scheme for the regions, where regions get coloured based on their radio station
+""" Colour scheme for the map 
+	
+	colours.py contains a colour scheme for the regions, where regions get coloured based on 
+	their radio station.
 
+"""
 
 def colours(regions):
 	

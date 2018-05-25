@@ -1,40 +1,28 @@
-# Team KGB, Radio Russa
-# score.py contains a function that checks how many times each radio station was used
+""" Score function
+
+	score.py contains a function that checks how many times each radio station was used
+
+"""
 def score(regions):
 	
 	# Fail check
 	if regions != 1:
 	
-		# Loop through regions
+		# Loop through regions, create empty dict for storing the usage of stations and set for the max use
 		for region in range(len(regions)):
 			used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0, "6": 0, "7": 0}
 			used = set()
 				
-			# Create empty mother integer
-			#mother = 0
-			
-			#Create empty set for the children (neighbours)
-			#children = set()
-
-			#Get the mother radio station from the set		
+			#Get the radio station from the list of regions		
 			for region in regions:
+				region_station = region.radio	
 				
-				region_station = region.radio
-
-				# Get the children radio stations
-				#for i in regions.get(key):
-
-					#children.add(i.radio)
-
-				#children = set()
-				
-				#if mother in children:
-					#fail+=1
-					
-				#else:
+				# Add station to set and dict
 				used.add(region_station)
 				add = str(region_station)
 				used_stations[add]+=1
+		
+		# Amount keeps track of how many stations were used per region (4, 5, 6 or 7)
 		amount = max(used)
 		return used_stations, amount
 	else:

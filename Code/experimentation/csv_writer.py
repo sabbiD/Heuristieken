@@ -1,11 +1,13 @@
-# Team KGB, Radio Russa
-# csv_writer.py writes the results to a CSV file
-import csv
+""" CSV writer
+	
+	csv_writer.py writes the results from an algorithm to a CSV file
 
+"""
+import csv
 
 def write_csv(compare, name):
 	
-	name = name + '.csv'
+	name = name + ".csv"
 	
 	# Collect data from results
 	score = compare[0]
@@ -46,21 +48,23 @@ def write_csv(compare, name):
 		highest_d = max(compare[3])
 		mean_d = sum(compare[3])/len(compare[3])
 
-	# Write to CSV file with the given name
-	with open('../Heuristieken/Results/{}'.format(name), 'w') as csvfile:
-		fieldnames = ['Try No', 'Score', 'Even Distribution Score', 'Cheapest Station', 'Costs', 'Amount of Stations',
-		 'Lowest price', "Highest price", "Mean price", "Lowest distribution", "Highest distribution", "Mean distribution", 'Average Time', 'Fails', 'How many Stations']
+	# Write to CSV file with the given name, save in "Results" folder
+	with open("../Heuristieken/Results/{}".format(name), "w") as csvfile:
+		fieldnames = ["Try No", "Score", "Even Distribution Score", 
+		"Cheapest Station", "Costs", "Amount of Stations",
+		 "Lowest price", "Highest price", "Mean price", 
+		 "Lowest distribution", "Highest distribution", "Mean distribution", "Average Time", "Fails", "How many Stations"]
 		writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
 
 		writer.writeheader()
 		for i in range(len(score)):
-			writer.writerow({'Try No': i,'Score': score[i], 
-				'Even Distribution Score': even[i], 
-				'Cheapest Station': cheapest[i], 'Costs':lowest[i],
-				 'Amount of Stations':amount[i]})
+			writer.writerow({"Try No": i,"Score": score[i], 
+				"Even Distribution Score": even[i], 
+				"Cheapest Station": cheapest[i], "Costs":lowest[i],
+				 "Amount of Stations":amount[i]})
 			
 		
-		writer.writerow({'Lowest price': lowest_v, "Highest price": highest_v, "Mean price": mean_v, "Lowest distribution": lowest_d, "Highest distribution": highest_d, "Mean distribution": mean_d, "Average Time": time, 'Fails': fail, 'How many Stations': used})
+		writer.writerow({"Lowest price": lowest_v, "Highest price": highest_v, "Mean price": mean_v, "Lowest distribution": lowest_d, "Highest distribution": highest_d, "Mean distribution": mean_d, "Average Time": time, "Fails": fail, "How many Stations": used})
 
 
 
