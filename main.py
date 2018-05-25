@@ -179,7 +179,7 @@ def main():
 					order = ldo(data)
 
 				reset(data)
-				depth = depth_first(data, order[0])
+				depth = depth_first(data, order)
 				make_map(depth, file_name, number, x, y, choice, algorithm, order_choice)
 
 			# Hill-climber algorithm with 4, 5, 6 or 7 radios

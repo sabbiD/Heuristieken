@@ -8,7 +8,7 @@
 import sys
 import random
 from helpers import neighbour_set
-
+from helpers import reset
 
 def dfs_recursive(graph, vertex, path):
 
@@ -67,11 +67,10 @@ def dfs_recursive(graph, vertex, path):
 # Function used to reset data when multiple iterations of depth-first is run
 def depth_first(regions, order):
 
-	# Check for fail
-	if not regions[order]:
-		return 1
+	# Reset data for iterations
+	reset(regions)
 
 	# Call depth-first function
-	dfs_recursive(regions, order, path=[])
+	dfs_recursive(regions, order[0], path=[])
 
 	return regions
