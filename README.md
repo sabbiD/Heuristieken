@@ -1,7 +1,8 @@
 # Team KGB: Radio Russia
-diff
+```diff
 + this will be highlighted in green
 - this will be highlighted in red
+```
 
 Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van zendmasten te creëren voor de provincies van de landen Oekraine, de Verenigde Staten, China en Rusland.
 Er zijn 7 type zendmasten mogelijk.
