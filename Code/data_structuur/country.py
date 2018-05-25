@@ -1,7 +1,10 @@
-# Team KGB, Radio Russia
-# country.py uses shapefiles to create a dictionary with regions as keys,
-# and a list of neighbours as values.
-# With help from: Wouter and Quinten
+""" Shapefile transformer
+
+	country.py uses shapefiles to create a dictionary with regions as keys,
+	and a list of neighbours as values.
+	With help from: Wouter and Quinten
+
+"""
 
 from shapely.geometry import shape
 import fiona

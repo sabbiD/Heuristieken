@@ -1,6 +1,11 @@
-# common way is to always accept better solutions
-# accept worse solutions with a probability of , where  is the current temperature,  
-# is the energy (or cost) of the current solution and  is the energy of a candidate solution being considered.
+
+""" Simulated annealing
+
+	common way is to always accept better solutions
+	accept worse solutions with a probability of , where  is the current temperature,  
+	is the energy (or cost) of the current solution and  is the energy of a candidate solution being considered.
+
+"""
 
 import math
 import random
