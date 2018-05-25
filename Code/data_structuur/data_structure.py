@@ -1,9 +1,11 @@
-# Team KGB, Radio Russia
-# data_structure creates the datastructure for Radio Russia.
-# The data structure consists of a dictionary,
-# in which the keys are Region objects with an index and radio station,
-# and in which the values are a list of neighbouring Region objects.
+""" Data structure
 
+	data_structure creates the datastructure for Radio Russia.
+	The data structure consists of a dictionary,
+	in which the keys are Region objects with an index and radio station,
+	and in which the values are a list of neighbouring Region objects.
+
+"""
 
 # Region class with index and radio station
 class Region:

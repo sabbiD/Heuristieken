@@ -1,3 +1,7 @@
+""" Sebile search 2.0
+
+
+"""
 import sys
 import random
 from helpers import neighbour_set
