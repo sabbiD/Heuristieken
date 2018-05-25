@@ -1,10 +1,13 @@
-# Team KGB, Radio Russia
-# main.py is the main program for Radio Russia.
-# The first part allows a user to (via the terminal) choose a country and visualize 
-# the map for a certain algorithm.
-# In part 2, the user can run a certain number of iterations for this algorithm, 
-# and create a csv with the results. In addition, a plot with the cost distribution
-# will be shown. 
+""" Main
+
+	 main.py is the main program for Radio Russia.
+	 The first part allows a user to (via the terminal) choose a country and visualize 
+	 the map for a certain algorithm.
+	 In part 2, the user can run a certain number of iterations for this algorithm, 
+	 and create a csv with the results. In addition, a plot with the cost distribution
+	 will be shown. 
+	 
+"""
 
 # Add current structure to path
 import os, sys
@@ -84,7 +87,7 @@ def main():
 		# FIRST PART: 
 		# ask user which algorithm they would like to run and visualize this in a map
 
-		print("\nThere are multiple algorithms to choose from: radio, random, greedy, depth-first, hill-climber")
+		print("\nThere are multiple algorithms to choose from: radio, random, greedy, depth-first, hill-climber, hill-climber-costs")
 		algorithm_answer = input("Would you like to run an algorithm (y/n)? ").lower()
 
 		while not (algorithm_answer == "y" or algorithm_answer == "n"):
@@ -96,7 +99,7 @@ def main():
 			while not (algorithm == "radio" or algorithm == "random" 
 				or algorithm == "greedy" or algorithm == "depth-first" or 
 				algorithm == "hill-climber" or algorithm == "hill-climber-costs"):
-				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first or hill-climber: ").lower()
+				algorithm = input("This is not a valid option. Please choose from radio, random, greedy, depth-first, hill-climber or hill-climber-costs: ").lower()
 
 			# Radio algorithm with either random order or ldo order
 			if (algorithm == "radio"):
@@ -214,8 +217,8 @@ def main():
 					print("It took {} tries to create a valid distribution!".format(count))
 					make_map(hill, file_name, number, x, y, choice, algorithm, amount_radios)
 
-
-			# Hill-climber algorithm with 4, 5, 6 or 7 radios
+			# Hill-climber algorithm that starts with a random valid solution,
+			# and tries to optimize the costs
 			elif (algorithm == "hill-climber-costs"):
 
 				amount_radios = input("With how many stations would you like to run the algorithm (4, 5, 6, 7)? ").lower()
@@ -235,7 +238,6 @@ def main():
 				hill_costs = hill_climber_costs(data, radios)
 
 				make_map(hill_costs, file_name, number, x, y, choice, algorithm, amount_radios)
-
 
 
 			# SECOND PART: 
@@ -302,6 +304,12 @@ def main():
 					type_choice = amount_radios
 					type_algorithm = "hill-climber"
 					result = compare(hill_climber, radios, data, iterations, type_algorithm)
+
+				# Hill-climber algorithm with costs
+				elif algorithm == "hill-climber-costs":
+					type_choice = amount_radios
+					type_algorithm = "hill-climber"
+					result = compare(hill_climber_costs, radios, data, iterations, type_algorithm)
 
 				# Create CSV and histogram
 				write_csv(result, name)

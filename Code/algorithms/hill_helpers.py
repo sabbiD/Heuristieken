@@ -6,6 +6,7 @@
 	regions have a conflict.
 	change_regions changes the radio station of a conflicting regions such that
 	this region does not have a conflict anymore.
+	calculate_costs calculates the costs of a certain configuration of stations.
 
 """
 
@@ -62,13 +63,15 @@ def change_region(key_region, final_regions, radios):
 		return key_region.radio, final_regions
 
 
-# Check how many conflicts there are, return amount of conflicts + list of 
-# regions that have a conflict
+# Check the costs of a certain radio configuration
 def calculate_costs(final_regions):
 
+	# Cost scheme 2 (cheapest)
 	costs_2 = {1: 19, 2: 20, 3: 21, 4: 23, 5: 36, 6: 37, 7: 38} 
 
 	costs = 0
+
+	# Add cost of each station
 	for region in final_regions:
 		costs += costs_2[region.radio]
 
