@@ -94,7 +94,7 @@ def distribution(score, data):
 			diff = value - ultimate
 
 			# If difference is positive: add to "even"
-			if diff > 0:
+			if diff >= 0:
 				even += diff
 			
 			# If difference is negative, transform to positive and add to "even"	
