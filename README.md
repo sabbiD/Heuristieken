@@ -225,7 +225,7 @@ Het Depth-first algoritme wordt gebruikt om de datastructuur van het land te doo
 
 Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze worden gemarkeerd als fails. Verder is het aantal types zendmasten variabel.
 
-Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld, waarna de regio met de op een na meeste buren wordt behandeld enzovoort. 
+Bij de radio functie is het van belang in welke volgorde de zendmasten van de regios geplaats worden. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld. Omdat bij depth-first alleen de beginregio gekozen wordt, zijn er dus maar x mogelijke volgordes en dus verschillende oplossingen, waarbij x het aantal regio's met het maximaal aantal buren is. Oekraïne heeft bijvoorbeeld 3 regio's met 7 buren. Er zijn dus met een LDO volgorde 3 verschillende beginpunten mogelijk. 
 
 **Kostenverdeling US:**
 
