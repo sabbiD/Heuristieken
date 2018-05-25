@@ -1,3 +1,8 @@
+""" Linear and logarithmic cost function. 
+	
+	Functions to calculate the costs of the distribution with variable cost schemes.
+
+"""
 import math
 
 kosten1 = [12, 26, 27, 30, 37, 39, 41]
