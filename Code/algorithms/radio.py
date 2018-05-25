@@ -1,6 +1,9 @@
-# Team KGB, Radio Russa
-# radio.py contains a simple home-made function to create a distribution of
-# radio stations.
+""" Radio function
+	
+	radio.py contains a simple home-made function to create a distribution of
+	radio stations.
+
+"""
 
 from helpers import neighbour_set
 

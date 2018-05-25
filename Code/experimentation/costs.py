@@ -1,7 +1,11 @@
-# Team KGB, Radio Russa
-# costs.py contains two functions, "costs" and "distribution". Both take one argument, namely the distribution
-# of the radio stations. The cost function calculates the costs for the country, one for each scheme. 
-# The distribution function calculates how evenly the radio stations are distributed.  
+""" Cost and distribution function
+	
+	costs.py contains two functions, "costs" and "distribution". Both take one argument, namely the distribution
+	of the radio stations. The cost function calculates the costs for the country, one for each scheme. 
+	The distribution function calculates how evenly the radio stations are distributed. 
+
+"""
+ 
 
 def costs(score):
 	
@@ -10,12 +14,12 @@ def costs(score):
 		return score
 	
 	# The four cost schemes
-	kosten1 = [12, 26, 27, 30, 37, 39, 41]
-	kosten2 = [19, 20, 21, 23, 36, 37, 38]
-	kosten3 = [16, 17, 31, 33, 36, 56, 57]
-	kosten4 = [3, 34, 36, 39, 41, 43, 58]
+	cost1 = [12, 26, 27, 30, 37, 39, 41]
+	cost2 = [19, 20, 21, 23, 36, 37, 38]
+	cost3 = [16, 17, 31, 33, 36, 56, 57]
+	cost4 = [3, 34, 36, 39, 41, 43, 58]
 
-	costs = [kosten1, kosten2, kosten3, kosten4]
+	costs = [cost1, cost2, cost3, cost4]
 
 	# Empty dictionary for storing the final cost calculations + empty list for the used radio stations 
 	money = {1 : 0, 2:0, 3:0, 4:0}
@@ -24,7 +28,7 @@ def costs(score):
 	counter = 1
 	
 	# Loop through cost schemes
-	for i in costs:	
+	for scheme in costs:	
 		price = 0		
 		
 		# Loop through regions
@@ -37,7 +41,7 @@ def costs(score):
 		# Loop that multiplies cheapest price with the station that is most used	
 		for n in range(7):
 
-			mini = min(i)
+			mini = min(scheme)
 			
 			maxi = max(radios)
 			
@@ -48,7 +52,7 @@ def costs(score):
 			# Remove station and price that is already used
 			radios.remove(maxi)
 			
-			i.remove(mini)
+			scheme.remove(mini)
 
 		money[counter] = price
 		counter += 1
@@ -63,17 +67,18 @@ def distribution(score, data):
 	if score == 1:
 		return score
 	
-	# Initiate variables to store the used stations ("use"), and the distribution score "even"
+	# Initiate variables to store the used stations ("use"), and the distribution score ("even")
 	use = 0
 	even = 0 
 	
-	# First loop, store how many stations were used
+	# First loop, remember how many stations were used
 	for item in score:
 		value = score.get(item)
 		if value != 0:
 			use += 1
 	
 	length = len(data)
+	
 	# Calculate the ultimate even percentage
 	ultimate = round(length/use,1)
 	

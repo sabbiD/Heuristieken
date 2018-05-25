@@ -1,8 +1,10 @@
-# Team KGB, Radio Russa
-# Hill_climber.py contains a hill climber function for map colouring.
-# The hill climber function uses 2 helper functions from hill_helpers.py
-# With help from https://ai.stackexchange.com/questions/5377/hill-climbing-search-map-coloring-problem.
+""" Hill-climber 2.0
+	
+	Hill_climber.py contains a hill climber function for map colouring.
+	The hill climber function uses 2 helper functions from hill_helpers.py
+	With help from https://ai.stackexchange.com/questions/5377/hill-climbing-search-map-coloring-problem.
 
+"""
 import random
 from randomy import randomy
 from hill_helpers import shared_regions, change_region, calculate_costs
