@@ -3,7 +3,7 @@
 Uses shapefiles to create maps of countries on a plot.
 And colours these maps according to station with colour function.
 
-Sources:
+Sources used:
 - https://sensitivecities.com/so-youd-like-to-make-a-map-using-python-EN.html#.WwaE70jRA2w
 - https://gis.stackexchange.com/questions/131716/plot-shapefile-with-matplotlib?rq=1
 - https://chrishavlin.wordpress.com/2016/11/16/shapefiles-tutorial/

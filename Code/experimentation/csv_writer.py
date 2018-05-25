@@ -5,6 +5,7 @@
 """
 import csv
 
+
 def write_csv(compare, name):
 	
 	name = name + ".csv"

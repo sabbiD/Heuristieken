@@ -3,6 +3,8 @@
 	score.py contains a function that checks how many times each radio station was used
 
 """
+
+
 def score(regions):
 	
 	# Fail check
@@ -13,7 +15,7 @@ def score(regions):
 			used_stations={"1": 0, "2": 0, "3": 0, "4":0, "5":0, "6": 0, "7": 0}
 			used = set()
 				
-			#Get the radio station from the list of regions		
+			# Get the radio station from the list of regions		
 			for region in regions:
 				region_station = region.radio	
 				

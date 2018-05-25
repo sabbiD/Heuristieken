@@ -8,6 +8,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
+
 def histogram(result, name, algorithm, choice, version):
 
 	# Fail check

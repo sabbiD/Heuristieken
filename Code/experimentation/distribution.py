@@ -13,6 +13,7 @@ from helpers import reset, random_order, ldo
 import random
 import time
 
+
 def compare(algorithm, argument, regions, iterations, type):
 
 	fail = 0
