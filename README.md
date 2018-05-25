@@ -324,26 +324,9 @@ Absolute minimum kosten: 3 * 27 = **81**
 Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/ukraine_table.jpg" width = "400" height = "274"/>  
+Tabel 1: Samenvatting resultaten Oekraïne.
 
-| Laagste kosten    Laagste evenredigheid    Tijd in milliseconden    Fails (van de 100000 keer)    Stations    Notes |    |        |                             |            |     |           | 
-|---------------------------------------------------------------------------------------------------------------------|----|--------|-----------------------------|------------|-----|-----------| 
-| Random                                                                                                              |    |        |                             |            |     |           | 
-| 4    544    8.6    4.7    92%    4                                                                                  |    |        |                             |            |     |           | 
-| 5    563    1.5    4.8    38.6%    5                                                                                |    |        |                             |            |     |           | 
-| 7    611    9.6    5    0.01%    7                                                                                  |    |        |                             |            |     |           | 
-| Radio Functie                                                                                                       |    |        |                             |            |     |           | 
-| Random    541    5.2    4.9    0%    4: 32                                                                          | 1% |  5: 66 | 2%                          |       6: 1 | 7%  |  7:0%     | 
-| LDO    549    9.5    5    0%    4: 85                                                                               | 3% |  5: 14 | 7%    4 zenders: 58604 keer |            |     |           | 
-| Greedy                                                                                                              |    |        |                             |            |     |           | 
-| Random    541    7.6    5    0%    4: 31                                                                            | 7% |  5: 66 | 6%                          |       6: 0 | 02% |  7:0%     | 
-| LDO    549    9.5    6.6    0%    4: 85                                                                             | 5% |  5: 14 | 5%    4 zenders: 58646 keer |            |     |           | 
-| Hill-Climber                100%                                                                                    |    |        |                             |            |     |           | 
-| 4    544    8.6    8.7    99.9%    4                                                                                |    |        |                             |            |     |           | 
-| 5    548    1.5    7.6    97.4%    5                                                                                |    |        |                             |            |     |           | 
-| 7    592    9.8    7    78.5%    7                                                                                  |    |        |                             |            |     |           | 
-| Depth-First                                                                                                         |    |        |                             |            |     |           | 
-| Random    542    11.3    10    0%    4: 18                                                                          | 6% |  5: 81 | 4%                          |            |     |           | 
-| LDO    557    20.6    12    0%    5: 100%                                                                           |    |        |                             |            |     |           | 
 #### China
 China heeft 31 regio's. Het maximaal aantal buren is 8.
 
@@ -351,12 +334,18 @@ Absolute minimum kosten: 3 * 31 = **93**
 Absolute maximum kosten: 58 * 31 = **1798**  
 Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
 
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/china_table.jpg" width = "400" height = "274"/>  
+Tabel 2: Samenvatting resultaten China.
+
 #### US
 Us heeft 56 regio's. Het maximaal aantal buren is 8.
 
 Absolute minimum kosten: 3 * 56 = **168**  
 Absolute maximum kosten: 58 * 56 = **3248**  
 Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/US_table.jpg" width = "400" height = "274"/>  
+Tabel 3: Samenvatting resultaten US.
 
 #### Rusland
 Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
