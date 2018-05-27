@@ -324,7 +324,7 @@ Absolute minimum kosten: 3 * 27 = **81**
 Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
-|'Oekraïne'   |Laagste  |Laagste      |Fails      |Stations   |
+|'Oekraïne'   |Laagste kosten |Laagste evenredigheid     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|
 |     Random  |Laagste  |Laagste      |Fails      |Stations   |
 |            4|Laagste  |Laagste      |Fails      |Stations   |
@@ -347,6 +347,7 @@ Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 |  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
 |       Random|Laagste  |Laagste      |Fails      |Stations   |
 |          LDO|Laagste  |Laagste      |Fails      |Stations   |
+
 Tabel 1: Samenvatting resultaten Oekraïne.
 
 #### China
