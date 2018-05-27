@@ -324,14 +324,14 @@ Absolute minimum kosten: 3 * 27 = **81**
 Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
-|Oekraïne   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|_Oekraïne_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |  ***Random***  |  |     |     |   |
 |            4|544  |1.5      |3.69      |92.2%   ||
 |            5|564  |2.4      |3.81      |38.88%  ||
 |            7|597  |1.7      |3.71      |0.0063%  | |
 |             |         |             |           |           |
-| ***Radio****   |  |      |      |   ||
+| ***Radio***   |  |      |      |   ||
 |       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
 |          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
@@ -357,9 +357,9 @@ Absolute minimum kosten: 3 * 31 = **93**
 Absolute maximum kosten: 58 * 31 = **1798**  
 Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
 
-|China   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|_China_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
-|  ***Random****  |  |     |     |   |
+|  ***Random***  |  |     |     |   |
 |            4|625  |1.5      |5.94      |98.29%   ||
 |            5|648  |1.6      |5.91      |60.92%  ||
 |            7|710  |1.7      |5.90      |0.02%  | |
@@ -389,7 +389,7 @@ Absolute minimum kosten: 3 * 56 = **168**
 Absolute maximum kosten: 58 * 56 = **3248**  
 Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
 
-|US   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|_US_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |  ***Random***  |  |     |     |   |
 |            4|1141  |0.0      |12.55      |99.78%   ||
@@ -409,7 +409,7 @@ Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**
 |            5|1193  |1.6      |21.94      |48.37%   ||
 |            7|1300  |2.0      |31.13      |0.00071%   ||
 |             |         |             |           |           |
-| ****Depth-first***|  |      |      |   ||
+| ***Depth-first***|  |      |      |   ||
 |       Random|1140  |27.2      |33.29      |12.35%   |5:60.96%, 5:26.7%|
 |          LDO|1162  |28.8      |35.0      |0%   |5:49.95%, 6:50.05%|
 
@@ -422,7 +422,7 @@ Absolute minimum kosten: 3 * 83 = **249**
 Absolute maximum kosten: 58 * 83 = **4814**  
 Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**  
 
-|Rusland   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|_Rusland_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |   ***Random***  |  |     |     |   |
 |            4|544  |1.5      |3.69      |92.2%   ||
