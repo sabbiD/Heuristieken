@@ -324,7 +324,30 @@ Absolute minimum kosten: 3 * 27 = **81**
 Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/ukraine_table.jpg" width = "500" height = "400"/>  
+|'Oekraïne'   |Laagste  |Laagste      |Fails      |Stations   |
+|             |kosten   |evenredigheid|per 100,000|           |
+|-------------|---------|-------------|-----------|-----------|
+|     Random  |Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
 Tabel 1: Samenvatting resultaten Oekraïne.
 
 #### China
@@ -334,7 +357,30 @@ Absolute minimum kosten: 3 * 31 = **93**
 Absolute maximum kosten: 58 * 31 = **1798**  
 Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/china_table.jpg" width = "500" height = "400"/>  
+|'China'      |Laagste  |Laagste      |Fails      |Stations   |
+|             |kosten   |evenredigheid|per 100,000|           |
+|-------------|---------|-------------|-----------|-----------|
+|     Random  |Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
 Tabel 2: Samenvatting resultaten China.
 
 #### US
@@ -344,7 +390,30 @@ Absolute minimum kosten: 3 * 56 = **168**
 Absolute maximum kosten: 58 * 56 = **3248**  
 Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/US_table.jpg" width = "500" height = "400"/>  
+|'US'         |Laagste  |Laagste      |Fails      |Stations   |
+|             |kosten   |evenredigheid|per 100,000|           |
+|-------------|---------|-------------|-----------|-----------|
+|     Random  |Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
 Tabel 3: Samenvatting resultaten US.
 
 #### Rusland
@@ -353,6 +422,32 @@ Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
 Absolute minimum kosten: 3 * 83 = **249**  
 Absolute maximum kosten: 58 * 83 = **4814**  
 Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**  
+
+|'Rusland'    |Laagste  |Laagste      |Fails      |Stations   |
+|             |kosten   |evenredigheid|per 100,000|           |
+|-------------|---------|-------------|-----------|-----------|
+|     Random  |Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
+|            4|Laagste  |Laagste      |Fails      |Stations   |
+|            5|Laagste  |Laagste      |Fails      |Stations   |
+|            7|Laagste  |Laagste      |Fails      |Stations   |
+|             |         |             |           |           |
+|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
+|       Random|Laagste  |Laagste      |Fails      |Stations   |
+|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+Tabel 4: Samenvatting resultaten Rusland
 
 ### Conclusie
 
