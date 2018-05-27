@@ -325,7 +325,6 @@ Absolute maximum kosten: 58 * 27 = **1566**
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
 |'Oekraïne'   |Laagste  |Laagste      |Fails      |Stations   |
-|             |kosten   |evenredigheid|per 100,000|           |
 |-------------|---------|-------------|-----------|-----------|
 |     Random  |Laagste  |Laagste      |Fails      |Stations   |
 |            4|Laagste  |Laagste      |Fails      |Stations   |
