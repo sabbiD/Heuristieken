@@ -324,29 +324,29 @@ Absolute minimum kosten: 3 * 27 = **81**
 Absolute maximum kosten: 58 * 27 = **1566**  
 Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 
-|'Oekraïne'   |Laagste kosten |Laagste evenredigheid     |Fails      |Stations   |
-|-------------|---------|-------------|-----------|-----------|
-|     Random  |Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+|Oekraïne   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|-------------|---------|-------------|-----------|-----------|---------|
+|     Random  |  |     |     |   |
+|            4|544  |1.5      |3.69      |92.2%   ||
+|            5|564  |2.4      |3.81      |38.88%  ||
+|            7|597  |1.7      |3.71      |0.0063%  | |
 |             |         |             |           |           |
-|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Radio   |  |      |      |   ||
+|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
+|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
-|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Greedy  |  |      |      |   ||
+|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
+|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
 |             |         |             |           |           |
-| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+| Hill-Climber|  |      |     |   ||
+|            4|543  |1.5      |6.96      |84.74%   ||
+|            5|562  |2.4      |5.81      |15.43%   ||
+|            7|591  |1.7      |5.03      |0.00003%   ||
 |             |         |             |           |           |
-|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|  Depth-first|  |      |      |   ||
+|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
+|          LDO|557  |12.4      |9.75      |0%   |5:100%|
 
 Tabel 1: Samenvatting resultaten Oekraïne.
 
@@ -357,30 +357,29 @@ Absolute minimum kosten: 3 * 31 = **93**
 Absolute maximum kosten: 58 * 31 = **1798**  
 Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
 
-|'China'      |Laagste  |Laagste      |Fails      |Stations   |
-|             |kosten   |evenredigheid|per 100,000|           |
-|-------------|---------|-------------|-----------|-----------|
-|     Random  |Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+|China   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|-------------|---------|-------------|-----------|-----------|---------|
+|     Random  |  |     |     |   |
+|            4|544  |1.5      |3.69      |92.2%   ||
+|            5|564  |2.4      |3.81      |38.88%  ||
+|            7|597  |1.7      |3.71      |0.0063%  | |
 |             |         |             |           |           |
-|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Radio   |  |      |      |   ||
+|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
+|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
-|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Greedy  |  |      |      |   ||
+|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
+|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
 |             |         |             |           |           |
-| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+| Hill-Climber|  |      |     |   ||
+|            4|543  |1.5      |6.96      |84.74%   ||
+|            5|562  |2.4      |5.81      |15.43%   ||
+|            7|591  |1.7      |5.03      |0.00003%   ||
 |             |         |             |           |           |
-|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|  Depth-first|  |      |      |   ||
+|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
+|          LDO|557  |12.4      |9.75      |0%   |5:100%|
 Tabel 2: Samenvatting resultaten China.
 
 #### US
@@ -390,30 +389,30 @@ Absolute minimum kosten: 3 * 56 = **168**
 Absolute maximum kosten: 58 * 56 = **3248**  
 Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
 
-|'US'         |Laagste  |Laagste      |Fails      |Stations   |
-|             |kosten   |evenredigheid|per 100,000|           |
-|-------------|---------|-------------|-----------|-----------|
-|     Random  |Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+|US   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|-------------|---------|-------------|-----------|-----------|---------|
+|     Random  |  |     |     |   |
+|            4|544  |1.5      |3.69      |92.2%   ||
+|            5|564  |2.4      |3.81      |38.88%  ||
+|            7|597  |1.7      |3.71      |0.0063%  | |
 |             |         |             |           |           |
-|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Radio   |  |      |      |   ||
+|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
+|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
-|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Greedy  |  |      |      |   ||
+|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
+|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
 |             |         |             |           |           |
-| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+| Hill-Climber|  |      |     |   ||
+|            4|543  |1.5      |6.96      |84.74%   ||
+|            5|562  |2.4      |5.81      |15.43%   ||
+|            7|591  |1.7      |5.03      |0.00003%   ||
 |             |         |             |           |           |
-|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|  Depth-first|  |      |      |   ||
+|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
+|          LDO|557  |12.4      |9.75      |0%   |5:100%|
+
 Tabel 3: Samenvatting resultaten US.
 
 #### Rusland
@@ -423,30 +422,30 @@ Absolute minimum kosten: 3 * 83 = **249**
 Absolute maximum kosten: 58 * 83 = **4814**  
 Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**  
 
-|'Rusland'    |Laagste  |Laagste      |Fails      |Stations   |
-|             |kosten   |evenredigheid|per 100,000|           |
-|-------------|---------|-------------|-----------|-----------|
-|     Random  |Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+|Rusland   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
+|-------------|---------|-------------|-----------|-----------|---------|
+|     Random  |  |     |     |   |
+|            4|544  |1.5      |3.69      |92.2%   ||
+|            5|564  |2.4      |3.81      |38.88%  ||
+|            7|597  |1.7      |3.71      |0.0063%  | |
 |             |         |             |           |           |
-|     Radio   |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Radio   |  |      |      |   ||
+|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
+|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
-|     Greedy  |Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|     Greedy  |  |      |      |   ||
+|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
+|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
 |             |         |             |           |           |
-| Hill-Climber|Laagste  |Laagste      |Fails      |Stations   |
-|            4|Laagste  |Laagste      |Fails      |Stations   |
-|            5|Laagste  |Laagste      |Fails      |Stations   |
-|            7|Laagste  |Laagste      |Fails      |Stations   |
+| Hill-Climber|  |      |     |   ||
+|            4|543  |1.5      |6.96      |84.74%   ||
+|            5|562  |2.4      |5.81      |15.43%   ||
+|            7|591  |1.7      |5.03      |0.00003%   ||
 |             |         |             |           |           |
-|  Depth-first|Laagste  |Laagste      |Fails      |Stations   |
-|       Random|Laagste  |Laagste      |Fails      |Stations   |
-|          LDO|Laagste  |Laagste      |Fails      |Stations   |
+|  Depth-first|  |      |      |   ||
+|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
+|          LDO|557  |12.4      |9.75      |0%   |5:100%|
+
 Tabel 4: Samenvatting resultaten Rusland
 
 ### Conclusie
