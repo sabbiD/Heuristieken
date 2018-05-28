@@ -90,6 +90,10 @@ Daarna worden twee voorbeelden van het algoritme gegeven, waarbij een visualisat
 
 Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land.  
 
+Vervolgens volgt de kostenminimalisatie. Hierbij zijn twee algoritmes gebruikt om te kijken of we de kosten nog lager kunnen krijgen.
+
+Ten slotte volgt de conclusie.
+
 N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
 
 N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.  
