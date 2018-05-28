@@ -71,6 +71,6 @@ def depth_first(regions, order):
 	reset(regions)
 
 	# Call depth-first function
-	dfs_recursive(regions, order[0], path=[])
+	dfs_recursive(regions, order, path=[])
 
 	return regions
