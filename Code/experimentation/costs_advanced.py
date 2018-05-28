@@ -70,41 +70,44 @@ def costs_log_decline(score):
 		
 		price = 0		
 		
-		for key in score:
+		# Loop through regions
+		for item in score:
 			
-			radio = score.get(key)
+			radio = score.get(item)
 				
 			radios.append(radio)
-
-			for n in range(7):
+		
+		decline = []
+		
+		# Loop that multiplies cheapest price with the station that is most used	
+		for n in range(7):
 
 			mini = min(scheme)
 			
 			maxi = max(radios)
+			
+			#cash = mini * maxi
 
 			# Add price of first station
-			cash += mini 
-
+			cash = mini 
+			decline.append(mini)
+			scheme.remove(mini)
+			
 			# Add price of every following station which gets 10% cheaper
 			for i in range(maxi - 2):
 				new_price = mini * 0.9
 				cash += new_price
 				mini = new_price
-			
-			price += cash
-			
-			radios.remove(maxi)
-			
-			scheme.remove(mini)
+				decline.append(mini)
 
-		money[counter]=moneyz
+			price += cash
+			plt.plot(decline)
+			plt.show()
+			decline = []
+			# Remove station and price that is already used
+			radios.remove(maxi)
+
+		money[counter] = price
 		counter += 1
 
 	return(money)
-
-
-
-
-
-
-
