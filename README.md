@@ -471,9 +471,23 @@ In de tabel hieronder is de vergelijking van de hill climber costs tegenover de 
 
 Het depth-first limit algoritme is ook een recursief algoritme net zoals de [depth-first](#depth-first) hierboven beschreven. 
 Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld aan de prijs van de zendmast die er geplaatst kan worden.
-Op basis van het aantal buren van de regio wordt het kostenschema aangepast (Kostenschema is zo lang als dat er buren zijn behalve als er meer buren zijn dan zendmasttypes).
+Op basis van het aantal buren van de regio wordt het kostenschema aangepast (kostenschema is zo lang als dat er buren zijn behalve als er meer buren zijn dan zendmasttypes dan neem heel kostenschema). Dit wordt gedaan om de kosten zo laag mogelijk te houden.
 Hierna worden alle prijzen van de zendmasttypes in dit nieuwe kostenschema bij elkaar opgeteld en gedeeld door het aantal buren van de regio. Dit is het limiet voor de regio.
 Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio zonder de huidige regio een zendmast te geven en doet hetzelfde voor deze regio. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
+
+In de tabel hieronder is de vergelijking van de [depth-first](#depth-first) tegenover de depth-first limit te zien.
+
+|Oekraïne|Depth-first (LDO) |Depth-first limit (LDO)|
+|--------|------------------|-----------------------|
+|Laagste kosten| 557| 542|
+|Hoogste kosten| 572| 572|
+|Laagste verdeling| 12.4| 7.0|
+|Hoogste verdeling| 16.4| 16.4|
+|Tijd in ms|1.0| 2.0|
+|Fails| 0%| 0%|
+|Stations| 5:100%| 4:12.35%, 5: 87.65%|
+
+Tabel 6: Depth-first vs. depth-first limit
 
 
 ### Conclusie
