@@ -135,7 +135,7 @@ Percentage fails: **93%**
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png" width = "700" height = "500"/>
 
 #### Radio functie
-De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy). Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heristieken)).
+De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy). Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heuristieken)).
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
 
@@ -180,7 +180,7 @@ Percentage fails: **0%**
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png" width = "700" height = "500"/>
 
 #### Greedy
-Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heristieken)). 
+Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heuristieken)). 
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
 
@@ -450,6 +450,21 @@ Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
 |          LDO|1744  |37.6      |11.3      |0%   |5:100%|
 
 Tabel 4: Samenvatting resultaten Rusland
+
+### Kosten minimalisatie
+### Hill climber costs
+Het hill climber costs algoritme is een algoritme dat de kosten probeert te minimaliseren. Hierbij gebruikt het een geldige verdeling van radiozendmasten met x aantal types als beginpunt. Deze verdeling wordt gemaakt met de randomizer.  
+
+Hierna gaat dit algoritme voor een random regio het zendmast type proberen te veranderen, waarbij alleen geldige veranderingen (zonder conflict met buur regio’s ) gemaakt mogen worden. Vervolgens wordt berekend of deze verandering tot lagere of hogere kosten leidt. Als de verandering tot lagere kosten leidt, wordt deze aangenomen als de nieuwe staat. Als de verandering niet tot lagere kosten leidt, wordt doorgegaan met de oude staat. Dit wordt 100 keer gedaan.  
+
+Om te kijken of dit algoritme uiteindelijk tot lagere kosten leidt dan de random verdeling waarmee begonnen wordt, hebben we dit algoritme 100 keer gerund voor elk land met 4, 5 en 7 regio’s. Hierbij hebben we gekozen voor maar 100 iteraties, omdat dit algoritme uitgaat van een **geldige** random verdeling. De randomizer gaf bijvoorbeeld in het geval van Rusland voor 4 stations maar 1 keer in 100,000 iteraties een geldige oplossing. Hierdoor kan dit algoritme dus erg lang duren, omdat hij doorgaat tot er een geldige random oplossing is voor het aantal stations. Uitgaande van Rusland, zouden er bij 100,000 iteraties dus ongeveer 100,000 x 100,000 iteraties nodig zijn. Als 1 iteratie 1 milliseconde zou duren, zou dit ongeveer 115 dagen in beslag nemen.  
+
+Omdat we uitgaan van een geldige verdeling en het vrij snel gaat, hebben wij daarom gekozen voor 100 iteraties om te kijken hoe de hill climber costs het doet tegenover de random verdeling.  
+
+In de tabel hieronder is de vergelijking van de hill climber costs tegenover de randomizer te zien.
+
+### Depth first limit
+
 
 ### Conclusie
 
