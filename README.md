@@ -493,6 +493,7 @@ In de tabel hieronder is de vergelijking van de hill climber costs tegenover de 
 |            5|1848       |1743                   |4: **0%**, 5: **100%**                      | 
 |            7|2028       |1827                   |4: **0%**, 5: **0%**, 6: **2%**, 7: **98%**  | 
 |             |           |                       |                                            | 
+
 Tabel 6: Vergelijking randomizer vs hill climber costs
 
 In bovenstaande tabel is te zien dat de hill climber costs consequent een goedkopere indeling weet te genereren dan de laagst mogelijke kosten van de randomizer na 100,000 iteraties. Dit kan deels te maken hebben met het feit dat de hill climber costs in sommige gevallen minder zendtypes gebruikt dan het gekozen aantal, maar zelfs bij 4 stations (waarbij beide algoritmes altijd 4 stations gebruiken) zijn de kosten van de hill climber costs lager dan die van de randomizer. Dit algoritme kan dus een gegenereerde verdeling verbeteren en de kosten minimaliseren.
@@ -504,12 +505,14 @@ Een toekomstige stap zou zijn om dit algoritme ook te testen met een verdeling d
 Het depth-first limit algoritme is ook een recursief algoritme net zoals de [depth-first](#depth-first) hierboven beschreven. 
 Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld aan de prijs van de zendmast die er geplaatst kan worden.
 
-Op basis van het aantal buren van de regio wordt het kostenschema aangepast (kostenschema is zo lang als dat er buren zijn behalve als er meer buren zijn dan zendmasttypes dan neem heel kostenschema). Dit wordt gedaan om de kosten zo laag mogelijk te houden.
+Op basis van het aantal buren van de regio wordt het kostenschema aangepast. Als er bijvoorbeeld 4 buren zijn dan wordt het limiet gebaseerd op de 4 laagste kosten uit het kostenschema, 7 buren de 7 laagste kosten uit het kostenschema wat in dit geval het hele schema is. Dit limiet zou er voor moeten zorgen dat de kosten laag worden gehouden.
 
 Hierna worden alle prijzen van de zendmasttypes in dit nieuwe kostenschema bij elkaar opgeteld en gedeeld door het aantal buren van de regio. Dit is het limiet voor de regio.
 Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio zonder de huidige regio een zendmast te geven en doet hetzelfde voor deze regio. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
 
 In de tabel hieronder is de vergelijking van de [depth-first](#depth-first) tegenover de depth-first limit te zien.
+
+De resultaten hieronder gebaseerd op Oekraïne, laten zien dat de depth-first limit inderdaad voor een verlaging in de kosten zorgt vergeleken met de depth-first. Wat verder opvalt is dat ook de verdeling een verbetering is vergeleken met de depth-first en dat er ook verdelingen met 4 zendmasttypes worden gemaakt ipv. alleen met 5 zendmasttypes bij de depth-first. Echter lijkt de depth-first limit er wel 2 keer zo lang over te doen. Deze resultaten zijn vergelijkbaar met die van de rest van de landen.  
 
 |Oekraïne|Depth-first (LDO) |Depth-first limit (LDO)|
 |--------|------------------|-----------------------|
@@ -521,11 +524,11 @@ In de tabel hieronder is de vergelijking van de [depth-first](#depth-first) tege
 |Fails| 0%| 0%|
 |Stations| 5:100%| 4:12.35%, 5: 87.65%|
 
-Tabel 6: Depth-first vs. depth-first limit
+Tabel 7: Depth-first vs. depth-first limit
 
 
 ### Conclusie
-De beste kostendistributies worden door het greedy algoritme en de radio functie gegenereerd. De twee functies lijken veel op elkaar en er is ook maar een klein verschil tussen de resultaten van de twee algoritmes. De radio functie is onze eigen functie die we helemaal in het begin handmatig in elkaar hebben gezet. Uiteindelijk kwamen we erachter dat deze hetzelfde principe hanteert als een greedy algoritme, alleen op een andere manier geprogrammeerd. Toch is het leuk dat deze functie zo goed blijkt te presteren, omdat we tijdens het maken niet bezig waren met heuristieken of algoritmes, maar puur met het oplossen van het probleem en een juiste verdeling vinden.
+De beste kostendistributies worden door het greedy algoritme en de radio functie gegenereerd. De twee functies lijken veel op elkaar en er is ook maar een klein verschil tussen de resultaten van de twee algoritmes. De radio functie is onze eigen functie die we helemaal in het begin handmatig in elkaar hebben gezet. Uiteindelijk kwamen we erachter dat deze hetzelfde principe hanteert als een greedy algoritme, alleen op een andere manier geïmplementeerd. Toch is het leuk dat deze functie zo goed blijkt te presteren, omdat we tijdens het maken niet bezig waren met heuristieken of algoritmes, maar puur met het oplossen van het probleem en een juiste verdeling vinden.
 
 Uit onze resultaten blijkt dat een algoritme dat word gerund met een random volgorde soms lagere kosten geeft, en ook een betere evenredigheid dan een largest degree order volgorde. Als je echter naar de kosten distributies kijkt zie je ook dat de LDO distributie vaker lagere kosten genereert dan de random versies. De randomizer geeft een enkele keer zeer lage kosten, maar over het algemeen presteert dit algoritme dus minder goed dan LDO.
 
