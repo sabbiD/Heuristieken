@@ -118,7 +118,7 @@ Tijd per succesvolle iteratie (ms): **0.3**
 
 Percentage fails: **92%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_random_4.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_random_4.png" width = "600" height = "500"/>
 
 ##### Voorbeeld 2: Rusland
 Aantal zendmasten: **5**  
@@ -132,7 +132,7 @@ Maximale verdeling: **21.6**
 Tijd per succesvolle iteratie (ms):  **3 ms**  
 Percentage fails: **93%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png" width = "600" height = "500"/>
 
 #### Radio functie
 De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy).
@@ -160,7 +160,7 @@ Maximale verdeling: **25**
 Tijd per succesvolle iteratie (ms):  **0.5 ms**   
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_radio_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_radio_random.png" width = "600" height = "500"/>
 
 #### Voorbeeld 2: US
 1120	1167	1137.9684	14	34.8	22.84518	0.001395091	0	{4: 58500, 5: 41500, 6: 0, 7: 0}
@@ -177,7 +177,7 @@ Maximale verdeling: **34.8**
 Tijd per succesvolle iteratie (ms):  **1 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png" width = "600" height = "500"/>
 
 #### Greedy
 Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. 
@@ -205,7 +205,7 @@ Maximale verdeling: **25**
 Tijd per succesvolle iteratie (ms):  **0.05 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_greedy_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_greedy_random.png" width = "600" height = "500"/>
 
 #### Voorbeeld 2: Oekraine
 Volgorde: **LDO**  
@@ -220,7 +220,7 @@ Maximale verdeling: **13.6**
 Tijd per succesvolle iteratie (ms):  **0.4 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_greedy_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_greedy_ldo.png" width = "600" height = "500"/>
 
 #### Depth-first
 Het Depth-first algoritme wordt gebruikt om de datastructuur van het land te doorzoeken. Het algoritme begint bij een regio in de regio-lijst (de begin regio kan zelf worden aangegeven en heeft invloed op de resultaten) en kijkt welke zendmasten de buren van de regio hebben. Deze zendmasten worden uitgesloten voor keuze van zendmast voor de huidige regio waarna de goedkoopst mogelijke zendmast wordt gekozen. Deze regio wordt gemarkeerd zodat hier niet meer naar hoeft te worden gekeken. Daarna wordt hetzelfde gedaan voor een buur van de huidige regio. Als alle buren van een regio al zijn gemarkeerd kijkt het algoritme terug naar de vorige regio die is gemarkeerd en kijkt of er een andere buur is die nog niet is gemarkeerd om verder te gaan met die regio. Dit blijft doorgaan tot alle regio's zijn gemarkeerd en alle regio's een zendmast toegekend hebben gekregen.
@@ -248,7 +248,7 @@ Maximale verdeling:  **53**
 Tijd per succesvolle iteratie (ms):  **9 ms**  
 Percentage fails: **4%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_depth_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_depth_random.png" width = "600" height = "500"/>
 
 #### Voorbeeld 2: US  
 Volgorde: **LDO**  
@@ -263,7 +263,7 @@ Maximale verdeling: **40**
 Tijd per succesvolle iteratie (ms): **3 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_depth_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_depth_ldo.png" width = "600" height = "500"/>
 
 
 #### Hill-climber
@@ -294,7 +294,7 @@ Maximale verdeling: **11**
 Tijd per succesvolle iteratie (ms):  **0.6 ms**   
 Percentage fails: **85%**   
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_hill_4.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_hill_4.png" width = "600" height = "500"/>
 
 #### Voorbeeld 2: China
 Aantal zendmasten: **5**  
@@ -308,7 +308,7 @@ Maximale verdeling: **33**
 Tijd per succesvolle iteratie (ms):  **0.9 ms**  
 Percentage fails: **35%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_hill_5.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_hill_5.png" width = "600" height = "500"/>
 
 ### Vergelijking algoritmes
 
@@ -329,26 +329,26 @@ Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 |_Oekraïne_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |  ***Random***  |  |     |     |   |
-|            4|544  |1.5      |3.69      |92.2%   ||
-|            5|564  |2.4      |3.81      |38.88%  ||
-|            7|597  |1.7      |3.71      |0.0063%  | |
+|            4|544  |1.5      |0.4      |92.2%   ||
+|            5|564  |2.4      |0.4      |38.88%  ||
+|            7|597  |1.7      |0.4      |0.63%  | |
 |             |         |             |           |           |
 | ***Radio***   |  |      |      |   ||
-|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
-|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
+|       Random|541  |1.5      |0.3      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
+|          LDO|549  |1.5     |0.4      |0%   |4:85.5%, 5:14.5%|
 |             |         |             |           |           |
 | ***Greedy***  |  |      |      |   ||
-|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
-|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
+|       Random|541  |1.5      |0.4      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
+|          LDO|549  |1.5      |0.4      |0%   |4:85.56%, 5:14.44%|
 |             |         |             |           |           |
 | ***Hill-Climber***|  |      |     |   ||
-|            4|543  |1.5      |6.96      |84.74%   ||
-|            5|562  |2.4      |5.81      |15.43%   ||
-|            7|591  |1.7      |5.03      |0.00003%   ||
+|            4|543  |1.5      |0.7      |84.74%   ||
+|            5|562  |2.4      |0.6      |15.43%   ||
+|            7|591  |1.7      |0.5      |0.003%   ||
 |             |         |             |           |           |
 | ***Depth-first***|  |      |      |   ||
-|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
-|          LDO|557  |12.4      |9.75      |0%   |5:100%|
+|       Random|542  |11.0      |0.9      |0%   |4:18.39%, 5:81.61%|
+|          LDO|557  |12.4      |1.0      |0%   |5:100%|
 
 Tabel 1: Samenvatting resultaten Oekraïne.
 
@@ -362,26 +362,27 @@ Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**
 |_China_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |  ***Random***  |  |     |     |   |
-|            4|625  |1.5      |5.94      |98.29%   ||
-|            5|648  |1.6      |5.91      |60.92%  ||
-|            7|710  |1.7      |5.90      |0.02%  | |
+|            4|625  |1.5      |0.6      |98.29%   ||
+|            5|648  |1.6      |0.6      |60.92%  ||
+|            7|710  |1.7      |0.6      |2%  | |
 |             |         |             |           |           |
 |  ***Radio***   |  |      |      |   ||
-|       Random|622  |1.5      |5.44      |0%   |4:11.75%, 5:78.16%, 6:10%, 7:0.00017%|
-|          LDO|623  |1.5     |6.5      |0%   |4:93.35%, 5:6.65%|
+|       Random|622  |1.5      |0.5      |0%   |4:11.75%, 5:78.16%, 6:10%, 7:0.017%|
+|          LDO|623  |1.5     |0.7    |0%   |4:93.35%, 5:6.65%|
 |             |         |             |           |           |
 | ***Greedy***  |  |      |      |   ||
-|       Random|622  |1.5      |5.69      |0%   |4:11.67%, 5:78.12%, 6:10.18%, 7:0.00018%|
-|          LDO|623  |1.5      |6.68      |0%   |4:93.36%, 5:6.64%|
+|       Random|622  |1.5      |0.6     |0%   |4:11.67%, 5:78.12%, 6:10.18%, 7:0.018%|
+|          LDO|623  |1.5      |0.7     |0%   |4:93.36%, 5:6.64%|
 |             |         |             |           |           |
 |***Hill-Climber***|  |      |     |   ||
-|            4|625  |1.5      |13.4      |96.39%   ||
-|            5|645  |1.6      |10.43      |34.68%   ||
-|            7|691  |1.7      |9.0      |0.00078%   ||
+|            4|625  |1.5      |1.3      |96.39%   ||
+|            5|645  |1.6      |1.0      |34.68%   ||
+|            7|691  |1.7      |0.9      |0.078%   ||
 |             |         |             |           |           |
 | ***Depth-first***|  |      |      |   ||
-|       Random|625  |9.5      |15.43      |3.25%   |4:6.41%, 5:90.33%|
-|          LDO|647  |11.2      |17.09      |0%   |5:100%|
+|       Random|625  |9.5      |1.5      |3.25%   |4:6.41%, 5:90.33%|
+|          LDO|647  |11.2      |1.7      |0%   |5:100%|
+
 Tabel 2: Samenvatting resultaten China.
 
 #### US
@@ -394,26 +395,26 @@ Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**
 |_US_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |  ***Random***  |  |     |     |   |
-|            4|1141  |0.0      |12.55      |99.78%   ||
-|            5|1212  |1.6      |12.71      |73.53%  ||
-|            7|1325  |0.0      |12.95      |2.27%  | |
+|            4|1141  |0.0      |1.3      |99.78%   ||
+|            5|1212  |1.6      |1.3      |73.53%  ||
+|            7|1325  |0.0      |1.3      |2.27%  | |
 |             |         |             |           |           |
 |  ***Radio***   |  |      |      |   ||
-|       Random|1115  |10.0      |12.22      |0%   |4:2.9%, 5:76.1%, 6:20.88%, 7:0.14%|
-|          LDO|1120  |14.0     |13.95      |0%   |4:58.5%, 5:41.5%|
+|       Random|1115  |10.0      |1.2      |0%   |4:2.9%, 5:76.1%, 6:20.88%, 7:0.14%|
+|          LDO|1120  |14.0     |1.4      |0%   |4:58.5%, 5:41.5%|
 |             |         |             |           |           |
 |   ***Greedy***  |  |      |      |   ||
-|       Random|1114  |10.0      |12.74      |0%   |4:2.94%, 5:76.1%, 6:20.83%, 7:0.14%|
-|          LDO|1120  |14.0      |14.28      |0%   |4:58.54%, 5:41.46%|
+|       Random|1114  |10.0      |1.3      |0%   |4:2.94%, 5:76.1%, 6:20.83%, 7:0.14%|
+|          LDO|1120  |14.0      |1.5      |0%   |4:58.54%, 5:41.46%|
 |             |         |             |           |           |
 |***Hill-Climber***|  |      |     |   ||
-|            4|1137  |0.0      |26.97      |99.43%   ||
-|            5|1193  |1.6      |21.94      |48.37%   ||
-|            7|1300  |2.0      |31.13      |0.00071%   ||
+|            4|1137  |0.0      |2.7      |99.43%   ||
+|            5|1193  |1.6      |2.2      |48.37%   ||
+|            7|1300  |2.0      |3.2      |0.071%   ||
 |             |         |             |           |           |
 | ***Depth-first***|  |      |      |   ||
-|       Random|1140  |27.2      |33.29      |12.35%   |5:60.96%, 5:26.7%|
-|          LDO|1162  |28.8      |35.0      |0%   |5:49.95%, 6:50.05%|
+|       Random|1140  |27.2      |3.3      |12.35%   |5:60.96%, 6:26.7%|
+|          LDO|1162  |28.8      |3.5     |0%   |5:49.95%, 6:50.05%|
 
 Tabel 3: Samenvatting resultaten US.
 
@@ -427,26 +428,26 @@ Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
 |_Rusland_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
 |   ***Random***  |  |     |     |   |
-|            4|544  |1.5      |3.69      |92.2%   ||
-|            5|564  |2.4      |3.81      |38.88%  ||
-|            7|597  |1.7      |3.71      |0.0063%  | |
+|            4|1714  |5.0     |6.2      |99.99%   ||
+|            5|1848  |2.4      |3.5      |93.19%  ||
+|            7|2028  |1.7      |3.7      |8.7%  | |
 |             |         |             |           |           |
 |  ***Radio***   |  |      |      |   ||
-|       Random|541  |1.5      |3.44      |0%   |4: 32.2%, 5:66.1%, 6:1.7%|
-|          LDO|549  |1.5     |4.16      |0%   |4:85.5%, 5:14.5%|
+|       Random|1676  |13.0      |3.5      |0%   |4: 0.09%, 5:65.11%, 6:34.7%, 7:0.08%|
+|          LDO|1700  |23.2     |3.8      |0%   |5:100%|
 |             |         |             |           |           |
 | ***Greedy***  |  |      |      |   ||
-|       Random|541  |1.5      |3.64      |0%   |4:31.88%, 5:66.37%, 6: 1.75%|
-|          LDO|549  |1.5      |4.17      |0%   |4:85.56%, 5:14.44%|
+|       Random|1675  |13.0      |3.7      |0%   |4:0.09%, 5:64.9%, 6: 34.9%, 7:0.07%|
+|          LDO|1700  |23.2     |4.0      |0%   |5:100%|
 |             |         |             |           |           |
 |***Hill-Climber***|  |      |     |   ||
-|            4|543  |1.5      |6.96      |84.74%   ||
-|            5|562  |2.4      |5.81      |15.43%   ||
-|            7|591  |1.7      |5.03      |0.00003%   ||
+|            4|1705  |30     |6.5      |99.99%   ||
+|            5|1816  |2.4      |5.7      |71.85%   ||
+|            7|1962  |1.7      |4.4      |0.4%   ||
 |             |         |             |           |           |
 | ***Depth-first***|  |      |      |   ||
-|       Random|542  |11.0      |9.18      |0%   |4:18.39%, 5:81.61%|
-|          LDO|557  |12.4      |9.75      |0%   |5:100%|
+|       Random|1697  |31.6      |9.9      |3.5%   |5:66.1%, 6:30.37%|
+|          LDO|1744  |37.6      |11.3      |0%   |5:100%|
 
 Tabel 4: Samenvatting resultaten Rusland
 
