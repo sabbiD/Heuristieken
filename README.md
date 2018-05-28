@@ -467,28 +467,28 @@ Omdat we uitgaan van een geldige verdeling en het vrij snel gaat, hebben wij daa
 
 In de tabel hieronder is de vergelijking van de hill climber costs tegenover de randomizer te zien.
 
-|             |Randomizer |Hill climber costs     | 
-|-------------|-----------|-----------------------|
-|***Ukraine***|           |                       |     
-|            4|1714       |5.0                    |
-|            5|1848       |2.4                    |
-|            7|2028       |1.7                    |
-|             |           |                       |  
-|***China***  |           |                       |     
-|            4|1714       |5.0                    |
-|            5|1848       |2.4                    |
-|            7|2028       |1.7                    |
-|             |           |                       |
-|***US***     |           |                       |     
-|            4|1714       |5.0                    |
-|            5|1848       |2.4                    |
-|            7|2028       |1.7                    |
-|             |           |                       |
-|***Russia*** |           |                       |     
-|            4|1714       |5.0                    |
-|            5|1848       |2.4                    |
-|            7|2028       |1.7                    |
-|             |           |                       |
+|             |Randomizer |Hill climber costs     | Stations hill climber costs| 
+|-------------|-----------|-----------------------|-----------------------|
+|***Ukraine***|           |                       |                       |      
+|            4|1714       |5.0                    |                       | 
+|            5|1848       |2.4                    |                       | 
+|            7|2028       |1.7                    |                       | 
+|             |           |                       |                         | 
+|***China***  |           |                       |                            | 
+|            4|1714       |5.0                    |                       | 
+|            5|1848       |2.4                    |                       | 
+|            7|2028       |1.7                    |                       | 
+|             |           |                       |                       | 
+|***US***     |           |                       |                            | 
+|            4|1714       |5.0                    |                       | 
+|            5|1848       |2.4                    |                       | 
+|            7|2028       |1.7                    |                       | 
+|             |           |                       |                       | 
+|***Russia*** |           |                       |                            | 
+|            4|1714       |5.0                    |                       | 
+|            5|1848       |2.4                    |                       | 
+|            7|2028       |1.7                    |                       | 
+|             |           |                       |                       | 
 
 ### Depth first limit
 
