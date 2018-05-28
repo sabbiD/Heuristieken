@@ -111,14 +111,14 @@ Aantal zendmasten: **4**
 Minimale kosten: **544**  
 Maximale kosten: **558**  
 
-Minimale verdeling: **8.05**  
-Maximale verdeling: **12.55**  
+Minimale verdeling: **1.5**  
+Maximale verdeling: **11**  
 
-Tijd per succesvolle iteratie (ms): **0.8**  
+Tijd per succesvolle iteratie (ms): **0.3**  
 
 Percentage fails: **92%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_random_4.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_random_4.png"/>
 
 ##### Voorbeeld 2: Rusland
 Aantal zendmasten: **5**  
@@ -126,13 +126,13 @@ Aantal zendmasten: **5**
 Minimale kosten: **1848**  
 Maximale kosten: **1964**  
 
-Minimale verdeling: **2.4**
-Maximale verdeling: **21.6**
+Minimale verdeling: **2.4**  
+Maximale verdeling: **21.6**  
 
-Tijd per succesvolle iteratie (ms):  **10 ms**  
+Tijd per succesvolle iteratie (ms):  **3 ms**  
 Percentage fails: **93%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_random_5.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png"/>
 
 #### Radio functie
 De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy).
@@ -148,31 +148,33 @@ Bij de radio functie is het van belang in welke volgorde de zendmasten van de re
 In de bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor het radio algoritme met random en LDO volgorde. LDO volgorde leidt meestal tot een goedkopere oplossing.
 
 ##### Voorbeeld 1: China
-Volgorde: **Random**  
+Volgorde: **Random**   
 Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**  
 
 Minimale kosten: **622**  
 Maximale kosten: **713**  
 
-Minimale verdeling: **1.5** 
-Maximale verdeling: **25.5**
+Minimale verdeling: **1.5**   
+Maximale verdeling: **25**  
 
-Tijd per succesvolle iteratie (ms):  **1 ms**  
+Tijd per succesvolle iteratie (ms):  **0.5 ms**   
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_radio_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_radio_random.png"/>
 
 #### Voorbeeld 2: US
-Volgorde: **LDO**  
+1120	1167	1137.9684	14	34.8	22.84518	0.001395091	0	{4: 58500, 5: 41500, 6: 0, 7: 0}
+
+Volgorde: **LDO**   
 Aantal zendmasten: **4: 59%, 5: 41%, 6: 0%, 7: 0%**  
 
 Minimale kosten: **1120**  
 Maximale kosten: **1167**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **14**  
+Maximale verdeling: **34.8**  
 
-Tijd per succesvolle iteratie (ms):  **4 ms**  
+Tijd per succesvolle iteratie (ms):  **1 ms**  
 Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
@@ -194,13 +196,13 @@ In bovenstaande grafiek is de verdeling van de kosten voor de US te zien voor de
 Volgorde: **Random**  
 Aantal zendmasten: **4: 12%, 5: 78%, 6: 10%, 7: 0.01%**  
 
-Minimale kosten: **622** 
+Minimale kosten: **622**  
 Maximale kosten: **714**  
 
-Minimale verdeling: **1.5** 
-Maximale verdeling: **25.5**
+Minimale verdeling: **1.5**  
+Maximale verdeling: **25**  
 
-Tijd per succesvolle iteratie (ms):  **1 ms**  
+Tijd per succesvolle iteratie (ms):  **0.05 ms**  
 Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
@@ -212,10 +214,10 @@ Aantal zendmasten: **4: 86%, 5: 14%, 6: 0%, 7: 0%**
 Minimale kosten: **549**  
 Maximale kosten: **586**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **1.5**  
+Maximale verdeling: **13.6**  
 
-Tijd per succesvolle iteratie (ms):  **1 ms**  
+Tijd per succesvolle iteratie (ms):  **0.4 ms**  
 Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
@@ -240,25 +242,25 @@ Aantal zendmasten: **4: 0%, 5: 66%, 6: 30%, 7: 0%**
 Minimale kosten: **1697**  
 Maximale kosten: **1782**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling:  **31.6**  
+Maximale verdeling:  **53**  
 
-Tijd per succesvolle iteratie (ms):  **10 ms**  
+Tijd per succesvolle iteratie (ms):  **9 ms**  
 Percentage fails: **4%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
 
-#### Voorbeeld 2: US
+#### Voorbeeld 2: US  
 Volgorde: **LDO**  
 Aantal zendmasten: **4: 0%, 5: 50%, 6: 50%, 7: 0%**  
 
 Minimale kosten: **1162**  
 Maximale kosten: **1170**  
 
-Minimale verdeling:  
-Maximale verdeling:  
+Minimale verdeling: **28.8**  
+Maximale verdeling: **40**  
 
-Tijd per succesvolle iteratie (ms): **6 ms**  
+Tijd per succesvolle iteratie (ms): **3 ms**  
 Percentage fails: **0%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
@@ -283,28 +285,28 @@ In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de
 ##### Voorbeeld 1: Oekraine
 Aantal zendmasten: **4**  
 
-Minimale kosten: **545**  
+Minimale kosten: **543**  
 Maximale kosten: **558**  
 
-Minimale verdeling: 
-Maximale verdeling: 
+Minimale verdeling: **1.5**  
+Maximale verdeling: **11**  
 
-Tijd per succesvolle iteratie (ms):  **2 ms**  
-Percentage fails: **99.8%**  
+Tijd per succesvolle iteratie (ms):  **0.6 ms**   
+Percentage fails: **85%**   
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
 
 #### Voorbeeld 2: China
 Aantal zendmasten: **5**  
 
-Minimale kosten: **650**  
+Minimale kosten: **645**  
 Maximale kosten: **733**  
 
-Minimale verdeling: **1.6**
-Maximale verdeling: **15.2**  
+Minimale verdeling: **3.4**  
+Maximale verdeling: **33**   
 
-Tijd per succesvolle iteratie (ms):  **1.5 ms**  
-Percentage fails: **99.5%**  
+Tijd per succesvolle iteratie (ms):  **0.9 ms**  
+Percentage fails: **35%**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
 
