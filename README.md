@@ -101,7 +101,7 @@ N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling 
 ### Algoritmes
 
 #### Randomizer 
-### (met constraints)
+##### (met constraints)
 De randomizer genereert een random verdeling van zendmasten, met de constraint dat een regio niet hetzelfde type zendmast mag hebben als een naburige regio. Je kan kiezen met hoeveel zendmasten het algoritme wordt uitgevoerd (4, 5, 6 of 7). Dit algoritme resulteert niet in 100% van de gevallen in een geldige verdeling. Als er geen goede verdeling gevonden kon worden, wordt dit gezien als een "fail".  
 
 **Kostenverdeling US:**
@@ -460,7 +460,7 @@ Tabel 5: Samenvatting resultaten Rusland
 ### Hill climber costs
 Het hill climber costs algoritme is een hill climber algoritme dat de kosten probeert te minimaliseren. Dit algoritme werkt vrijwel op dezelfde manier als de [hill climber](#hill-climber), alleen gebruikt dit algoritme een geldige verdeling van radiozendmasten met x aantal types als beginpunt en in plaats van conflicten te minderen probeert het de kosten te verminderen. 
 
-De begin verdeling wordt gemaakt met de [randomizer](#Randomizer).  
+De begin verdeling wordt gemaakt met de [randomizer](#randomizer).  
 Hierna gaat dit algoritme voor een random regio het zendmast type proberen te veranderen. Vervolgens wordt berekend of deze verandering tot lagere of hogere kosten leidt. Als de verandering tot lagere kosten leidt, wordt deze aangenomen als de nieuwe staat. Als de verandering niet tot lagere kosten leidt, wordt doorgegaan met de oude staat. Dit wordt 100 keer gedaan.  
 
 Om te kijken of dit algoritme uiteindelijk tot lagere kosten leidt dan de random verdeling waarmee begonnen wordt, hebben we dit algoritme 100 keer gerund voor elk land met 4, 5 en 7 regio’s. Hierbij hebben we gekozen voor maar 100 iteraties, omdat dit algoritme uitgaat van een **geldige** random verdeling. De randomizer gaf bijvoorbeeld in het geval van Rusland voor 4 stations maar 1 keer in 100,000 iteraties een geldige oplossing. Hierdoor kan dit algoritme dus erg lang duren, omdat hij doorgaat tot er een geldige random oplossing is voor het aantal stations. Uitgaande van Rusland, zouden er bij 100,000 iteraties dus ongeveer 100,000 x 100,000 iteraties nodig zijn. Als 1 iteratie 1 milliseconde zou duren, zou dit ongeveer 115 dagen in beslag nemen.  
