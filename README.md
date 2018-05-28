@@ -382,6 +382,7 @@ Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**
 | ***Depth-first***|  |      |      |   ||
 |       Random|625  |9.5      |1.5      |3.25%   |4:6.41%, 5:90.33%|
 |          LDO|647  |11.2      |1.7      |0%   |5:100%|
+
 Tabel 2: Samenvatting resultaten China.
 
 #### US
