@@ -136,10 +136,10 @@ Maximale verdeling: **21.6**
 Tijd per succesvolle iteratie (ms):  **3 ms**  
 Percentage fails: **93%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png" width = "700" height = "500"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png" width = "800" height = "500"/>
 
 #### Radio functie
-De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy). Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heuristieken)).
+De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy). Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)).
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
 
@@ -184,7 +184,7 @@ Percentage fails: **0%**
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png" width = "700" height = "500"/>
 
 #### Greedy
-Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie](#heuristieken)). 
+Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)). 
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
 
@@ -252,7 +252,7 @@ Maximale verdeling:  **53**
 Tijd per succesvolle iteratie (ms):  **9 ms**  
 Percentage fails: **4%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_depth_random.png" width = "700" height = "500"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_depth_random.png" width = "800" height = "500"/>
 
 #### Voorbeeld 2: US  
 Volgorde: **LDO**  
@@ -267,7 +267,7 @@ Maximale verdeling: **40**
 Tijd per succesvolle iteratie (ms): **3 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_depth_ldo.png" width = "600" height = "500"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_depth_ldo.png" width = "700" height = "500"/>
 
 
 #### Hill-climber
@@ -468,6 +468,12 @@ Omdat we uitgaan van een geldige verdeling en het vrij snel gaat, hebben wij daa
 In de tabel hieronder is de vergelijking van de hill climber costs tegenover de randomizer te zien.
 
 ### Depth first limit
+
+Het depth-first limit algoritme is ook een recursief algoritme net zoals de [depth-first](#depth-first) hierboven beschreven. 
+Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld aan de prijs van de zendmast die er geplaatst kan worden.
+Op basis van het aantal buren van de regio wordt het kostenschema aangepast (Kostenschema is zo lang als dat er buren zijn behalve als er meer buren zijn dan zendmasttypes).
+Hierna worden alle prijzen van de zendmasttypes in dit nieuwe kostenschema bij elkaar opgeteld en gedeeld door het aantal buren van de regio. Dit is het limiet voor de regio.
+Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio zonder de huidige regio een zendmast te geven en doet hetzelfde voor deze regio. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
 
 
 ### Conclusie
