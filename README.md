@@ -177,7 +177,7 @@ Maximale verdeling: **34.8**
 Tijd per succesvolle iteratie (ms):  **1 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_radio_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png"/>
 
 #### Greedy
 Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. 
@@ -205,7 +205,7 @@ Maximale verdeling: **25**
 Tijd per succesvolle iteratie (ms):  **0.05 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_greedy_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_greedy_random.png"/>
 
 #### Voorbeeld 2: Oekraine
 Volgorde: **LDO**  
@@ -220,7 +220,7 @@ Maximale verdeling: **13.6**
 Tijd per succesvolle iteratie (ms):  **0.4 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_greedy_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_greedy_ldo.png"/>
 
 #### Depth-first
 Het Depth-first algoritme wordt gebruikt om de datastructuur van het land te doorzoeken. Het algoritme begint bij een regio in de regio-lijst (de begin regio kan zelf worden aangegeven en heeft invloed op de resultaten) en kijkt welke zendmasten de buren van de regio hebben. Deze zendmasten worden uitgesloten voor keuze van zendmast voor de huidige regio waarna de goedkoopst mogelijke zendmast wordt gekozen. Deze regio wordt gemarkeerd zodat hier niet meer naar hoeft te worden gekeken. Daarna wordt hetzelfde gedaan voor een buur van de huidige regio. Als alle buren van een regio al zijn gemarkeerd kijkt het algoritme terug naar de vorige regio die is gemarkeerd en kijkt of er een andere buur is die nog niet is gemarkeerd om verder te gaan met die regio. Dit blijft doorgaan tot alle regio's zijn gemarkeerd en alle regio's een zendmast toegekend hebben gekregen.
@@ -248,7 +248,7 @@ Maximale verdeling:  **53**
 Tijd per succesvolle iteratie (ms):  **9 ms**  
 Percentage fails: **4%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russia_depth_random.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_depth_random.png"/>
 
 #### Voorbeeld 2: US  
 Volgorde: **LDO**  
@@ -263,7 +263,7 @@ Maximale verdeling: **40**
 Tijd per succesvolle iteratie (ms): **3 ms**  
 Percentage fails: **0%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/us_depth_ldo.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_depth_ldo.png"/>
 
 
 #### Hill-climber
@@ -294,7 +294,7 @@ Maximale verdeling: **11**
 Tijd per succesvolle iteratie (ms):  **0.6 ms**   
 Percentage fails: **85%**   
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukraine_hill_4.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/ukrainemap_hill_4.png"/>
 
 #### Voorbeeld 2: China
 Aantal zendmasten: **5**  
@@ -308,7 +308,7 @@ Maximale verdeling: **33**
 Tijd per succesvolle iteratie (ms):  **0.9 ms**  
 Percentage fails: **35%**  
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/china_hill_5.png"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/chinamap_hill_5.png"/>
 
 ### Vergelijking algoritmes
 
