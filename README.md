@@ -354,7 +354,7 @@ Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
 |       Random|542  |11.0      |0.9      |0%   |4:18.39%, 5:81.61%|
 |          LDO|557  |12.4      |1.0      |0%   |5:100%|
 
-Tabel 1: Samenvatting resultaten Oekraïne.
+Tabel 2: Samenvatting resultaten Oekraïne.
 
 #### China
 China heeft 31 regio's. Het maximaal aantal buren is 8.
@@ -387,7 +387,7 @@ Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**
 |       Random|625  |9.5      |1.5      |3.25%   |4:6.41%, 5:90.33%|
 |          LDO|647  |11.2      |1.7      |0%   |5:100%|
 
-Tabel 2: Samenvatting resultaten China.
+Tabel 3: Samenvatting resultaten China.
 
 #### US
 Us heeft 56 regio's. Het maximaal aantal buren is 8.
@@ -420,7 +420,7 @@ Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**
 |       Random|1140  |27.2      |3.3      |12.35%   |5:60.96%, 6:26.7%|
 |          LDO|1162  |28.8      |3.5     |0%   |5:49.95%, 6:50.05%|
 
-Tabel 3: Samenvatting resultaten US.
+Tabel 4: Samenvatting resultaten US.
 
 #### Rusland
 Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
@@ -453,17 +453,20 @@ Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
 |       Random|1697  |31.6      |9.9      |3.5%   |5:66.1%, 6:30.37%|
 |          LDO|1744  |37.6      |11.3      |0%   |5:100%|
 
-Tabel 4: Samenvatting resultaten Rusland
+Tabel 5: Samenvatting resultaten Rusland
 
 ### Kosten minimalisatie
 ### Hill climber costs
-Het hill climber costs algoritme is een algoritme dat de kosten probeert te minimaliseren. Hierbij gebruikt het een geldige verdeling van radiozendmasten met x aantal types als beginpunt. Deze verdeling wordt gemaakt met de randomizer.  
+Het hill climber costs algoritme is een hill climber algoritme dat de kosten probeert te minimaliseren. Dit algoritme werkt vrijwel op dezelfde manier als de [hill climber](#hill-climber), alleen gebruikt dit algoritme een geldige verdeling van radiozendmasten met x aantal types als beginpunt en in plaats van conflicten te minderen probeert het de kosten te verminderen. 
 
-Hierna gaat dit algoritme voor een random regio het zendmast type proberen te veranderen, waarbij alleen geldige veranderingen (zonder conflict met buur regio’s ) gemaakt mogen worden. Vervolgens wordt berekend of deze verandering tot lagere of hogere kosten leidt. Als de verandering tot lagere kosten leidt, wordt deze aangenomen als de nieuwe staat. Als de verandering niet tot lagere kosten leidt, wordt doorgegaan met de oude staat. Dit wordt 100 keer gedaan.  
+De begin verdeling wordt gemaakt met de [randomizer](#Randomizer (met constraints).  
+Hierna gaat dit algoritme voor een random regio het zendmast type proberen te veranderen. Vervolgens wordt berekend of deze verandering tot lagere of hogere kosten leidt. Als de verandering tot lagere kosten leidt, wordt deze aangenomen als de nieuwe staat. Als de verandering niet tot lagere kosten leidt, wordt doorgegaan met de oude staat. Dit wordt 100 keer gedaan.  
 
 Om te kijken of dit algoritme uiteindelijk tot lagere kosten leidt dan de random verdeling waarmee begonnen wordt, hebben we dit algoritme 100 keer gerund voor elk land met 4, 5 en 7 regio’s. Hierbij hebben we gekozen voor maar 100 iteraties, omdat dit algoritme uitgaat van een **geldige** random verdeling. De randomizer gaf bijvoorbeeld in het geval van Rusland voor 4 stations maar 1 keer in 100,000 iteraties een geldige oplossing. Hierdoor kan dit algoritme dus erg lang duren, omdat hij doorgaat tot er een geldige random oplossing is voor het aantal stations. Uitgaande van Rusland, zouden er bij 100,000 iteraties dus ongeveer 100,000 x 100,000 iteraties nodig zijn. Als 1 iteratie 1 milliseconde zou duren, zou dit ongeveer 115 dagen in beslag nemen.  
 
 Omdat we uitgaan van een geldige verdeling en het vrij snel gaat, hebben wij daarom gekozen voor 100 iteraties om te kijken hoe de hill climber costs het doet tegenover de random verdeling.  
+
+N.B. Dit algoritme begint met een random geldige verdeling met het aantal zenders dat gekozen wordt, en daarna probeert het de kosten te verminderen door een random regio te kiezen waarbij het laagst mogelijke station gekozen wordt. Hierdoor kan het zo zijn dat de uiteindelijke verdeling minder zendtypes gebruikt dan het gekozen aantal. Daarom wordt de verdeling in de tabel erbij vermeld.
 
 In de tabel hieronder is de vergelijking van de hill climber costs tegenover de randomizer te zien.
 
@@ -482,19 +485,26 @@ In de tabel hieronder is de vergelijking van de hill climber costs tegenover de 
 |***US***     |           |                       |                                            | 
 |            4|1141       |1125                   |4: **100%**                                 | 
 |            5|1212       |1146                   |4: **0%**, 5: **100%**                      | 
-|            7|12325      |1155                   |4: **0%**, 5: **2%**, 6: **21%**, 7: **77%**| 
+|            7|1325       |1155                   |4: **0%**, 5: **2%**, 6: **21%**, 7: **77%**| 
 |             |           |                       |                                            | 
 |***Rusland*** |          |                       |                                            | 
 |            4|1714       |1683                   |4: **100%**                                 | 
 |            5|1848       |1743                   |4: **0%**, 5: **100%**                      | 
 |            7|2028       |1827                   |4: **0%**, 5: **0%**, 6: **2%**, 7: **98%**  | 
 |             |           |                       |                                            | 
+Tabel 6: Vergelijking randomizer vs hill climber costs
+
+In bovenstaande tabel is te zien dat de hill climber costs consequent een goedkopere indeling weet te genereren dan de laagst mogelijke kosten van de randomizer na 100,000 iteraties. Dit kan deels te maken hebben met het feit dat de hill climber costs in sommige gevallen minder zendtypes gebruikt dan het gekozen aantal, maar zelfs bij 4 stations (waarbij beide algoritmes altijd 4 stations gebruiken) zijn de kosten van de hill climber costs lager dan die van de randomizer. Dit algoritme kan dus een gegenereerde verdeling verbeteren en de kosten minimaliseren.
+
+Een toekomstige stap zou zijn om dit algoritme ook te testen met een verdeling die gemaakt is door de andere algoritmes (radio, greedy, depth-first en de normale hill climber), om te kijken of de kosten hierbij ook geminimaliseerd zouden kunnen worden. 
 
 ### Depth first limit
 
 Het depth-first limit algoritme is ook een recursief algoritme net zoals de [depth-first](#depth-first) hierboven beschreven. 
 Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld aan de prijs van de zendmast die er geplaatst kan worden.
+
 Op basis van het aantal buren van de regio wordt het kostenschema aangepast (kostenschema is zo lang als dat er buren zijn behalve als er meer buren zijn dan zendmasttypes dan neem heel kostenschema). Dit wordt gedaan om de kosten zo laag mogelijk te houden.
+
 Hierna worden alle prijzen van de zendmasttypes in dit nieuwe kostenschema bij elkaar opgeteld en gedeeld door het aantal buren van de regio. Dit is het limiet voor de regio.
 Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio zonder de huidige regio een zendmast te geven en doet hetzelfde voor deze regio. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
 
@@ -518,7 +528,7 @@ De beste kostendistributies worden door het greedy algoritme en de radio functie
 
 Uit onze resultaten blijkt dat een algoritme dat word gerund met een random volgorde soms lagere kosten geeft, en ook een betere evenredigheid dan een largest degree order volgorde. Als je echter naar de kosten distributies kijkt zie je ook dat de LDO distributie vaker lagere kosten genereert dan de random versies. De randomizer geeft een enkele keer zeer lage kosten, maar over het algemeen presteert dit algoritme dus minder goed dan LDO.
 
-Het is logisch dat de randomizer en hill-climber met 4 stations goede kosten genereren, omdat de kostenschemas lager zijn voor stations 1-4.  Jammer genoeg doen de algoritmes dit zelden; ze failen bij de grotere landen 99,99 % van de keren.
+Het is logisch dat de randomizer en hill-climber met 4 stations goede kosten genereren, omdat de kostenschemas lager zijn voor stations 1-4.  Jammer genoeg doen de algoritmes dit zelden; ze failen bij de grotere landen 99.99 % van de keren.
 
 ## Auteurs (Authors)
 
