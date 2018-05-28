@@ -471,7 +471,11 @@ In de tabel hieronder is de vergelijking van de hill climber costs tegenover de 
 
 
 ### Conclusie
+De beste kostendistributies worden door het greedy algoritme en de radio functie gegenereerd. De twee functies lijken veel op elkaar en er is ook maar een klein verschil tussen de resultaten van de twee algoritmes. De radio functie is onze eigen functie die we helemaal in het begin handmatig in elkaar hebben gezet. Uiteindelijk kwamen we erachter dat deze hetzelfde principe hanteert als een greedy algoritme, alleen op een andere manier geprogrammeerd. Toch is het leuk dat deze functie zo goed blijkt te presteren, omdat we tijdens het maken niet bezig waren met heuristieken of algoritmes, maar puur met het oplossen van het probleem en een juiste verdeling vinden.
 
+Uit onze resultaten blijkt dat een algoritme dat word gerund met een random volgorde soms lagere kosten geeft, en ook een betere evenredigheid dan een largest degree order volgorde. Als je echter naar de kosten distributies kijkt zie je ook dat de LDO distributie vaker lagere kosten genereert dan de random versies. De randomizer geeft een enkele keer zeer lage kosten, maar over het algemeen presteert dit algoritme dus minder goed dan LDO.
+
+Het is logisch dat de randomizer en hill-climber met 4 stations goede kosten genereren, omdat de kostenschemas lager zijn voor stations 1-4.  Jammer genoeg doen de algoritmes dit zelden; ze failen bij de grotere landen 99,99 % van de keren.
 
 ## Auteurs (Authors)
 
