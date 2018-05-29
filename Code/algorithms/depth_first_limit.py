@@ -71,21 +71,27 @@ def dfs_recursive(graph, vertex, path):
 
 			limit += costs_2[i + 1]
 
-	# Determine limit by dividing it by amount of neighbours
-	limit = limit / len(graph[vertex])
-
-	# Check if current option for station is higher than limit
-	# if so try again for neighbour of region
-	if costs_2[min(options)] > limit:
+	if len(graph[vertex]) > 0:
 		
-		other_neighbour = random.choice(graph[vertex])
-		
-		if other_neighbour not in path:
+		# Determine limit by dividing it by amount of neighbours
+		limit = limit / len(graph[vertex])
 
-			# Empty neighbour list for next region
-			neighb_station = []
 
-			path = dfs_recursive(graph, other_neighbour, path)
+		# Check if current option for station is higher than limit
+		# if so try again for neighbour of region
+		if costs_2[min(options)] > limit:
+			
+			other_neighbour = random.choice(graph[vertex])
+			
+			if other_neighbour not in path:
+
+				# Empty neighbour list for next region
+				neighb_station = []
+
+				path = dfs_recursive(graph, other_neighbour, path)
+
+	else:
+		vertex.radio = 1
 
 	# Assign cheapest station available to current region
 	vertex.radio = min(options)
