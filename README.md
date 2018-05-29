@@ -539,7 +539,11 @@ De resultaten hieronder gebaseerd op Oekraïne, laten zien dat de depth-first li
 Tabel 7: Depth-first vs. depth-first limit
 
 #### Advanced costs
+We hebben nog een poging gedaan om het advanced kostenschema uit te werken. We hebben dit helaas nog niet kunnen runnen en we hebben hier geen resultaten voor, maar we hebben wel een functie die de kosten lineair af laat lopen en een die de kosten logaritmisch af laat lopen. 
 
+Deze functies zijn te vinden in het mapje experimentation.
+
+Onze verwachting is dat, terwijl kostenschema 2 bij ons altijd het goedkoopst was, bij de advanced functies (en dan vooral de logaritmische functie) een ander kostenschema wellicht goedkoper zal zijn. Daarbij verwachten we dat bij een lineair schema een minder evenredige verdeling goedkoper uit zou kunnen pakken.
 
 ### Conclusie
 De beste kostendistributies worden door het greedy algoritme en de radio functie gegenereerd. De twee functies lijken veel op elkaar en er is ook maar een klein verschil tussen de resultaten van de twee algoritmes. De radio functie is onze eigen functie die we helemaal in het begin handmatig in elkaar hebben gezet. Uiteindelijk kwamen we erachter dat deze hetzelfde principe hanteert als een greedy algoritme, alleen op een andere manier geïmplementeerd. Toch is het leuk dat deze functie zo goed blijkt te presteren, omdat we tijdens het maken niet bezig waren met heuristieken of algoritmes, maar puur met het oplossen van het probleem en een juiste verdeling vinden.
