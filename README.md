@@ -1,10 +1,10 @@
 # Team KGB: Radio Russia
 
-Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van zendmasten te creëren voor de provincies van de landen Oekraine, de Verenigde Staten, China en Rusland.
+Radio Russia is een project dat probeert om een zo goed mogelijke verdeling van zendmasten te creëren voor de provincies van de landen Oekraïne, de Verenigde Staten, China en Rusland.
 Er zijn 7 type zendmasten mogelijk.
 
 <img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" width = "400" height = "274"/>  
-Afbeelding 1: De verdeling van provincies van Oekraine.  
+Afbeelding 1: De verdeling van provincies van Oekraïne.  
   
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
@@ -34,7 +34,7 @@ Preliminary results: uit 100.000 iteraties bleek dat bij ons kostenschema 2 alti
 ### Statespace
 De statespace van dit probleem is r^n, waarbij r het aantal types zendmasten is, en n het aantal regio's. Zo is voor Oekraïne bijvoorbeeld de statespace 7^27. 
 
-Het probleem is te vergelijken met het colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
+Het probleem is te vergelijken met het map colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
 
 Het blijkt in de praktijk echter moeilijk te zijn om met simpele algoritmes een map in te kleuren met maar 4 kleuren.
 (http://www.devx.com/dotnet/Article/32927)
@@ -72,7 +72,7 @@ while read requirement; do conda install --yes $requirement; done < requirements
 
 Alle Python scripts staan in de folder Code. Deze is onderverdeeld in algorithms, data_structuur, experimentation en test_code. In de map Data zitten alle shapefiles en in de map Results staan alle resultaten.
 
-In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search, sebile_search en sebile_search_2.0 zijn (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
+In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search en sebile_search (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
 
 ### Test (Testing)
 
@@ -291,7 +291,7 @@ N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7
 In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US met 5 en 7 zenders. Voor 4 zenders was in 100.000 iteraties geen oplossing te vinden. 5 zenders leidt tot een goedkopere oplossing, maar leidt ook tot veel meer fails.
 
 
-##### Voorbeeld 1: Oekraine
+##### Voorbeeld 1: Oekraïne
 Aantal zendmasten: **4**  
 
 Minimale kosten: **543**  
@@ -324,9 +324,9 @@ Percentage fails: **35%**
 Hieronder volgt per land een tabel met de resultaten van alle algoritmes, waarin de kosten, verdeling, tijd, aantal stations en fails met elkaar worden vergeleken.
 
 Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:  
-De absolute minimum kosten (zonder enige constraints)  
-De absolute maximum kosten (zonder enige constraints)  
-Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints)  
+De absolute minimum kosten (zonder enige constraints).  
+De absolute maximum kosten (zonder enige constraints).  
+Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints).  
 
 #### Oekraïne
 Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
@@ -462,8 +462,8 @@ Tabel 5: Samenvatting resultaten Rusland
 
 ### Evenredigheid
 
-De gemiddelde evenredigheidsscore van de verschillende versies van de algoritmes voor de US zijn te zien in onderstaande afbeelding. Hierbij is de score van de radiofunctie verborgen achter die van het greedy algoritme, omdat deze dezelfde scores hadden.
-Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste verdelingsscore gaven, terwijl de depth first een vrij slechte score gaf. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook greedy zendmasten plaatst. Dit zouden we graag nog verder onderzoeken.
+De gemiddelde evenredigheidsscore van de verschillende versies van de algoritmes voor de US zijn te zien in onderstaande afbeelding. Hierbij is de score van de radiofunctie verborgen achter die van het greedy algoritme, omdat deze dezelfde scores hebben.
+Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste verdelingsscore geven, terwijl de depth first een vrij slechte score geeft. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen ipv. de hele volgorde. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook greedy zendmasten plaatst. Dit zouden we graag nog verder onderzoeken.
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/evenredigheid.png" width = "550" height = "300"/>
 
@@ -569,7 +569,7 @@ De kosten kunnen geminimaliseerd worden door de hill climber costs op een random
 
 - We zouden de hill climber costs ook graag baseren op een beginstaat gegenereerd door de andere algoritmes, om te kijken of hier ook kosten minimalisatie mogelijk is. 
 
-- We zouden ook willen kijken of we "algoritme op algoritme" kunnen laten runnen, bijvoorbeeld door de depth first search te late beginnen op een greedy verdeling. 
+- We zouden ook willen kijken of we "algoritme op algoritme" kunnen laten runnen, bijvoorbeeld door de depth first search te laten beginnen op een geldige greedy verdeling. 
 
 ## Auteurs (Authors)
 
