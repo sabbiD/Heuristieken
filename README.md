@@ -25,6 +25,10 @@ Tabel 1: Kostenschema
 | G              | 41            | 38        | 57       | 48       |
 
 
+Preliminary results: uit 100.000 iteraties bleek dat bij ons kostenschema 2 altijd het goedkoopst was. Dit hoeft natuurlijk niet altijd zo te zijn, maar als je de kosten van elk schema bij elkaar optelt is schema 2 ook het goedkoopst:
+1: 212, **2: 194**, 3: 246, 4: 254.
+
+
 ## Statespace en heuristieken
 
 ### Statespace
@@ -558,6 +562,8 @@ De kosten kunnen geminimaliseerd worden door de hill climber costs op een random
 - Andere volgordes: we zouden ook nog kunnen kijken naar andere volgordes dan de random en de LDO, bijvoorbeeld door bij de randen of juist het midden van de kaart te beginnen, of juist te beginnen bij regios met het minst aantal buren.
 
 - We zouden de hill climber costs ook graag baseren op een beginstaat gegenereerd door de andere algoritmes, om te kijken of hier ook kosten minimalisatie mogelijk is. 
+
+- We zouden ook willen kijken of we "algoritme op algoritme" kunnen laten runnen, bijvoorbeeld door de depth first search te late beginnen op een greedy verdeling. 
 
 ## Auteurs (Authors)
 
