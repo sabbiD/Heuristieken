@@ -329,7 +329,7 @@ Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
 
 Absolute minimum kosten: 3 * 27 = **81**  
 Absolute maximum kosten: 58 * 27 = **1566**  
-Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
+Middenweg: 6.75 * 19 + 6.75 * 20 + 6.75 * 21 + 6.75 * 23 = **560.25**
 
 |_Oekraïne_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
@@ -362,7 +362,7 @@ China heeft 31 regio's. Het maximaal aantal buren is 8.
 
 Absolute minimum kosten: 3 * 31 = **93**  
 Absolute maximum kosten: 58 * 31 = **1798**  
-Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
+Middenweg: 7.75 * 19 + 7.75 * 20 + 7.75 * 21 + 7.75 * 23 = **643.25**  
 
 |_China_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
@@ -508,11 +508,11 @@ Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld a
 Op basis van het aantal buren van de regio wordt het kostenschema aangepast. Als er bijvoorbeeld 4 buren zijn dan wordt het limiet gebaseerd op de 4 laagste kosten uit het kostenschema, 7 buren de 7 laagste kosten uit het kostenschema wat in dit geval het hele schema is. Dit limiet zou er voor moeten zorgen dat de kosten laag worden gehouden.
 
 Hierna worden alle prijzen van de zendmasttypes in dit nieuwe kostenschema bij elkaar opgeteld en gedeeld door het aantal buren van de regio. Dit is het limiet voor de regio.
-Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio zonder de huidige regio een zendmast te geven en doet hetzelfde voor deze regio. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
+Aan de hand van dit limiet wordt bij elke plaatsing van zendmast gekeken of dit limiet wordt overschreden. Als dit het geval is springt het algoritme naar een buur van de huidige regio, zonder de huidige regio een zendmast te geven en gaat daarna verder met de buur. Als dit limiet niet wordt overschreden krijgt de regio de goedkoopst mogelijke zendmast (mogelijkheid is gebaseerd op wat de buren hebben).
 
 In de tabel hieronder is de vergelijking van de [depth-first](#depth-first) tegenover de depth-first limit te zien.
 
-De resultaten hieronder gebaseerd op Oekraïne, laten zien dat de depth-first limit inderdaad voor een verlaging in de kosten zorgt vergeleken met de depth-first. Wat verder opvalt is dat ook de verdeling een verbetering is vergeleken met de depth-first en dat er ook verdelingen met 4 zendmasttypes worden gemaakt ipv. alleen met 5 zendmasttypes bij de depth-first. Echter lijkt de depth-first limit er wel 2 keer zo lang over te doen. Deze resultaten zijn vergelijkbaar met die van de rest van de landen.  
+De resultaten hieronder gebaseerd op Oekraïne, laten zien dat de depth-first limit inderdaad voor een verlaging in de kosten zorgt vergeleken met de depth-first. Wat verder opvalt is dat ook de verdeling een verbetering is vergeleken met de depth-first en dat er ook verdelingen met 4 zendmasttypes worden gemaakt ipv. alleen met 5 zendmasttypes bij de depth-first. Echter lijkt de depth-first limit er wel 2 keer zo lang over te doen. Deze resultaten zijn vergelijkbaar met die van de rest van de landen. In de gevallen van China en Rusland leidt de depth-first limit tot een verlaging in de kosten (kosten van 645 en 1700 respectievelijk), en in het geval van de US blijven de kosten gelijk.
 
 |Oekraïne|Depth-first (LDO) |Depth-first limit (LDO)|
 |--------|------------------|-----------------------|
