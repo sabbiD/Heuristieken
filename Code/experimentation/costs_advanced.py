@@ -39,7 +39,8 @@ def costs_linear_decline(score):
 				
 			radios.append(radio)
 
-			# With 
+			# Add to cash for every station:
+			# price * amount of station - (amount of station + amount - 1 + ....+ amount - maxi)
 			cash = mini * maxi - ((maxi ^ 2 + maxi)/2)
 			
 			price += cash
