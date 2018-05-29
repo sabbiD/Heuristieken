@@ -14,3 +14,4 @@ csv_writer.py maakt een csv waarin alle waarden worden opgeslagen voor x iterati
 
 plot.py maakt een histogram van de kosten voor x iteraties.
 
+costs_advanced.py bevat twee functies die ingaan op het advanced kostenschema waarbij de kosten van een zendmast type veranderen wanneer een mast van dit type geplaatst wordt.
