@@ -5,7 +5,7 @@ Er zijn 7 type zendmasten mogelijk.
 
 <img src="http://heuristieken.nl/wiki/images/2/26/Rr_ukraine.png" width = "400" height = "274"/>  
 Afbeelding 1: De verdeling van provincies van Oekraïne.  
-  
+
 De eerste stap is om een verdeling te maken voor deze vier landen met zo min mogelijk verschillende types zendmasten.
 Hierbij is de vereiste dat een provincie niet hetzelfde type zendmast mag hebben als een naburige provincie.
 Een meer evenredige verdeling (waarbij er een evenredig aantal van alle types gebruikt wordt) is hierbij voordeliger.
@@ -25,18 +25,21 @@ Tabel 1: Kostenschema
 | G              | 41            | 38        | 57       | 48       |
 
 
-Preliminary results: uit 100.000 iteraties bleek dat bij ons kostenschema 2 altijd het goedkoopst was. Dit hoeft natuurlijk niet altijd zo te zijn, maar als je de kosten van elk schema bij elkaar optelt is schema 2 ook het goedkoopst:
-1: 212, **2: 194**, 3: 246, 4: 254.
+Voorlopige resultaten: uit 100.000 iteraties bleek dat bij ons kostenschema 2 altijd het goedkoopst was. Dit hoeft natuurlijk niet altijd zo te zijn. Als je de kosten van de verschillende types van elk schema bij elkaar optelt (zie hieronder) is schema 2 ook het goedkoopst, wat lijkt te bevestigen dat bij ons dit schema het meest voordelig is. Dit geldt ook als de goedkoopste 4, 5, of 6 types bij elkaar opgeteld worden.
 
+Totaal som alle types per kostenschema:
+1: 212, **2: 194**, 3: 246, 4: 254
+
+Omdat bij ons kostenschema 2 het goedkoopst was, zijn de kosten die in de resultaten staan altijd de kosten van dit schema.
 
 ## Statespace en heuristieken
 
 ### Statespace
 De statespace van dit probleem is r^n, waarbij r het aantal types zendmasten is, en n het aantal regio's. Zo is voor Oekraïne bijvoorbeeld de statespace 7^27. 
 
-Het probleem is te vergelijken met het map colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
+Dit probleem is te vergelijken met het map colouring probleem, waarbij de landen van een map worden ingekleurd en naburige landen ook niet dezelfde kleur mogen krijgen. Volgens de four colour theorem (https://en.wikipedia.org/wiki/Four_color_theorem) is elke map in te kleuren met maximaal 4 kleuren. Dus, de statespace zou verkleind kunnen worden tot 4^n. 
 
-Het blijkt in de praktijk echter moeilijk te zijn om met simpele algoritmes een map in te kleuren met maar 4 kleuren.
+Het blijkt in de praktijk echter vrij moeilijk te zijn om een map in te kleuren met maar 4 kleuren.
 (http://www.devx.com/dotnet/Article/32927)
 Vaak is 5 een makkelijker aantal.
 
@@ -46,11 +49,11 @@ Bij ons is ook gebleken dat het niet in alle gevallen mogelijk was om maar 4 typ
 
 Wij hebben de volgende heuristieken toegepast op ons probleem:
 
-Het aantal stations: bij een aantal algoritmes (random, hill-climber) kan het aantal zendmasten dat gebruikt wordt gekozen worden. Het algoritme wordt dan gedwongen om dat aantal zendmasten te gebruiken. Zoals hierboven vermeld, betekent dit dat in sommige gevallen geen oplossing gevonden kan worden met het aantal zendmasten dat gekozen is.
+Het aantal stations: bij een aantal algoritmes (random, hill-climber) kan het aantal zendmasten dat gebruikt wordt gekozen worden. Het algoritme wordt dan "gedwongen" om dat aantal zendmasten te gebruiken. Zoals hierboven vermeld, betekent dit dat in sommige gevallen geen oplossing gevonden kan worden met het aantal zendmasten dat gekozen is.
 
-Volgorde: bij het kleuren van een map is het belangrijk in welke volgorde de regio's ingekleurd worden. We hebben ervoor gekozen om bij de radio, greedy en de depth-first 2 types volgorden te hanteren: een random volgorde, waarbij telkens een willekeurige regio wordt ingekleurd, en largest degree ordering (LDO), waarbij de regio's op volgorde van het aantal buren (meeste buren eerst) worden ingekleurd.
+Volgorde: bij het kleuren van een map is het belangrijk in welke volgorde de regio's ingekleurd worden. We hebben ervoor gekozen om bij de radio, greedy en de depth-first algoritmes 2 verschillede volgordes te hanteren: een random volgorde, waarbij telkens een willekeurige regio wordt ingekleurd, en largest degree ordering (LDO), waarbij de regio's op volgorde van het aantal buren (meeste buren eerst) worden ingekleurd.
 
-Greedy: het greedy principe probeert steeds de goedkoopst mogelijk zendmast te plaatsen, om de kosten zo laag mogelijk te houden. Dit principe hebben wij toegepast op al onze algoritmes.
+Greedy: het greedy principe probeert steeds de goedkoopst mogelijke zendmast te plaatsen, om de kosten zo laag mogelijk te houden. Dit principe hebben wij toegepast op al onze algoritmes.
 
 ## Aan de slag (Getting Started)
 
@@ -72,7 +75,7 @@ while read requirement; do conda install --yes $requirement; done < requirements
 
 Alle Python scripts staan in de folder Code. Deze is onderverdeeld in algorithms, data_structuur, experimentation en test_code. In de map Data zitten alle shapefiles en in de map Results staan alle resultaten.
 
-In het mapje test_code staan nog 4 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search en sebile_search (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een niet-werkend simulated-annealing algoritme waar we helaas geen tijd meer voor hadden om het werkend te krijgen.
+In het mapje test_code staan nog 3 algoritmes die uiteindelijk niet gebruikt zijn in main.py en voor de vergelijkingen. kajsa_search en sebile_search (semi-zelfbedachte, op depth-first gebaseerde) werkende algoritmes om een verdeling te maken. simulated_annealing is een algoritme waar we helaas geen tijd meer voor hadden om het volledig werkend te krijgen.
 
 ### Test (Testing)
 
@@ -88,17 +91,17 @@ In main.py kun je eerst een land kiezen, waarna hiervoor de datastructuur aangem
 
 Er zijn 5 algoritmes mogelijk om de verdeling van zendmasten voor een bepaald land te maken: randomizer (met constraints), radio, greedy, depth-first en hill-climber.  
 
-Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US (100.000 iteraties).  
+Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van dit algoritme getoond voor de verschillende versies van het algoritme (bijvoorbeeld het aantal stations of de volgorde waarin de regios bepaald worden) voor de US (vor 100.000 iteraties).  
 
 Daarna worden twee voorbeelden van het algoritme gegeven, waarbij een visualisatie van de map van een juiste verdeling getoond wordt. Hierbij worden vervolgens de resultaten getoond van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results).  
 
-Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land m.b.t de kosten, waarna de evenredigheidsscore van de verschillende landen wordt vergeleken voor de US. 
+Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land. Daarna volgt nog een vergelijking van de evenredigheidsscore voor de US. 
 
 Vervolgens volgt de kostenminimalisatie. Hierbij zijn twee algoritmes gebruikt om te kijken of we de kosten nog lager kunnen krijgen.
 
 Ten slotte volgt de conclusie.
 
-N.B.1: Bij 100.000 iteraties was kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
+N.B.1: Zoals eerder vermeld, was bij 100.000 iteraties kostenschema 2 altijd het voordeligst. De kosten die weergegeven worden zijn dus altijd berekend met schema 2.  
 
 N.B.2: Uitleg verdelingsscores: voor een bepaalde verdeling (b.v. een verdeling met 4 zendertypes voor Oekraine (27 provincies), is er een "ultiem" verdelingspercentage, waarbij alle zendertypes evenredig verdeeld zijn. Om de evenredigheid van een bepaalde verdeling te berekenen, hebben we een scorefunctie gemaakt, waarbij de echte verdeling wordt vergeleken met de ultieme verdeling. Hierbij wordt de afwijking van het ultieme percentage opgeteld, waardoor er een score ontstaat. Hoe lager de score, hoe dichter bij de ultieme verdeling.  
 
@@ -144,11 +147,9 @@ Percentage fails: **93%**
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/russiamap_random_5.png" width = "800" height = "500"/>
 
 #### Radio functie
-De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit vergelijkstation vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme, waarbij telkens de laagst mogelijke zender gekozen wordt (zie hieronder voor een uitgebreidere uitleg over greedy). Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)).
+De radio functie is ons eerste, zelfbedachte algoritme. Hierbij wordt het "vergelijkstation" op 1 gezet. Hierna wordt voor elke regio dit station vergeleken met de stations van de naburige regios. Als het vergelijkstation hetzelfde is als een van de buren, wordt er 1 opgeteld bij het vergelijkstation. Zodra het vergelijkstation niet meer hetzelfde is als een van de buren, krijgt de regio het vergelijkstation. Dit algoritme heeft erg veel weg van het greedy algoritme dat [hierna](#greedy) besproken wordt, waarbij telkens de laagst mogelijke zender gekozen wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)).
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
-
- 
 
 **Kostenverdeling US:**
 
@@ -189,11 +190,9 @@ Percentage fails: **0%**
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/usmap_radio_ldo.png" width = "700" height = "500"/>
 
 #### Greedy
-Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft eerst de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)). 
+Het greedy algoritme probeert een verdeling te maken die de kosten zo laag mogelijk houdt. Het algoritme geeft de eerste regio de goedkoopste zendmast, waarna voor alle andere regio's de goedkoopst mogelijke (dus zonder dat een regio dezelfde zendmast als een van de buren heeft) zendmast geplaatst wordt. Er zijn twee volgorde-mogelijkheden: random en largest degree ordering ([zie Heuristieken](#heuristieken)). 
 
 Dit algoritme geeft altijd een goeie verdeling. Er zijn dus geen fails. Wel is het aantal zendtypes dat gebruikt wordt variabel.
-
-
 
 **Kostenverdeling US:**
 
@@ -234,9 +233,9 @@ Percentage fails: **0%**
 #### Depth-first
 Het depth-first algoritme wordt gebruikt om de datastructuur van het land te doorzoeken. Het algoritme begint bij een regio in de regio-lijst (de begin regio kan zelf worden aangegeven en heeft invloed op de resultaten) en kijkt welke zendmasten de buren van de regio hebben. Deze zendmasten worden uitgesloten voor keuze van zendmast voor de huidige regio waarna de goedkoopst mogelijke zendmast wordt gekozen. Deze regio wordt gemarkeerd zodat hier niet meer naar hoeft te worden gekeken. Daarna wordt hetzelfde gedaan voor een buur van de huidige regio. Als alle buren van een regio al zijn gemarkeerd kijkt het algoritme terug naar de vorige regio die is gemarkeerd en kijkt of er een andere buur is die nog niet is gemarkeerd om verder te gaan met die regio. Dit blijft doorgaan tot alle regio's zijn gemarkeerd en alle regio's een zendmast toegekend hebben gekregen.
 
-Het Depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze worden gemarkeerd als fails. Verder is het aantal types zendmasten variabel.
+Het depth-first algoritme geeft niet in alle gevallen een goeie verdeling. Deze worden gemarkeerd als fails. Verder is het aantal types zendmasten variabel.
 
-Bij dit algoritme kan er een keuze gemaakt worden tussen verschillende startpunten. Er zijn twee start-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna de verdeling gemaakt wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld. Omdat bij depth-first alleen de beginregio gekozen wordt, zijn er dus maar x mogelijke volgordes en dus verschillende oplossingen, waarbij x het aantal regio's met het maximaal aantal buren is. Oekraïne heeft bijvoorbeeld 3 regio's met 7 buren. Er zijn dus met een LDO volgorde 3 verschillende beginpunten mogelijk. Dit betekent dat er uiteindelijk ook maar 3 verschillende verdelingen te maken zijn met depth-first LDO.
+Bij dit algoritme kan er een keuze gemaakt worden tussen verschillende startpunten. Er zijn twee start-mogelijkheden: random en largest degree ordering. Bij een random volgorde wordt de lijst met regios van te voren geshuffeld, waarna het startpunt gekozen wordt. Bij largest degree ordering (LDO), wordt de volgorde bepaald op basis van het aantal buren van een regio. De regio met de meeste buren wordt als eerste behandeld. Omdat bij depth-first alleen de beginregio gekozen wordt, zijn er dus maar x mogelijke volgordes en dus verschillende oplossingen, waarbij x het aantal regio's met het maximaal aantal buren is. Oekraïne heeft bijvoorbeeld 3 regio's met 7 buren. Er zijn dus met een LDO volgorde 3 verschillende beginpunten mogelijk. Dit betekent dat er uiteindelijk ook maar 3 verschillende verdelingen te maken zijn met depth-first LDO.
 
 **Kostenverdeling US:**
 
@@ -276,19 +275,17 @@ Percentage fails: **0%**
 
 
 #### Hill-climber
-Het hill-climber algoritme werkt als volgt: er wordt een initiële (random) verdeling van zendmasten gemaakt. Daarna wordt er geteld hoeveel regios een conflict hebben (dus hoeveel regios een zendmast hebben die hetzelfde is als een van de buurregio's). Hierna wordt er uit de conflict regio's een random regio gekozen, waarvan het station zo wordt aangepast dat dit conflict opgelost wordt. Vervolgens wordt er geteld of het totale aantal conflicten nu minder is dan voorheen. Zo ja, wordt de nieuwe staat aangenomen en wordt het volgende random conflict station aangepast. Zo nee, wordt de nieuwe staat niet aangenomen en wordt met de oude staat verder gegaan. 
+Het hill-climber algoritme werkt als volgt: er wordt een initiële (random) verdeling van zendmasten gemaakt. Daarna wordt er geteld hoeveel regio's een conflict hebben (dus hoeveel regio's een zendmast hebben die hetzelfde is als een van de buurregio's). Hierna wordt er uit de conflict regio's een random regio gekozen, waarvan de zendmast zo wordt aangepast dat dit conflict opgelost wordt. Hierbij wordt de laagst mogelijke zendmast gekozen. Vervolgens wordt er geteld of het totale aantal conflicten minder is dan voorheen. Zo ja, wordt deze nieuwe staat aangenomen en wordt het volgende random conflict station aangepast. Zo nee, wordt de nieuwe staat niet aangenomen en wordt met de oude staat verder gegaan. 
 
-De hill-climber komt in sommige gevallen in een lokaal maximum terecht waarin geen oplossing mogelijk is. Als dit het geval is wordt het algoritme na 100 iteraties afgebroken en wordt dit geteld als een fail.
+De hill-climber komt in sommige gevallen in een lokaal maximum terecht waarin geen oplossing mogelijk is. Als dit het geval is, komt het algoritme in een oneindige loop terecht. Daarom wordt het algoritme als er na 100 iteraties geen geldige oplossng is afgebroken en wordt dit geteld als een fail. 100 is gekozen als een veilige marge, omdat we hebben geteld hoe veel switches de hill climber bij Rusland (het grootste land) ongeveer nodig heeft om tot een geldige oplossing te komen, en dit lag 
 
 Verder kan je bij dit algoritme kiezen met hoeveel stations het gerund wordt (4, 5, 6 of 7).
-
-N.B. Voor Rusland was in 100.000 iteraties geen oplossing mogelijk met 4, 5 of 7 stations. Voor de US was er alleen een verdeling mogelijk met 5 en 7 stations.
 
 **Kostenverdeling US:**  
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/hill-climber.png" width = "550" height = "300"/>
 
-In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US met 5 en 7 zenders. Voor 4 zenders was in 100.000 iteraties geen oplossing te vinden. 5 zenders leidt tot een goedkopere oplossing, maar leidt ook tot veel meer fails.
+In bovenstaande tabel is de kostenverdeling te zien voor de hill-climber voor de US. 4 zendmast types leidt tot de goedkoopste oplossing, maar bij 4 types failt het algoritme vrijwel altijd.
 
 
 ##### Voorbeeld 1: Oekraïne
@@ -326,7 +323,7 @@ Hieronder volgt per land een tabel met de resultaten van alle algoritmes, waarin
 Voor elk land wordt de kostenspace aangegeven om een beter beeld te geven van de resultaten:  
 De absolute minimum kosten (zonder enige constraints).  
 De absolute maximum kosten (zonder enige constraints).  
-Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met 4 types zendmasten, zonder constraints).  
+Een "middenweg" (waarbij uitgegaan wordt van een optimale evenredige verdeling met kostenschema 2 met 4 types zendmasten, zonder constraints).  
 
 #### Oekraïne
 Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
@@ -463,7 +460,8 @@ Tabel 5: Samenvatting resultaten Rusland
 ### Evenredigheid
 
 De gemiddelde evenredigheidsscore van de verschillende versies van de algoritmes voor de US zijn te zien in onderstaande afbeelding. Hierbij is de score van de radiofunctie verborgen achter die van het greedy algoritme, omdat deze dezelfde scores hebben.
-Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste verdelingsscore geven, terwijl de depth first een vrij slechte score geeft. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen ipv. de hele volgorde. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook greedy zendmasten plaatst. Dit zouden we graag nog verder onderzoeken.
+
+Er is duidelijk te zien dat de randomizer en het hill-climber algoritme de beste verdelingsscore geven, terwijl de depth first een vrij slechte score geeft. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen i.p.v. de hele volgorde. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook met het greedy heuristiek zendmasten plaatst. Dit zouden we graag in de toekomst verder onderzoeken.
 
 <img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/evenredigheid.png" width = "550" height = "300"/>
 
@@ -503,7 +501,7 @@ In de tabel hieronder is de vergelijking van de hill climber costs tegenover de 
 |***Rusland*** |          |                       |                                            | 
 |            4|1714       |1683                   |4: **100%**                                 | 
 |            5|1848       |1743                   |4: **0%**, 5: **100%**                      | 
-|            7|2028       |1827                   |4: **0%**, 5: **0%**, 6: **2%**, 7: **98%**  | 
+|            7|2028       |1827                   |4: **0%**, 5: **0%**, 6: **2%**, 7: **98%** | 
 |             |           |                       |                                            | 
 
 Tabel 6: Vergelijking randomizer vs hill climber costs
@@ -557,13 +555,13 @@ Zoals hierboven vermeld, is de evenredigheid het beste voor de hill climber en d
 De kosten kunnen geminimaliseerd worden door de hill climber costs op een random verdeling toe te passen, en de depth first limit resulteert ook vaak in lagere kosten dan de normale depth first.
 
 #### Toekomstig onderzoek
-- Andere algoritmes:We zouden graag de simulated annealing werkend krijgen en de kajsa search en sebile search verder uitwerken
+- Andere algoritmes: We zouden graag de simulated annealing werkend krijgen en de kajsa search en sebile search verder uitwerken.
 
 - In plaats van de regio's inkleuren zou het interessant zijn om de buren van een regio in te kleuren, zoals in de kajsa search.
 
 - We zouden graag meer experimenteren met de evenredigheidsverdeling en onze algoritmes aanpassen op het maken van een meer evenredige verdeling, omdat we nu vooral gefocust hebben op de kosten.
 
-- De LDO van de depth first is nu zo geprogrammeerd dat hij zoveel verschillende mogelijkheden heeft als het aantal regio's met het maximaal aantal buren, waardoor er niet veel spreiding is. We zouden hier graag bij willen nadenken over een manier om de volgorde zo te bepalen dat er meer verschillende oplossingen mogelijk zijn. Bijvoorbeeld doorde volgende buur te kiezen op basis van het aantal buren dat deze buur heeft.
+- De LDO van de depth first is nu zo geprogrammeerd dat hij zoveel verschillende mogelijkheden heeft als het aantal regio's met het maximaal aantal buren, waardoor er niet veel spreiding is. We zouden hier graag bij willen nadenken over een manier om de volgorde zo te bepalen dat er meer verschillende oplossingen mogelijk zijn. Bijvoorbeeld door de volgende buur te kiezen op basis van het aantal buren dat deze buur heeft, of door regio's met meer dan 5 buren als startpunt te nemen i.p.v. alleen die met het hoogste aantal buren.
 
 - Andere volgordes: we zouden ook nog kunnen kijken naar andere volgordes dan de random en de LDO, bijvoorbeeld door bij de randen of juist het midden van de kaart te beginnen, of juist te beginnen bij regios met het minst aantal buren.
 
