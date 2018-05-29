@@ -461,7 +461,7 @@ Tabel 5: Samenvatting resultaten Rusland
 De gemiddelde evenredigheidsscore van de verschillende versies van de algoritmes voor de US zijn te zien in onderstaande afbeelding. Hierbij is de score van de radiofunctie verborgen achter die van het greedy algoritme, omdat deze dezelfde scores hadden.
 Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste verdelingsscore gaven, terwijl de depth first een vrij slechte score gaf. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook greedy zendmasten plaatst. Dit zouden we graag nog verder onderzoeken.
 
-<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/evenredig.png" width = "550" height = "300"/>
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/evenredigheid.png" width = "550" height = "300"/>
 
 
 ### Kosten minimalisatie
@@ -540,7 +540,24 @@ De beste kostendistributies worden door het greedy algoritme en de radio functie
 
 Uit onze resultaten blijkt dat een algoritme dat word gerund met een random volgorde soms lagere kosten geeft, en ook een betere evenredigheid dan een largest degree order volgorde. Als je echter naar de kosten distributies kijkt zie je ook dat de LDO distributie vaker lagere kosten genereert dan de random versies. De randomizer geeft een enkele keer zeer lage kosten, maar over het algemeen presteert dit algoritme dus minder goed dan LDO.
 
-Het is logisch dat de randomizer en hill-climber met 4 stations goede kosten genereren, omdat de kostenschemas lager zijn voor stations 1-4.  Jammer genoeg doen de algoritmes dit zelden; ze failen bij de grotere landen 99.99 % van de keren.
+Het is logisch dat de randomizer en hill-climber met 4 stations goede kosten genereren, omdat de kostenschemas lager zijn voor stations 1-4. Jammer genoeg doen de algoritmes dit zelden; ze failen bij de grotere landen 99.99 % van de keren. De hill climber doet het echter beter dan de randomizer met 5 stations, hij failt dan minder vaak dan de randomizer. De radio en greedy functies failen nooit maar zijn variabel in het aantal type zendmasten dat gebruikt wordt. Hierbij gebruiken ze vaak 5 stations en blijkt het dus moeilijk om een oplossing met 4 stations te genereren.
+
+Zoals hierboven vermeld, is de evenredigheid het beste voor de hill climber en de randomizer, en het slechtste voor de depth first.
+
+De kosten kunnen geminimaliseerd worden door de hill climber costs op een random verdeling toe te passen, en de depth first limit resulteert ook vaak in lagere kosten dan de normale depth first.
+
+#### Toekomstig onderzoek
+- Andere algoritmes:We zouden graag de simulated annealing werkend krijgen en de kajsa search en sebile search verder uitwerken
+
+- In plaats van de regio's inkleuren zou het interessant zijn om de buren van een regio in te kleuren, zoals in de kajsa search.
+
+- We zouden graag meer experimenteren met de evenredigheidsverdeling en onze algoritmes aanpassen op het maken van een meer evenredige verdeling, omdat we nu vooral gefocust hebben op de kosten.
+
+- De LDO van de depth first is nu zo geprogrammeerd dat hij zoveel verschillende mogelijkheden heeft als het aantal regio's met het maximaal aantal buren, waardoor er niet veel spreiding is. We zouden hier graag bij willen nadenken over een manier om de volgorde zo te bepalen dat er meer verschillende oplossingen mogelijk zijn. Bijvoorbeeld doorde volgende buur te kiezen op basis van het aantal buren dat deze buur heeft.
+
+- Andere volgordes: we zouden ook nog kunnen kijken naar andere volgordes dan de random en de LDO, bijvoorbeeld door bij de randen of juist het midden van de kaart te beginnen, of juist te beginnen bij regios met het minst aantal buren.
+
+- We zouden de hill climber costs ook graag baseren op een beginstaat gegenereerd door de andere algoritmes, om te kijken of hier ook kosten minimalisatie mogelijk is. 
 
 ## Auteurs (Authors)
 
