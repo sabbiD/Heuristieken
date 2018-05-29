@@ -329,7 +329,7 @@ Oekraïne heeft 27 regio's. Het maximaal aantal buren is 7.
 
 Absolute minimum kosten: 3 * 27 = **81**  
 Absolute maximum kosten: 58 * 27 = **1566**  
-Middenweg: 6.75 * 12 + 6.75 * 26 + 6.75 * 27 + 6.75 * 30 = **641.25**
+Middenweg: 6.75 * 19 + 6.75 * 20 + 6.75 * 21 + 6.75 * 23 = **560.25**
 
 |_Oekraïne_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
@@ -362,7 +362,7 @@ China heeft 31 regio's. Het maximaal aantal buren is 8.
 
 Absolute minimum kosten: 3 * 31 = **93**  
 Absolute maximum kosten: 58 * 31 = **1798**  
-Middenweg: 7.75 * 12 + 7.75 * 26 + 7.75 * 27 + 7.75 * 30 = **736.25**  
+Middenweg: 7.75 * 19 + 7.75 * 20 + 7.75 * 21 + 7.75 * 23 = **643.25**  
 
 |_China_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
