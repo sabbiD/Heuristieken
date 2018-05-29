@@ -573,7 +573,7 @@ De kosten kunnen geminimaliseerd worden door de hill climber costs op een random
 
 ## Auteurs (Authors)
 
-* Kajsa Rosenblad, Sebile Demirtas, Sammy Heutz
+* Kajsa Rosenblad, Sebile Demirtaş, Sammy Heutz
 
 ## Dankwoord (Acknowledgments)
 
