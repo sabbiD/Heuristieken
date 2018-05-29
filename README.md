@@ -469,7 +469,7 @@ Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste
 
 
 ### Kosten minimalisatie
-### Hill climber costs
+#### Hill climber costs
 Het hill climber costs algoritme is een hill climber algoritme dat de kosten probeert te minimaliseren. Dit algoritme werkt vrijwel op dezelfde manier als de [hill climber](#hill-climber), alleen gebruikt dit algoritme een geldige verdeling van radiozendmasten met x aantal types als beginpunt en in plaats van conflicten te minderen probeert het de kosten te verminderen. 
 
 De begin verdeling wordt gemaakt met de [randomizer](#randomizer).  
@@ -512,7 +512,7 @@ In bovenstaande tabel is te zien dat de hill climber costs consequent een goedko
 
 Een toekomstige stap zou zijn om dit algoritme ook te testen met een verdeling die gemaakt is door de andere algoritmes (radio, greedy, depth-first en de normale hill climber), om te kijken of de kosten hierbij ook geminimaliseerd zouden kunnen worden. 
 
-### Depth first limit
+#### Depth first limit
 
 Het depth-first limit algoritme is ook een recursief algoritme net zoals de [depth-first](#depth-first) hierboven beschreven. 
 Het verschil met dat algoritme is dat er nu per regio een limiet wordt gesteld aan de prijs van de zendmast die er geplaatst kan worden.
@@ -537,6 +537,8 @@ De resultaten hieronder gebaseerd op Oekraïne, laten zien dat de depth-first li
 |Stations| 5:100%| 4:12.35%, 5: 87.65%|
 
 Tabel 7: Depth-first vs. depth-first limit
+
+#### Advanced costs
 
 
 ### Conclusie
