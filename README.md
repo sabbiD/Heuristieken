@@ -88,7 +88,7 @@ Per algoritme volgt eerst een uitleg. Vervolgens worden de kosten-resultaten van
 
 Daarna worden twee voorbeelden van het algoritme gegeven, waarbij een visualisatie van de map van een juiste verdeling getoond wordt. Hierbij worden vervolgens de resultaten getoond van 100.000 iteraties (N.B. alle andere CSV files die gegenereerd kunnen worden per algoritme zijn te vinden in de map Results).  
 
-Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land.  
+Hierna volgt een vergelijking van de verschillende algoritmes m.b.v. een tabel per land m.b.t de kosten, waarna de evenredigheidsscore van de verschillende landen wordt vergeleken voor de US. 
 
 Vervolgens volgt de kostenminimalisatie. Hierbij zijn twee algoritmes gebruikt om te kijken of we de kosten nog lager kunnen krijgen.
 
@@ -395,7 +395,7 @@ Us heeft 56 regio's. Het maximaal aantal buren is 8.
 
 Absolute minimum kosten: 3 * 56 = **168**  
 Absolute maximum kosten: 58 * 56 = **3248**  
-Middenweg: 14 * 12 + 14 * 26 + 14 * 27 + 14 * 30 = **1330**  
+Middenweg: 14 * 19 + 14 * 20 + 14 * 21 + 14 * 23 = **1162**  
 
 |_US_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
@@ -428,7 +428,7 @@ Rusland heeft 83 regio's. Het maximaal aantal buren is 9.
 
 Absolute minimum kosten: 3 * 83 = **249**  
 Absolute maximum kosten: 58 * 83 = **4814**  
-Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**  
+Middenweg: 14.5 * 19 + 14.5 * 20 + 14.5 * 21 + 14.5 * 23 = **1203.5**  
 
 |_Rusland_   |Laagste kosten |Laagste evenredigheid     | Tijd in ms     |Fails      |Stations   |
 |-------------|---------|-------------|-----------|-----------|---------|
@@ -455,6 +455,14 @@ Middenweg: 14.5 * 12 + 14.5 * 26 + 14.5 * 27 + 14.5 * 30 = **1377.50**
 |          LDO|1744  |37.6      |11.3      |0%   |5:100%|
 
 Tabel 5: Samenvatting resultaten Rusland
+
+### Evenredigheid
+
+De gemiddelde evenredigheidsscore van de verschillende versies van de algoritmes voor de US zijn te zien in onderstaande afbeelding. Hierbij is de score van de radiofunctie verborgen achter die van het greedy algoritme, omdat deze dezelfde scores hadden.
+Er is duidelijk te zien dat de randomizer en het hill climber algoritme de beste verdelingsscore gaven, terwijl de depth first een vrij slechte score gaf. Dit komt waarschijnlijk doordat de depth first een andere volgorde hanteert dan de andere algoritmes, waarbij wij alleen het startpunt bepalen. Dat de randomizer een goede evenredigheidsscore geeft is logisch, omdat deze geen gebruik maakt van een greedy heuristiek, maar random een mogelijk type kiest. We weten niet zeker waarom de hill climber zo'n goede evenredigheidsscore gaf, omdat deze ook greedy zendmasten plaatst. Dit zouden we graag nog verder onderzoeken.
+
+<img src="https://github.com/sabbiD/Heuristieken/blob/master/Results/comparison/evenredig.png" width = "550" height = "300"/>
+
 
 ### Kosten minimalisatie
 ### Hill climber costs
